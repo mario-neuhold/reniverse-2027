@@ -16,6 +16,8 @@ export type Video = {
 export const DIMENSIONS = ["collective", "genre", "mood", "topic", "album"] as const;
 export type Dimension = (typeof DIMENSIONS)[number];
 
+export const DIMENSION_LABELS: Record<Dimension, string> = { collective: "Artist(s)", genre: "Genre", mood: "Mood", topic: "Topic", album: "Album" };
+
 export type Galaxy = {
   key: string;
   name: string;

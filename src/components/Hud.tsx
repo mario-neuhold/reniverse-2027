@@ -1,7 +1,7 @@
 "use client";
 
 import type { Focus } from "@/components/Reniverse";
-import { DIMENSIONS, type Dimension, type Galaxy } from "@/lib/data";
+import { DIMENSION_LABELS, DIMENSIONS, type Dimension, type Galaxy } from "@/lib/data";
 
 type Props = {
   dimension: Dimension;
@@ -24,11 +24,11 @@ export function Hud({ dimension, galaxies, focus, onDimension, onOverview, onGal
           Reniverse
         </button>
         <label className="ml-auto flex items-center gap-2 text-xs text-white/60">
-          by
-          <select aria-label="Dimension" value={dimension} onChange={(e) => onDimension(e.target.value as Dimension)} className={`${control} capitalize`}>
+          Group by
+          <select aria-label="Dimension" value={dimension} onChange={(e) => onDimension(e.target.value as Dimension)} className={control}>
             {DIMENSIONS.map((d) => (
               <option key={d} value={d}>
-                {d}
+                {DIMENSION_LABELS[d]}
               </option>
             ))}
           </select>
