@@ -6,10 +6,15 @@ import { useMemo, useRef, useState } from "react";
 import { type PerspectiveCamera, Vector3 } from "three";
 import { Galaxy } from "@/components/Galaxy";
 import { Hud } from "@/components/Hud";
+import { GalaxyModal } from "@/components/GalaxyModal";
 import { VideoModal } from "@/components/VideoModal";
 import { type Dimension, type Galaxy as GalaxyData, type Video, buildGalaxies, galaxyRadius, overviewExtent } from "@/lib/data";
 
-export type Focus = { kind: "overview" } | { kind: "galaxy"; galaxy: GalaxyData } | { kind: "video"; video: Video; galaxy: GalaxyData };
+export type Focus =
+  | { kind: "overview" }
+  | { kind: "galaxy"; galaxy: GalaxyData }
+  | { kind: "info"; galaxy: GalaxyData }
+  | { kind: "video"; video: Video; galaxy: GalaxyData };
 
 const FOV = 50;
 
@@ -48,6 +53,11 @@ export function Reniverse() {
     setFocus({ kind: "galaxy", galaxy });
   };
 
+  const clickSun = (galaxy: GalaxyData) => {
+    if (focus.kind === "galaxy" && focus.galaxy.key === galaxy.key) setFocus({ kind: "info", galaxy });
+    else flyGalaxy(galaxy);
+  };
+
   const flyPlanet = (video: Video, galaxy: GalaxyData, target: Vector3) => {
     const cam = controls.current;
     if (!cam) return;
@@ -76,28 +86,39 @@ export function Reniverse() {
     flyGalaxy(galaxies[(i + dir + n) % n]);
   };
 
+  const modalOpen = focus.kind === "video" || focus.kind === "info";
+
   const closeVideo = () => {
     if (focus.kind === "video") flyGalaxy(focus.galaxy);
   };
 
   return (
     <div className="fixed inset-0 bg-[#030014]">
-      <Canvas camera={{ position: initialEye, fov: FOV, far: 3000 }} onPointerMissed={() => focus.kind !== "video" && flyOverview()}>
+      <Canvas dpr={[1, 1.5]} frameloop={modalOpen ? "demand" : "always"} camera={{ position: initialEye, fov: FOV, far: 3000 }} onPointerMissed={() => focus.kind !== "video" && flyOverview()}>
         <color attach="background" args={["#030014"]} />
         <ambientLight intensity={0.6} />
-        <Stars radius={600} depth={200} count={6000} factor={6} fade speed={0.5} />
+        <Stars radius={600} depth={200} count={2500} factor={6} fade speed={0.5} />
         {galaxies.map((galaxy) => (
           <Galaxy
             key={galaxy.key}
             galaxy={galaxy}
+            active={focus.kind !== "overview" && focus.galaxy.key === galaxy.key}
             paused={focus.kind === "video"}
-            onSunClick={flyGalaxy}
+            onSunClick={clickSun}
             onPlanetClick={(planet, g, pos) => flyPlanet(planet.video, g, pos)}
           />
         ))}
         <CameraControls ref={controls} makeDefault minDistance={4} maxDistance={600} smoothTime={0.7} dollySpeed={0.6} />
       </Canvas>
       <Hud dimension={dimension} galaxies={galaxies} focus={focus} onDimension={changeDimension} onOverview={() => flyOverview()} onGalaxy={flyGalaxy} onStep={step} />
+      {focus.kind === "info" && (
+        <GalaxyModal
+          galaxy={focus.galaxy}
+          dimension={dimension}
+          onClose={() => setFocus({ kind: "galaxy", galaxy: focus.galaxy })}
+          onPlay={(video) => setFocus({ kind: "video", video, galaxy: focus.galaxy })}
+        />
+      )}
       {focus.kind === "video" && (
         <VideoModal video={focus.video} currentGalaxy={focus.galaxy.key} onClose={closeVideo} onSelect={(video) => setFocus({ ...focus, video })} onTag={goToTag} />
       )}

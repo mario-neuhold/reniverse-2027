@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import { test } from "node:test";
-import { DIMENSIONS, buildGalaxies, galaxyRadius, seriesParts, VIDEOS } from "./data.ts";
+import { ALBUMS, DIMENSIONS, buildGalaxies, galaxyRadius, seriesParts, VIDEOS, videoForTrack } from "./data.ts";
 
 test("series share one orbit, parts evenly spaced in part order", () => {
   const ren = buildGalaxies("collective").find((g) => g.name === "Ren")!;
@@ -32,4 +32,16 @@ test("seriesParts returns ordered siblings or nothing", () => {
   const jenny = VIDEOS.find((v) => v.id === "jennys-tale")!;
   assert.deepEqual(seriesParts(jenny).map((v) => v.part), [1, 2, 3]);
   assert.deepEqual(seriesParts(VIDEOS.find((v) => v.id === "hi-ren")!), []);
+});
+
+test("album tracks match their videos despite title differences", () => {
+  const expect = (album: string, n: number, id: string) => assert.equal(videoForTrack(album, ALBUMS[album].tracks[n - 1])?.id, id, `${album} #${n}`);
+  expect("Sick Boi", 4, "money-game-part-3");
+  expect("Sick Boi", 8, "suicide");
+  expect("Asylum", 12, "inpatient-dr-meyers");
+  expect("Sick Sick Soul (Vol.1)", 5, "skinner-twos-on-a-cigarette");
+  expect("Vincent's Tale", 1, "prologue-sunflowers");
+  assert.equal(videoForTrack("Sick Boi", ALBUMS["Sick Boi"].tracks[17]), undefined);
+  assert.equal(new Set(VIDEOS.map((v) => v.youtubeId)).size, VIDEOS.length);
+  for (const video of VIDEOS) if (video.album) assert.ok(ALBUMS[video.album], `${video.id}: unknown album ${video.album}`);
 });

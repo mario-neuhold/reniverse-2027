@@ -35,7 +35,7 @@ export function Hud({ dimension, galaxies, focus, onDimension, onOverview, onGal
         </label>
       </header>
       <footer className="pointer-events-none absolute inset-x-0 bottom-0 flex flex-col items-center gap-2 p-4 pb-[max(1rem,env(safe-area-inset-bottom))]">
-        <p className="hidden text-xs text-white/50 sm:block">Drag to orbit · scroll or pinch to zoom · tap a sun or planet · tap empty space for overview</p>
+        <p className="hidden text-xs text-white/50 sm:block">Drag to orbit · scroll or pinch to zoom · tap a sun to focus, again for details · tap a video to play · tap empty space for overview</p>
         <div className="flex w-full max-w-md items-center gap-2">
           <button onClick={() => onStep(-1)} aria-label="Previous galaxy" className={`${control} w-11 shrink-0 text-lg`}>
             ‹
