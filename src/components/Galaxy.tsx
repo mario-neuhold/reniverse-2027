@@ -1,6 +1,6 @@
 "use client";
 
-import { Billboard, Html, Image as Sprite } from "@react-three/drei";
+import { Billboard, Image as Sprite } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import { useRef, useState } from "react";
 import { type Group, Vector3 } from "three";
@@ -75,10 +75,9 @@ function OrbitRing({ orbit, paused, onClick }: { orbit: Orbit; paused: boolean; 
           }}
         >
           <Billboard>
-            <Sprite
-              url={videoThumbnail(planet.video)}
-              radius={0.06}
-              scale={[planet.size * 1.78, planet.size]}
+            <Sprite url={videoThumbnail(planet.video)} radius={0.06} scale={[planet.size * 1.78, planet.size]} />
+            <Sprite url={placeholderImage(planet.video.title, "text")} transparent scale={[planet.size * 1.78, planet.size * 0.445]} position={[0, -planet.size * 0.78, 0]} />
+            <mesh
               onClick={(e) => {
                 e.stopPropagation();
                 onClick(planet, e.object.getWorldPosition(new Vector3()));
@@ -91,19 +90,13 @@ function OrbitRing({ orbit, paused, onClick }: { orbit: Orbit; paused: boolean; 
                 setHovered(null);
                 document.body.style.cursor = "";
               }}
-            />
-            {hovered === planet.video.id && <Label text={planet.video.title} y={planet.size / 2 + 0.3} />}
+            >
+              <planeGeometry args={[planet.size * 3.6, planet.size * 2.6]} />
+              <meshBasicMaterial transparent opacity={0} depthWrite={false} />
+            </mesh>
           </Billboard>
         </group>
       ))}
     </group>
-  );
-}
-
-function Label({ text, y }: { text: string; y: number }) {
-  return (
-    <Html position={[0, y, 0]} center zIndexRange={[10, 0]} style={{ pointerEvents: "none" }}>
-      <div className="whitespace-nowrap rounded bg-black/70 px-2 py-1 text-xs text-white">{text}</div>
-    </Html>
   );
 }
