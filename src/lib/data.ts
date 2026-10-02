@@ -167,7 +167,7 @@ export const VIDEOS: Video[] = [
 export const seriesParts = (video: Video) =>
   video.series ? VIDEOS.filter((v) => v.series === video.series).sort((a, b) => (a.part ?? 0) - (b.part ?? 0)) : [];
 
-const tagsFor = (video: Video, dim: Dimension): string[] => {
+export const tagsFor = (video: Video, dim: Dimension): string[] => {
   switch (dim) {
     case "collective":
       return [video.collective];

@@ -2,7 +2,7 @@
 
 import { CameraControls, Stars } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useMemo, useRef, useState } from "react";
 import { type PerspectiveCamera, Vector3 } from "three";
 import { Galaxy } from "@/components/Galaxy";
 import { Hud } from "@/components/Hud";
@@ -11,33 +11,35 @@ import { type Dimension, type Galaxy as GalaxyData, type Video, buildGalaxies, g
 
 export type Focus = { kind: "overview" } | { kind: "galaxy"; galaxy: GalaxyData } | { kind: "video"; video: Video; galaxy: GalaxyData };
 
+const FOV = 50;
+
+function eyeFor(center: Vector3, radius: number, elevation: number, aspect: number) {
+  const distance = (radius / (Math.tan((FOV * Math.PI) / 360) * Math.min(1, Math.max(aspect, 0.7)))) * 1.1;
+  const out = new Vector3(center.x, 0, center.z);
+  if (out.lengthSq() === 0) out.set(0, 0, 1);
+  const eye = center.clone().addScaledVector(out.normalize(), distance * Math.cos(elevation));
+  eye.y += distance * Math.sin(elevation);
+  return eye;
+}
+
+const homeCenter = (galaxies: GalaxyData[]) => new Vector3(0, 0, overviewExtent(galaxies) * 0.25);
+
 export function Reniverse() {
   const [dimension, setDimension] = useState<Dimension>("collective");
   const [focus, setFocus] = useState<Focus>({ kind: "overview" });
   const controls = useRef<CameraControls>(null);
   const galaxies = useMemo(() => buildGalaxies(dimension), [dimension]);
-  const extent = useMemo(() => overviewExtent(galaxies), [galaxies]);
+  const [initialEye] = useState(() => eyeFor(homeCenter(galaxies), overviewExtent(galaxies), 0.7, window.innerWidth / window.innerHeight));
 
-  const fly = useCallback((center: Vector3, radius: number, elevation: number) => {
+  const fly = (center: Vector3, radius: number, elevation: number) => {
     const cam = controls.current;
     if (!cam) return;
-    const { fov, aspect } = cam.camera as PerspectiveCamera;
-    const distance = (radius / (Math.tan((fov * Math.PI) / 360) * Math.min(1, Math.max(aspect, 0.7)))) * 1.1;
-    const out = new Vector3(center.x, 0, center.z);
-    if (out.lengthSq() === 0) out.set(0, 0, 1);
-    const eye = center.clone().addScaledVector(out.normalize(), distance * Math.cos(elevation));
-    eye.y += distance * Math.sin(elevation);
+    const eye = eyeFor(center, radius, elevation, (cam.camera as PerspectiveCamera).aspect);
     cam.setLookAt(eye.x, eye.y, eye.z, center.x, center.y, center.z, true);
-  }, []);
+  };
 
-  const flyHome = useCallback(() => fly(new Vector3(0, 0, extent * 0.25), extent, 0.7), [fly, extent]);
-
-  useEffect(() => {
-    flyHome();
-  }, [flyHome]);
-
-  const flyOverview = () => {
-    flyHome();
+  const flyOverview = (target = galaxies) => {
+    fly(homeCenter(target), overviewExtent(target), 0.7);
     setFocus({ kind: "overview" });
   };
 
@@ -58,7 +60,14 @@ export function Reniverse() {
 
   const changeDimension = (d: Dimension) => {
     setDimension(d);
-    setFocus({ kind: "overview" });
+    flyOverview(buildGalaxies(d));
+  };
+
+  const goToTag = (d: Dimension, name: string) => {
+    const galaxy = buildGalaxies(d).find((g) => g.name === name);
+    if (!galaxy) return;
+    setDimension(d);
+    flyGalaxy(galaxy);
   };
 
   const step = (dir: 1 | -1) => {
@@ -73,7 +82,7 @@ export function Reniverse() {
 
   return (
     <div className="fixed inset-0 bg-[#030014]">
-      <Canvas camera={{ position: [0, extent * 0.9, extent * 1.6], fov: 50, far: 3000 }} onPointerMissed={() => focus.kind !== "video" && flyOverview()}>
+      <Canvas camera={{ position: initialEye, fov: FOV, far: 3000 }} onPointerMissed={() => focus.kind !== "video" && flyOverview()}>
         <color attach="background" args={["#030014"]} />
         <ambientLight intensity={0.6} />
         <Stars radius={600} depth={200} count={6000} factor={6} fade speed={0.5} />
@@ -88,8 +97,10 @@ export function Reniverse() {
         ))}
         <CameraControls ref={controls} makeDefault minDistance={4} maxDistance={600} smoothTime={0.7} dollySpeed={0.6} />
       </Canvas>
-      <Hud dimension={dimension} galaxies={galaxies} focus={focus} onDimension={changeDimension} onOverview={flyOverview} onGalaxy={flyGalaxy} onStep={step} />
-      {focus.kind === "video" && <VideoModal video={focus.video} onClose={closeVideo} onSelect={(video) => setFocus({ ...focus, video })} />}
+      <Hud dimension={dimension} galaxies={galaxies} focus={focus} onDimension={changeDimension} onOverview={() => flyOverview()} onGalaxy={flyGalaxy} onStep={step} />
+      {focus.kind === "video" && (
+        <VideoModal video={focus.video} currentGalaxy={focus.galaxy.key} onClose={closeVideo} onSelect={(video) => setFocus({ ...focus, video })} onTag={goToTag} />
+      )}
     </div>
   );
 }

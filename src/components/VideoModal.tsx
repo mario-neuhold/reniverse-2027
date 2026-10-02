@@ -1,9 +1,17 @@
 "use client";
 
-import { useEffect, useRef } from "react";
-import { type Video, seriesParts } from "@/lib/data";
+import { Fragment, useEffect, useRef } from "react";
+import { DIMENSIONS, type Dimension, type Video, seriesParts, tagsFor } from "@/lib/data";
 
-export function VideoModal({ video, onClose, onSelect }: { video: Video; onClose: () => void; onSelect: (video: Video) => void }) {
+type Props = {
+  video: Video;
+  currentGalaxy: string;
+  onClose: () => void;
+  onSelect: (video: Video) => void;
+  onTag: (dimension: Dimension, name: string) => void;
+};
+
+export function VideoModal({ video, currentGalaxy, onClose, onSelect, onTag }: Props) {
   const ref = useRef<HTMLDialogElement>(null);
   useEffect(() => {
     ref.current?.showModal();
@@ -52,13 +60,24 @@ export function VideoModal({ video, onClose, onSelect }: { video: Video; onClose
           </button>
         </nav>
       )}
-      <ul className="flex flex-wrap gap-1 px-4 pb-3 pt-1 text-xs">
-        {[...video.genres, ...video.moods, ...video.topics].map((t) => (
-          <li key={t} className="rounded-full bg-white/10 px-2 py-0.5">
-            {t}
-          </li>
+      <dl className="grid grid-cols-[auto_1fr] gap-x-3 gap-y-1.5 px-4 pb-4 pt-1 text-xs">
+        {DIMENSIONS.map((dimension) => (
+          <Fragment key={dimension}>
+            <dt className="pt-0.5 capitalize text-white/50">{dimension}</dt>
+            <dd className="flex flex-wrap gap-1">
+              {tagsFor(video, dimension).map((name) => (
+                <button
+                  key={name}
+                  onClick={() => onTag(dimension, name)}
+                  className={`rounded-full px-2 py-0.5 ${`${dimension}:${name}` === currentGalaxy ? "bg-white text-black" : "bg-white/10 hover:bg-white/25"}`}
+                >
+                  {name}
+                </button>
+              ))}
+            </dd>
+          </Fragment>
         ))}
-      </ul>
+      </dl>
     </dialog>
   );
 }

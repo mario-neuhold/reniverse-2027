@@ -14,25 +14,27 @@ type Props = {
 };
 
 export function Galaxy({ galaxy, paused, onSunClick, onPlanetClick }: Props) {
-  const [hover, setHover] = useState(false);
   const sunSize = 3 + Math.min(galaxy.videos.length, 12) * 0.25;
   const image = galaxyImage(galaxy.name);
+  const title = placeholderImage(galaxy.name, "text");
   return (
     <group position={galaxy.position}>
       <Billboard>
-        <Sprite
-          url={image ?? placeholderImage(galaxy.name, "text")}
-          transparent
-          radius={image ? 0.15 : 0}
-          scale={image ? sunSize : [sunSize * 1.6, sunSize * 0.4]}
+        <group
           onClick={(e) => {
             e.stopPropagation();
             onSunClick(galaxy);
           }}
-          onPointerOver={() => setHover(true)}
-          onPointerOut={() => setHover(false)}
-        />
-        {hover && <Label text={galaxy.name} y={sunSize / 2 + 0.5} />}
+          onPointerOver={() => {
+            document.body.style.cursor = "pointer";
+          }}
+          onPointerOut={() => {
+            document.body.style.cursor = "";
+          }}
+        >
+          {image && <Sprite url={image} radius={0.15} scale={sunSize} />}
+          <Sprite url={title} transparent scale={[sunSize * 1.6, sunSize * 0.4]} position={[0, image ? -sunSize * 0.75 : 0, 0]} />
+        </group>
       </Billboard>
       <pointLight intensity={2} distance={60} decay={1} />
       {galaxy.orbits.map((orbit) => (
