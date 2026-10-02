@@ -14,7 +14,7 @@ export function Modal({ title, subtitle, onClose, children }: Props) {
       ref={ref}
       onClose={onClose}
       onClick={(e) => e.target === ref.current && ref.current.close()}
-      className="m-auto max-h-dvh w-[min(96vw,960px)] overflow-y-auto rounded-xl border border-white/20 bg-[#120b2e] p-0 text-white shadow-2xl shadow-black/80 backdrop:bg-black/70 backdrop:backdrop-blur-sm"
+      className="m-auto max-h-[calc(100dvh-2rem)] w-[min(96vw,960px)] overflow-y-auto rounded-xl border border-white/20 bg-[#120b2e] p-0 text-white shadow-2xl shadow-black/80 backdrop:bg-black/70 backdrop:backdrop-blur-sm"
     >
       <div className="flex items-center justify-between px-4 py-3">
         <div>

@@ -4,12 +4,12 @@ import Image from "next/image";
 import { Modal } from "@/components/Modal";
 import { ALBUMS, ARTISTS, DIMENSION_LABELS, type Dimension, type Galaxy, type Video, albumsOf, videoForTrack, videoThumbnail } from "@/lib/data";
 
-type Props = { galaxy: Galaxy; dimension: Dimension; onClose: () => void; onPlay: (video: Video) => void };
+type Props = { galaxy: Galaxy; dimension: Dimension; onClose: () => void; onPlay: (video: Video) => void; onTag: (dimension: Dimension, name: string) => void };
 
 const unique = (values: string[]) => [...new Set(values)];
-const chip = "rounded-full bg-white/10 px-3 py-1 text-xs";
+const chip = "min-h-10 rounded-full bg-white/10 px-3 text-sm hover:bg-white/25";
 
-export function GalaxyModal({ galaxy, dimension, onClose, onPlay }: Props) {
+export function GalaxyModal({ galaxy, dimension, onClose, onPlay, onTag }: Props) {
   const videos = galaxy.videos;
   const years = videos.map((v) => v.year);
   const span = Math.min(...years) === Math.max(...years) ? `${years[0]}` : `${Math.min(...years)}–${Math.max(...years)}`;
@@ -42,8 +42,10 @@ export function GalaxyModal({ galaxy, dimension, onClose, onPlay }: Props) {
           {albumsOf(galaxy.name).length > 0 && (
             <ul className="flex flex-wrap gap-2">
               {albumsOf(galaxy.name).map(([name, a]) => (
-                <li key={name} className={chip}>
-                  {name} · {a.date.slice(0, 4)}
+                <li key={name}>
+                  <button onClick={() => onTag("album", name)} className={chip}>
+                    {name} · {a.date.slice(0, 4)}
+                  </button>
                 </li>
               ))}
             </ul>
@@ -55,8 +57,10 @@ export function GalaxyModal({ galaxy, dimension, onClose, onPlay }: Props) {
           {album.note && <p className="text-white/80">{album.note}</p>}
           <ul className="flex flex-wrap gap-2">
             {genres.map((g) => (
-              <li key={g} className={chip}>
-                {g}
+              <li key={g}>
+                <button onClick={() => onTag("genre", g)} className={chip}>
+                  {g}
+                </button>
               </li>
             ))}
           </ul>
@@ -97,8 +101,10 @@ export function GalaxyModal({ galaxy, dimension, onClose, onPlay }: Props) {
           {!artist && (
             <ul className="mb-3 flex flex-wrap gap-2">
               {artists.map((a) => (
-                <li key={a} className={chip}>
-                  {a}
+                <li key={a}>
+                  <button onClick={() => onTag("collective", a)} className={chip}>
+                    {a}
+                  </button>
                 </li>
               ))}
             </ul>

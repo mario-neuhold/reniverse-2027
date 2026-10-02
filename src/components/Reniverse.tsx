@@ -94,6 +94,10 @@ export function Reniverse() {
 
   const modalOpen = focus.kind === "video" || focus.kind === "info";
 
+  const openDetails = () => {
+    if (focus.kind !== "overview") setFocus({ kind: "info", galaxy: focus.galaxy });
+  };
+
   const closeVideo = () => {
     if (focus.kind === "video") flyGalaxy(focus.galaxy);
   };
@@ -108,7 +112,6 @@ export function Reniverse() {
           <Galaxy
             key={galaxy.key}
             galaxy={galaxy}
-            active={focus.kind !== "overview" && focus.galaxy.key === galaxy.key}
             paused={focus.kind === "video"}
             onSunClick={clickSun}
             onPlanetClick={(planet, g, pos) => flyPlanet(planet.video, g, pos)}
@@ -116,13 +119,14 @@ export function Reniverse() {
         ))}
         <CameraControls ref={controls} makeDefault minDistance={4} maxDistance={600} smoothTime={0.7} dollySpeed={0.6} />
       </Canvas>
-      <Hud dimension={dimension} galaxies={galaxies} focus={focus} onDimension={changeDimension} onOverview={() => flyOverview()} onGalaxy={flyGalaxy} onVideo={goToVideo} onStep={step} />
+      <Hud dimension={dimension} galaxies={galaxies} focus={focus} onDimension={changeDimension} onOverview={() => flyOverview()} onGalaxy={flyGalaxy} onVideo={goToVideo} onStep={step} onDetails={openDetails} />
       {focus.kind === "info" && (
         <GalaxyModal
           galaxy={focus.galaxy}
           dimension={dimension}
           onClose={() => setFocus({ kind: "galaxy", galaxy: focus.galaxy })}
           onPlay={(video) => setFocus({ kind: "video", video, galaxy: focus.galaxy })}
+          onTag={goToTag}
         />
       )}
       {focus.kind === "video" && (
