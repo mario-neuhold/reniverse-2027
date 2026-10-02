@@ -67,7 +67,7 @@ export function GalaxyModal({ galaxy, dimension, onClose, onPlay }: Props) {
                 <>
                   <span className="w-6 text-right text-white/40">{track.n}</span>
                   {video ? (
-                    <Image src={videoThumbnail(video)} alt="" width={96} height={54} className="aspect-video w-16 rounded object-cover" />
+                    <Image src={videoThumbnail(video)} alt="" width={96} height={54} className="aspect-video w-16 min-w-16 rounded object-cover" />
                   ) : (
                     <span className="aspect-video w-16 rounded bg-white/5" />
                   )}

@@ -4,7 +4,11 @@
   --font-sans: var(--font-geist-sans);
 }
 
-html {
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+  overscroll-behavior: none;
   color-scheme: dark;
 }
 

@@ -9,7 +9,7 @@ import { DIMENSION_LABELS, type Dimension, type Video, VIDEOS, matchesQuery, tag
 type Column = { key: string; label: string; value: (v: Video) => string | number; render?: (v: Video) => ReactNode; hidden?: boolean };
 
 const COLUMNS: Column[] = [
-  { key: "thumb", label: "", value: () => "", render: (v) => <Image src={videoThumbnail(v)} alt="" width={96} height={54} className="aspect-video w-16 rounded object-cover" /> },
+  { key: "thumb", label: "", value: () => "", render: (v) => <Image src={videoThumbnail(v)} alt="" width={96} height={54} className="aspect-video w-16 min-w-16 rounded object-cover" /> },
   { key: "title", label: "Title", value: (v) => v.title, render: (v) => <span className="font-medium">{v.title}</span> },
   { key: "type", label: "Type", value: (v) => v.type },
   { key: "version", label: "Version", value: (v) => v.version ?? "", hidden: true },
@@ -99,8 +99,8 @@ export function VideoTable() {
   const columns = COLUMNS.filter((c) => visible.has(c.key));
 
   return (
-    <main className="mx-auto max-w-7xl p-4 pb-16">
-      <header className="mb-4 flex flex-wrap items-center gap-3">
+    <main className="mx-auto flex h-dvh max-w-7xl flex-col p-4">
+      <header className="mb-4 flex shrink-0 flex-wrap items-center gap-3">
         <Link href="/" className="text-xl font-bold tracking-wide">
           Reniverse
         </Link>
@@ -120,7 +120,7 @@ export function VideoTable() {
           </div>
         </details>
       </header>
-      <div className="mb-4 flex flex-wrap items-center gap-2">
+      <div className="mb-4 flex shrink-0 flex-wrap items-center gap-2">
         {[...FACETS, "year" as const].map((key) => (
           <select key={key} aria-label={key === "year" ? "Year" : DIMENSION_LABELS[key]} value={filters[key] ?? ""} onChange={(e) => setFilter(key, e.target.value)} className={control}>
             <option value="">{key === "year" ? "Year" : DIMENSION_LABELS[key]}: all</option>
@@ -146,7 +146,7 @@ export function VideoTable() {
           {rows.length} of {VIDEOS.length} videos
         </span>
       </div>
-      <div className="overflow-x-auto rounded-xl border border-white/10">
+      <div className="min-h-0 flex-1 overflow-auto overscroll-contain rounded-xl border border-white/10">
         <table className="w-full text-sm">
           <thead className="sticky top-0 bg-[#0a0620] text-left text-xs uppercase tracking-wide text-white/60">
             <tr>

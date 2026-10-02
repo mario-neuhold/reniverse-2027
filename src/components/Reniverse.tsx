@@ -99,7 +99,7 @@ export function Reniverse() {
   };
 
   return (
-    <div className="fixed inset-0 bg-[#030014]">
+    <div className="fixed inset-0 touch-none bg-[#030014]">
       <Canvas dpr={[1, 1.5]} frameloop={modalOpen ? "demand" : "always"} camera={{ position: initialEye, fov: FOV, far: 3000 }} onPointerMissed={() => focus.kind !== "video" && flyOverview()}>
         <color attach="background" args={["#030014"]} />
         <ambientLight intensity={0.6} />
