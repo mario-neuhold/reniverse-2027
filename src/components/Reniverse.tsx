@@ -80,6 +80,12 @@ export function Reniverse() {
     flyGalaxy(galaxy);
   };
 
+  const goToVideo = (video: Video) => {
+    const galaxy = galaxies.find((g) => g.videos.includes(video)) ?? galaxies[0];
+    flyGalaxy(galaxy);
+    setFocus({ kind: "video", video, galaxy });
+  };
+
   const step = (dir: 1 | -1) => {
     const n = galaxies.length;
     const i = focus.kind === "overview" ? (dir === 1 ? -1 : n) : galaxies.findIndex((g) => g.key === focus.galaxy.key);
@@ -110,7 +116,7 @@ export function Reniverse() {
         ))}
         <CameraControls ref={controls} makeDefault minDistance={4} maxDistance={600} smoothTime={0.7} dollySpeed={0.6} />
       </Canvas>
-      <Hud dimension={dimension} galaxies={galaxies} focus={focus} onDimension={changeDimension} onOverview={() => flyOverview()} onGalaxy={flyGalaxy} onStep={step} />
+      <Hud dimension={dimension} galaxies={galaxies} focus={focus} onDimension={changeDimension} onOverview={() => flyOverview()} onGalaxy={flyGalaxy} onVideo={goToVideo} onStep={step} />
       {focus.kind === "info" && (
         <GalaxyModal
           galaxy={focus.galaxy}

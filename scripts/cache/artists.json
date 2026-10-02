@@ -1,0 +1,2970 @@
+{
+ "Ren": {
+  "ipis": [
+   "00793767184"
+  ],
+  "life-span": {
+   "end": null,
+   "begin": "1990-03-29",
+   "ended": false
+  },
+  "relations": [
+   {
+    "type": "member of band",
+    "source-credit": "",
+    "begin": null,
+    "target-type": "artist",
+    "attribute-ids": {},
+    "direction": "forward",
+    "target-credit": "",
+    "ended": false,
+    "attribute-values": {},
+    "type-id": "5be4c609-9afa-4ea0-910b-12ffb71e3821",
+    "end": null,
+    "artist": {
+     "country": "GB",
+     "disambiguation": "",
+     "id": "f683189d-aa34-4e77-9ee2-483c276aa910",
+     "sort-name": "Big Push, The",
+     "type": "Group",
+     "name": "The Big Push",
+     "type-id": "e431f5f6-b5d2-343d-8b36-72607fffb74b"
+    },
+    "attributes": []
+   },
+   {
+    "ended": false,
+    "attribute-values": {},
+    "type-id": "5be4c609-9afa-4ea0-910b-12ffb71e3821",
+    "target-credit": "",
+    "direction": "forward",
+    "attribute-ids": {},
+    "attributes": [],
+    "artist": {
+     "type-id": "e431f5f6-b5d2-343d-8b36-72607fffb74b",
+     "name": "Inpatient",
+     "type": "Group",
+     "id": "5d88f23e-2cbc-44a5-926d-1bea7bba46c4",
+     "sort-name": "Inpatient",
+     "disambiguation": "Hip Hop",
+     "country": null
+    },
+    "end": null,
+    "type": "member of band",
+    "target-type": "artist",
+    "source-credit": "",
+    "begin": null
+   },
+   {
+    "type": "allmusic",
+    "source-credit": "",
+    "begin": null,
+    "target-type": "url",
+    "attribute-ids": {},
+    "url": {
+     "id": "01429243-eefc-4825-8b11-5c0cf63871ff",
+     "resource": "https://www.allmusic.com/artist/mn0004512670"
+    },
+    "direction": "forward",
+    "target-credit": "",
+    "ended": false,
+    "attribute-values": {},
+    "type-id": "6b3e3c85-0002-4f34-aca6-80ace0d7e846",
+    "end": null,
+    "attributes": []
+   },
+   {
+    "target-type": "url",
+    "source-credit": "",
+    "begin": null,
+    "type": "bandcamp",
+    "attributes": [],
+    "end": null,
+    "direction": "forward",
+    "target-credit": "",
+    "ended": false,
+    "attribute-values": {},
+    "type-id": "c550166e-0548-4a18-b1d4-e2ae423a3e88",
+    "attribute-ids": {},
+    "url": {
+     "id": "e3231e12-dc5b-4aca-9e46-920d846614b9",
+     "resource": "https://renmakesmusic.bandcamp.com/"
+    }
+   },
+   {
+    "begin": null,
+    "source-credit": "Ren Gill",
+    "target-type": "url",
+    "type": "discogs",
+    "end": null,
+    "attributes": [],
+    "attribute-ids": {},
+    "url": {
+     "id": "796b30c2-8a70-440a-91ed-3cd31288a3c7",
+     "resource": "https://www.discogs.com/artist/5413001"
+    },
+    "direction": "forward",
+    "target-credit": "",
+    "ended": false,
+    "attribute-values": {},
+    "type-id": "04a5b104-a4c2-4bac-99a1-7b837c37d9e4"
+   },
+   {
+    "target-type": "url",
+    "source-credit": "",
+    "begin": null,
+    "type": "free streaming",
+    "attributes": [],
+    "end": null,
+    "type-id": "769085a1-c2f7-4c24-a532-2375a77693bd",
+    "attribute-values": {},
+    "ended": false,
+    "direction": "forward",
+    "target-credit": "",
+    "url": {
+     "id": "ed3909a8-be0b-4490-af2a-043fd565a100",
+     "resource": "https://open.spotify.com/artist/0Repe2EiNjaFAFIukrroUM"
+    },
+    "attribute-ids": {}
+   },
+   {
+    "attributes": [],
+    "end": null,
+    "attribute-values": {},
+    "type-id": "769085a1-c2f7-4c24-a532-2375a77693bd",
+    "ended": false,
+    "target-credit": "",
+    "direction": "forward",
+    "url": {
+     "resource": "https://www.deezer.com/artist/440603",
+     "id": "8cf2a8f8-a768-4fab-ba0a-14e2344c4a90"
+    },
+    "attribute-ids": {},
+    "target-type": "url",
+    "begin": null,
+    "source-credit": "",
+    "type": "free streaming"
+   },
+   {
+    "begin": null,
+    "source-credit": "",
+    "target-type": "url",
+    "type": "free streaming",
+    "end": null,
+    "attributes": [],
+    "attribute-ids": {},
+    "url": {
+     "resource": "https://www.deezer.com/artist/77487692",
+     "id": "c4ee1cb3-a45c-49dc-a564-351fb4c7a99a"
+    },
+    "direction": "forward",
+    "target-credit": "",
+    "attribute-values": {},
+    "type-id": "769085a1-c2f7-4c24-a532-2375a77693bd",
+    "ended": false
+   },
+   {
+    "type": "last.fm",
+    "target-type": "url",
+    "begin": null,
+    "source-credit": "",
+    "direction": "forward",
+    "target-credit": "",
+    "type-id": "08db8098-c0df-4b78-82c3-c8697b4bba7f",
+    "attribute-values": {},
+    "ended": false,
+    "attribute-ids": {},
+    "url": {
+     "resource": "https://www.last.fm/music/Ren",
+     "id": "13769437-3dda-4f10-afc8-d2c93de68af2"
+    },
+    "attributes": [],
+    "end": null
+   },
+   {
+    "type": "lyrics",
+    "source-credit": "",
+    "begin": null,
+    "target-type": "url",
+    "attribute-ids": {},
+    "url": {
+     "id": "c7740c69-32ca-45e6-bf28-61a9aedc68e4",
+     "resource": "https://genius.com/artists/Ren"
+    },
+    "direction": "forward",
+    "target-credit": "",
+    "type-id": "e4d73442-3762-45a8-905c-401da65544ed",
+    "attribute-values": {},
+    "ended": false,
+    "end": null,
+    "attributes": []
+   },
+   {
+    "source-credit": "",
+    "begin": null,
+    "target-type": "url",
+    "type": "official homepage",
+    "end": null,
+    "attributes": [],
+    "attribute-ids": {},
+    "url": {
+     "resource": "https://www.renmakesmusic.co.uk/",
+     "id": "f3f68930-c554-4ec6-ab2c-144cfbc37e59"
+    },
+    "target-credit": "",
+    "direction": "forward",
+    "ended": false,
+    "attribute-values": {},
+    "type-id": "fe33d22f-c3b0-4d68-bd53-a856badf2b15"
+   },
+   {
+    "type": "other databases",
+    "source-credit": "",
+    "begin": null,
+    "target-type": "url",
+    "url": {
+     "resource": "https://d-nb.info/gnd/1326687492",
+     "id": "56127ed4-ba10-478b-9aec-5a418022bb2f"
+    },
+    "attribute-ids": {},
+    "type-id": "d94fb61c-fa20-4e3c-a19a-71a949fb2c55",
+    "attribute-values": {},
+    "ended": false,
+    "target-credit": "",
+    "direction": "forward",
+    "end": null,
+    "attributes": []
+   },
+   {
+    "begin": null,
+    "source-credit": "",
+    "target-type": "url",
+    "type": "other databases",
+    "end": null,
+    "attributes": [],
+    "attribute-ids": {},
+    "url": {
+     "resource": "https://imvdb.com/n/ren-3",
+     "id": "ba5432c4-ee32-460c-be0d-f87c736d6019"
+    },
+    "target-credit": "",
+    "direction": "forward",
+    "ended": false,
+    "attribute-values": {},
+    "type-id": "d94fb61c-fa20-4e3c-a19a-71a949fb2c55"
+   },
+   {
+    "target-credit": "",
+    "direction": "forward",
+    "ended": false,
+    "attribute-values": {},
+    "type-id": "f8319a2f-f824-4617-81c8-be6560b3b203",
+    "attribute-ids": {},
+    "url": {
+     "id": "11f2b568-1733-42e8-85c2-89c2fe5f7f16",
+     "resource": "https://www.beatport.com/artist/ren-gill/558188"
+    },
+    "attributes": [],
+    "end": null,
+    "type": "purchase for download",
+    "target-type": "url",
+    "begin": null,
+    "source-credit": "Ren Gill"
+   },
+   {
+    "url": {
+     "resource": "https://twitter.com/renmakesmusic",
+     "id": "28543303-4a30-4819-8f1a-3b48edd73f1f"
+    },
+    "attribute-ids": {},
+    "attribute-values": {},
+    "ended": false,
+    "type-id": "99429741-f3f6-484b-84f8-23af51991770",
+    "direction": "forward",
+    "target-credit": "",
+    "end": null,
+    "attributes": [],
+    "type": "social network",
+    "source-credit": "",
+    "begin": null,
+    "target-type": "url"
+   },
+   {
+    "attribute-values": {},
+    "type-id": "99429741-f3f6-484b-84f8-23af51991770",
+    "ended": false,
+    "direction": "forward",
+    "target-credit": "",
+    "url": {
+     "id": "3d8fa2b2-5f44-41b6-9b82-f731f35b5c5a",
+     "resource": "https://www.facebook.com/renmakesmusic"
+    },
+    "attribute-ids": {},
+    "attributes": [],
+    "end": null,
+    "type": "social network",
+    "target-type": "url",
+    "source-credit": "Ren",
+    "begin": null
+   },
+   {
+    "attributes": [],
+    "end": null,
+    "ended": false,
+    "attribute-values": {},
+    "type-id": "99429741-f3f6-484b-84f8-23af51991770",
+    "direction": "forward",
+    "target-credit": "",
+    "url": {
+     "id": "131286ed-eb5d-46da-b2c4-67a331db49a8",
+     "resource": "https://www.instagram.com/renmakesmusic/"
+    },
+    "attribute-ids": {},
+    "target-type": "url",
+    "source-credit": "",
+    "begin": null,
+    "type": "social network"
+   },
+   {
+    "direction": "forward",
+    "target-credit": "",
+    "attribute-values": {},
+    "ended": false,
+    "type-id": "99429741-f3f6-484b-84f8-23af51991770",
+    "attribute-ids": {},
+    "url": {
+     "id": "26511800-b154-4c1d-a506-c2112c33b2ce",
+     "resource": "https://www.tiktok.com/@renmakesmusic"
+    },
+    "attributes": [],
+    "end": null,
+    "type": "social network",
+    "target-type": "url",
+    "begin": null,
+    "source-credit": ""
+   },
+   {
+    "type": "soundcloud",
+    "begin": null,
+    "source-credit": "Ren",
+    "target-type": "url",
+    "attribute-ids": {},
+    "url": {
+     "id": "be1f7e22-bbea-45ff-a7e2-ef055ab798c5",
+     "resource": "https://soundcloud.com/renmakesmusic"
+    },
+    "target-credit": "",
+    "direction": "forward",
+    "attribute-values": {},
+    "ended": false,
+    "type-id": "89e4a949-0976-440d-bda1-5f772c1e5710",
+    "end": null,
+    "attributes": []
+   },
+   {
+    "ended": false,
+    "attribute-values": {},
+    "type-id": "63cc5d1f-f096-4c94-a43f-ecb32ea94161",
+    "target-credit": "",
+    "direction": "forward",
+    "url": {
+     "id": "ffb3a9c4-9c05-4502-96d7-9d4759d9ac4f",
+     "resource": "https://music.apple.com/gb/artist/1410768470"
+    },
+    "attribute-ids": {},
+    "attributes": [],
+    "end": null,
+    "type": "streaming",
+    "target-type": "url",
+    "begin": null,
+    "source-credit": ""
+   },
+   {
+    "attribute-ids": {},
+    "url": {
+     "resource": "https://tidal.com/artist/34131861",
+     "id": "2cb0caa0-d67f-40ec-89e0-0fa269962e31"
+    },
+    "target-credit": "",
+    "direction": "forward",
+    "ended": false,
+    "attribute-values": {},
+    "type-id": "63cc5d1f-f096-4c94-a43f-ecb32ea94161",
+    "end": null,
+    "attributes": [],
+    "type": "streaming",
+    "begin": null,
+    "source-credit": "",
+    "target-type": "url"
+   },
+   {
+    "target-type": "url",
+    "begin": null,
+    "source-credit": "",
+    "type": "streaming",
+    "attributes": [],
+    "end": null,
+    "direction": "forward",
+    "target-credit": "",
+    "type-id": "63cc5d1f-f096-4c94-a43f-ecb32ea94161",
+    "attribute-values": {},
+    "ended": false,
+    "attribute-ids": {},
+    "url": {
+     "id": "7ba8ed1e-7e31-4574-b81d-338e924d3165",
+     "resource": "https://tidal.com/artist/34143783"
+    }
+   },
+   {
+    "source-credit": "",
+    "begin": null,
+    "target-type": "url",
+    "type": "streaming",
+    "end": null,
+    "attributes": [],
+    "attribute-ids": {},
+    "url": {
+     "id": "b47e012f-4792-4a15-ba58-72a51e43b10a",
+     "resource": "https://tidal.com/artist/4160882"
+    },
+    "target-credit": "",
+    "direction": "forward",
+    "type-id": "63cc5d1f-f096-4c94-a43f-ecb32ea94161",
+    "attribute-values": {},
+    "ended": false
+   },
+   {
+    "type": "VIAF",
+    "source-credit": "",
+    "begin": null,
+    "target-type": "url",
+    "attribute-ids": {},
+    "url": {
+     "id": "ae09c0c5-c267-4c49-96c2-7c96e331f423",
+     "resource": "http://viaf.org/viaf/1769171400896336930007"
+    },
+    "direction": "forward",
+    "target-credit": "",
+    "attribute-values": {},
+    "type-id": "e8571dcc-35d4-4e91-a577-a3382fd84460",
+    "ended": false,
+    "end": null,
+    "attributes": []
+   },
+   {
+    "target-credit": "",
+    "direction": "forward",
+    "attribute-values": {},
+    "type-id": "689870a4-a1e4-4912-b17f-7b2664215698",
+    "ended": false,
+    "attribute-ids": {},
+    "url": {
+     "resource": "https://www.wikidata.org/wiki/Q106452516",
+     "id": "112a7c61-f344-42d6-866f-6777845aa43e"
+    },
+    "attributes": [],
+    "end": null,
+    "type": "wikidata",
+    "target-type": "url",
+    "source-credit": "",
+    "begin": null
+   },
+   {
+    "begin": null,
+    "source-credit": "",
+    "target-type": "url",
+    "type": "youtube",
+    "end": null,
+    "attributes": [],
+    "url": {
+     "id": "b6053c15-8e95-4e49-ad6a-ac0fe9023f4c",
+     "resource": "https://www.youtube.com/channel/UCqq3VcwPGseErHUa0-xLInQ"
+    },
+    "attribute-ids": {},
+    "attribute-values": {},
+    "ended": false,
+    "type-id": "6a540e5b-58c6-4192-b6ba-dbc71ec8fcf0",
+    "direction": "forward",
+    "target-credit": ""
+   }
+  ],
+  "isnis": [],
+  "area": {
+   "iso-3166-1-codes": [
+    "GB"
+   ],
+   "id": "8a754a16-0027-3a29-b6d7-2b40ea0481ed",
+   "sort-name": "United Kingdom",
+   "name": "United Kingdom",
+   "type": null,
+   "type-id": null,
+   "disambiguation": ""
+  },
+  "type-id": "b6e035f4-3ce9-331c-97df-83397230b0df",
+  "country": "GB",
+  "disambiguation": "British singer, songwriter, producer, rapper, multi-instrumentalist, aka Ren Eryn Gill",
+  "begin-area": {
+   "type-id": null,
+   "disambiguation": "",
+   "name": "Bangor",
+   "type": null,
+   "id": "cae770b2-685b-4db7-8bad-bf64da54188b",
+   "sort-name": "Bangor"
+  },
+  "end-area": null,
+  "id": "81250ee6-a008-4007-8cfd-dddc22176cac",
+  "sort-name": "Ren",
+  "type": "Person",
+  "gender-id": "36d3d30a-839d-3eda-8cb3-29be4384e4a9",
+  "name": "Ren",
+  "gender": "Male"
+ },
+ "Inpatient": {
+  "relations": [
+   {
+    "source-credit": "",
+    "attributes": [],
+    "type": "member of band",
+    "direction": "backward",
+    "target-type": "artist",
+    "attribute-ids": {},
+    "ended": false,
+    "attribute-values": {},
+    "type-id": "5be4c609-9afa-4ea0-910b-12ffb71e3821",
+    "artist": {
+     "type": "Person",
+     "sort-name": "JP On Da Track",
+     "type-id": "b6e035f4-3ce9-331c-97df-83397230b0df",
+     "country": null,
+     "disambiguation": "Producer/Composer/Writer/Engineer",
+     "id": "da18385f-d709-4b54-bc2d-7abdd40c28ac",
+     "name": "JP On Da Track"
+    },
+    "begin": null,
+    "target-credit": "",
+    "end": null
+   },
+   {
+    "attribute-values": {},
+    "attribute-ids": {},
+    "ended": false,
+    "target-type": "artist",
+    "target-credit": "",
+    "end": null,
+    "artist": {
+     "country": "GB",
+     "name": "Ren",
+     "id": "81250ee6-a008-4007-8cfd-dddc22176cac",
+     "disambiguation": "British singer, songwriter, producer, rapper, multi-instrumentalist, aka Ren Eryn Gill",
+     "sort-name": "Ren",
+     "type": "Person",
+     "type-id": "b6e035f4-3ce9-331c-97df-83397230b0df"
+    },
+    "type-id": "5be4c609-9afa-4ea0-910b-12ffb71e3821",
+    "begin": null,
+    "attributes": [],
+    "source-credit": "",
+    "direction": "backward",
+    "type": "member of band"
+   },
+   {
+    "attribute-ids": {},
+    "ended": false,
+    "target-type": "artist",
+    "attribute-values": {},
+    "target-credit": "",
+    "end": null,
+    "type-id": "5be4c609-9afa-4ea0-910b-12ffb71e3821",
+    "artist": {
+     "id": "4771b7f6-f4e8-4d5d-81c4-4fd3c6accc7c",
+     "name": "Chris Webby",
+     "disambiguation": "US rapper",
+     "country": "US",
+     "type-id": "b6e035f4-3ce9-331c-97df-83397230b0df",
+     "type": "Person",
+     "sort-name": "Webby, Chris"
+    },
+    "begin": null,
+    "source-credit": "",
+    "attributes": [],
+    "type": "member of band",
+    "direction": "backward"
+   },
+   {
+    "direction": "forward",
+    "type": "free streaming",
+    "attributes": [],
+    "source-credit": "",
+    "type-id": "769085a1-c2f7-4c24-a532-2375a77693bd",
+    "begin": null,
+    "target-credit": "",
+    "end": null,
+    "url": {
+     "resource": "https://open.spotify.com/artist/5Qqx3JIJnK5mtk7U4tC4Vb",
+     "id": "af04a858-3db8-44a5-8ac7-69cc73748368"
+    },
+    "attribute-values": {},
+    "target-type": "url",
+    "attribute-ids": {},
+    "ended": false
+   },
+   {
+    "attributes": [],
+    "source-credit": "",
+    "direction": "forward",
+    "type": "free streaming",
+    "attribute-values": {},
+    "attribute-ids": {},
+    "ended": false,
+    "target-type": "url",
+    "target-credit": "",
+    "end": null,
+    "type-id": "769085a1-c2f7-4c24-a532-2375a77693bd",
+    "begin": null,
+    "url": {
+     "resource": "https://www.deezer.com/artist/52218872",
+     "id": "5cc6b771-e754-4b4f-81af-73e2d8020dd0"
+    }
+   },
+   {
+    "attributes": [],
+    "source-credit": "",
+    "direction": "forward",
+    "type": "social network",
+    "attribute-values": {},
+    "target-type": "url",
+    "attribute-ids": {},
+    "ended": false,
+    "type-id": "99429741-f3f6-484b-84f8-23af51991770",
+    "begin": null,
+    "target-credit": "",
+    "end": null,
+    "url": {
+     "resource": "https://www.instagram.com/inpatient.world/",
+     "id": "d83ffffe-87c9-40b1-af69-3ebacf3ed23a"
+    }
+   },
+   {
+    "url": {
+     "resource": "https://www.tiktok.com/@inpatient.world",
+     "id": "2800bdd1-1e07-4ff0-8090-f52d18df1db7"
+    },
+    "end": null,
+    "target-credit": "",
+    "begin": null,
+    "type-id": "99429741-f3f6-484b-84f8-23af51991770",
+    "attribute-ids": {},
+    "ended": false,
+    "target-type": "url",
+    "attribute-values": {},
+    "type": "social network",
+    "direction": "forward",
+    "source-credit": "",
+    "attributes": []
+   },
+   {
+    "direction": "forward",
+    "type": "streaming",
+    "attributes": [],
+    "source-credit": "",
+    "type-id": "63cc5d1f-f096-4c94-a43f-ecb32ea94161",
+    "begin": null,
+    "target-credit": "",
+    "end": null,
+    "url": {
+     "resource": "https://tidal.com/artist/10431559",
+     "id": "9c833f5c-7719-4698-b7f4-5d86f992eb73"
+    },
+    "attribute-values": {},
+    "target-type": "url",
+    "ended": false,
+    "attribute-ids": {}
+   }
+  ],
+  "isnis": [],
+  "id": "5d88f23e-2cbc-44a5-926d-1bea7bba46c4",
+  "area": null,
+  "gender": null,
+  "sort-name": "Inpatient",
+  "gender-id": null,
+  "type-id": "e431f5f6-b5d2-343d-8b36-72607fffb74b",
+  "ipis": [],
+  "country": null,
+  "name": "Inpatient",
+  "life-span": {
+   "begin": null,
+   "end": null,
+   "ended": false
+  },
+  "disambiguation": "Hip Hop",
+  "end-area": null,
+  "begin-area": null,
+  "type": "Group"
+ },
+ "The Big Push": {
+  "type-id": "e431f5f6-b5d2-343d-8b36-72607fffb74b",
+  "relations": [
+   {
+    "artist": {
+     "name": "Romain Axisa",
+     "type": "Person",
+     "disambiguation": "",
+     "id": "02be5360-fae6-4ce1-b724-74b103232e48",
+     "sort-name": "Axisa, Romain",
+     "country": "FR",
+     "type-id": "b6e035f4-3ce9-331c-97df-83397230b0df"
+    },
+    "ended": false,
+    "type": "member of band",
+    "attribute-values": {},
+    "target-credit": "",
+    "source-credit": "",
+    "attribute-ids": {},
+    "attributes": [],
+    "direction": "backward",
+    "type-id": "5be4c609-9afa-4ea0-910b-12ffb71e3821",
+    "target-type": "artist",
+    "end": null,
+    "begin": null
+   },
+   {
+    "target-type": "artist",
+    "end": null,
+    "begin": null,
+    "type-id": "5be4c609-9afa-4ea0-910b-12ffb71e3821",
+    "direction": "backward",
+    "attributes": [],
+    "attribute-ids": {},
+    "source-credit": "",
+    "target-credit": "",
+    "attribute-values": {},
+    "type": "member of band",
+    "ended": false,
+    "artist": {
+     "country": "GB",
+     "type-id": "b6e035f4-3ce9-331c-97df-83397230b0df",
+     "sort-name": "Chambers, Glenn",
+     "id": "1846777d-18cb-4064-b6cd-b9c999c72c9e",
+     "disambiguation": "drummer, The Big Push",
+     "name": "Glenn Chambers",
+     "type": "Person"
+    }
+   },
+   {
+    "end": null,
+    "begin": null,
+    "target-type": "artist",
+    "type-id": "5be4c609-9afa-4ea0-910b-12ffb71e3821",
+    "direction": "backward",
+    "source-credit": "",
+    "attributes": [],
+    "attribute-ids": {},
+    "target-credit": "",
+    "type": "member of band",
+    "attribute-values": {},
+    "artist": {
+     "name": "Gorran Kendall",
+     "type": "Person",
+     "id": "234fc8e8-15bd-4344-a903-302356644f1f",
+     "disambiguation": "",
+     "country": "GB",
+     "type-id": "b6e035f4-3ce9-331c-97df-83397230b0df",
+     "sort-name": "Kendall, Gorran"
+    },
+    "ended": false
+   },
+   {
+    "direction": "backward",
+    "type-id": "5be4c609-9afa-4ea0-910b-12ffb71e3821",
+    "end": null,
+    "begin": null,
+    "target-type": "artist",
+    "artist": {
+     "id": "81250ee6-a008-4007-8cfd-dddc22176cac",
+     "disambiguation": "British singer, songwriter, producer, rapper, multi-instrumentalist, aka Ren Eryn Gill",
+     "sort-name": "Ren",
+     "type-id": "b6e035f4-3ce9-331c-97df-83397230b0df",
+     "country": "GB",
+     "type": "Person",
+     "name": "Ren"
+    },
+    "ended": false,
+    "type": "member of band",
+    "attribute-values": {},
+    "target-credit": "",
+    "source-credit": "",
+    "attributes": [],
+    "attribute-ids": {}
+   },
+   {
+    "target-credit": "",
+    "source-credit": "",
+    "attributes": [],
+    "attribute-ids": {},
+    "ended": false,
+    "type": "free streaming",
+    "attribute-values": {},
+    "type-id": "769085a1-c2f7-4c24-a532-2375a77693bd",
+    "url": {
+     "resource": "https://open.spotify.com/artist/4AOiNpcmfXTiWDB3uFszgn",
+     "id": "2f3843ed-cd36-4768-8011-ac5d8193c09c"
+    },
+    "target-type": "url",
+    "begin": null,
+    "end": null,
+    "direction": "forward"
+   },
+   {
+    "ended": false,
+    "attribute-values": {},
+    "type": "official homepage",
+    "target-credit": "",
+    "attribute-ids": {},
+    "attributes": [],
+    "source-credit": "",
+    "direction": "forward",
+    "type-id": "fe33d22f-c3b0-4d68-bd53-a856badf2b15",
+    "url": {
+     "resource": "https://www.thebigpushband.com/",
+     "id": "894db8e5-5ce6-43c7-ac5a-b094cb283d7d"
+    },
+    "target-type": "url",
+    "end": null,
+    "begin": null
+   },
+   {
+    "type-id": "99429741-f3f6-484b-84f8-23af51991770",
+    "url": {
+     "resource": "https://twitter.com/thebigpushband",
+     "id": "9f371004-325d-41d0-b5ec-a27ca5a11239"
+    },
+    "target-type": "url",
+    "begin": null,
+    "end": null,
+    "direction": "forward",
+    "target-credit": "",
+    "source-credit": "",
+    "attribute-ids": {},
+    "attributes": [],
+    "ended": false,
+    "type": "social network",
+    "attribute-values": {}
+   },
+   {
+    "direction": "forward",
+    "target-type": "url",
+    "begin": null,
+    "end": null,
+    "type-id": "99429741-f3f6-484b-84f8-23af51991770",
+    "url": {
+     "resource": "https://www.facebook.com/thebigpushband",
+     "id": "07c41929-64fe-4a00-90b7-8a153dac515b"
+    },
+    "attribute-values": {},
+    "type": "social network",
+    "ended": false,
+    "attributes": [],
+    "attribute-ids": {},
+    "source-credit": "",
+    "target-credit": ""
+   },
+   {
+    "direction": "forward",
+    "target-type": "url",
+    "begin": null,
+    "end": null,
+    "type-id": "99429741-f3f6-484b-84f8-23af51991770",
+    "url": {
+     "id": "269448b6-e7a8-4759-8143-4a4b22f1c7ae",
+     "resource": "https://www.instagram.com/thebigpushband/"
+    },
+    "type": "social network",
+    "attribute-values": {},
+    "ended": false,
+    "source-credit": "",
+    "attribute-ids": {},
+    "attributes": [],
+    "target-credit": ""
+   },
+   {
+    "source-credit": "",
+    "attributes": [],
+    "attribute-ids": {},
+    "target-credit": "",
+    "type": "youtube",
+    "attribute-values": {},
+    "ended": false,
+    "target-type": "url",
+    "begin": null,
+    "end": null,
+    "type-id": "6a540e5b-58c6-4192-b6ba-dbc71ec8fcf0",
+    "url": {
+     "id": "1421197d-09d9-49cf-ae1b-160028f0a943",
+     "resource": "https://www.youtube.com/channel/UCLuR_dea3ed8KbIoyvHUB0w"
+    },
+    "direction": "forward"
+   }
+  ],
+  "id": "f683189d-aa34-4e77-9ee2-483c276aa910",
+  "ipis": [],
+  "area": {
+   "sort-name": "Brighton",
+   "type-id": null,
+   "disambiguation": "",
+   "id": "16fe6dbc-b7aa-4935-a150-5d90660af8a5",
+   "type": null,
+   "name": "Brighton"
+  },
+  "life-span": {
+   "ended": false,
+   "end": null,
+   "begin": null
+  },
+  "country": "GB",
+  "sort-name": "Big Push, The",
+  "gender-id": null,
+  "begin-area": null,
+  "disambiguation": "",
+  "gender": null,
+  "end-area": null,
+  "name": "The Big Push",
+  "type": "Group",
+  "isnis": []
+ },
+ "The Skinner Brothers": {
+  "end-area": null,
+  "gender": null,
+  "disambiguation": "",
+  "name": "The Skinner Brothers",
+  "type-id": "e431f5f6-b5d2-343d-8b36-72607fffb74b",
+  "gender-id": null,
+  "relations": [
+   {
+    "type": "member of band",
+    "source-credit": "",
+    "direction": "backward",
+    "end": null,
+    "attributes": [],
+    "attribute-ids": {},
+    "target-credit": "",
+    "ended": false,
+    "begin": null,
+    "attribute-values": {},
+    "artist": {
+     "id": "14dac6dc-cfb2-487a-a8e6-a378c796e5b5",
+     "sort-name": "Leigh, Jack",
+     "type-id": "b6e035f4-3ce9-331c-97df-83397230b0df",
+     "name": "Jack Leigh",
+     "disambiguation": "",
+     "country": null,
+     "type": "Person"
+    },
+    "type-id": "5be4c609-9afa-4ea0-910b-12ffb71e3821",
+    "target-type": "artist"
+   },
+   {
+    "type": "member of band",
+    "source-credit": "",
+    "direction": "backward",
+    "end": null,
+    "attributes": [],
+    "attribute-ids": {},
+    "target-credit": "",
+    "begin": null,
+    "ended": false,
+    "attribute-values": {},
+    "artist": {
+     "sort-name": "Lindal, Fredrick",
+     "name": "Fredrick Lindal",
+     "type-id": "b6e035f4-3ce9-331c-97df-83397230b0df",
+     "id": "d5317bd2-dba3-447d-bf95-2e92c3200297",
+     "type": "Person",
+     "disambiguation": "",
+     "country": null
+    },
+    "type-id": "5be4c609-9afa-4ea0-910b-12ffb71e3821",
+    "target-type": "artist"
+   },
+   {
+    "direction": "backward",
+    "end": null,
+    "attributes": [],
+    "attribute-ids": {},
+    "ended": false,
+    "target-credit": "",
+    "begin": null,
+    "attribute-values": {},
+    "artist": {
+     "type": "Person",
+     "country": null,
+     "disambiguation": "",
+     "type-id": "b6e035f4-3ce9-331c-97df-83397230b0df",
+     "name": "Kian McCourt",
+     "sort-name": "McCourt, Kian",
+     "id": "8bf95faf-d815-47dc-a5f8-b85117adc8cd"
+    },
+    "type-id": "5be4c609-9afa-4ea0-910b-12ffb71e3821",
+    "target-type": "artist",
+    "type": "member of band",
+    "source-credit": ""
+   },
+   {
+    "target-credit": "",
+    "begin": null,
+    "ended": false,
+    "attribute-ids": {},
+    "end": null,
+    "attributes": [],
+    "direction": "backward",
+    "target-type": "artist",
+    "artist": {
+     "id": "42e8b945-ab98-4a75-9990-fe636dba398d",
+     "name": "Zachary Charles Skinner",
+     "type-id": null,
+     "sort-name": "Skinner, Zachary Charles",
+     "country": null,
+     "disambiguation": "",
+     "type": null
+    },
+    "type-id": "5be4c609-9afa-4ea0-910b-12ffb71e3821",
+    "attribute-values": {},
+    "type": "member of band",
+    "source-credit": ""
+   },
+   {
+    "source-credit": "",
+    "type": "bandcamp",
+    "attribute-values": {},
+    "type-id": "c550166e-0548-4a18-b1d4-e2ae423a3e88",
+    "target-type": "url",
+    "direction": "forward",
+    "url": {
+     "id": "058342b9-6d94-495c-8fbd-3256d9e1bc9d",
+     "resource": "https://theskinnerbrothers.bandcamp.com/"
+    },
+    "attributes": [],
+    "end": null,
+    "attribute-ids": {},
+    "ended": false,
+    "target-credit": "",
+    "begin": null
+   },
+   {
+    "ended": false,
+    "target-credit": "",
+    "begin": null,
+    "attribute-ids": {},
+    "end": null,
+    "attributes": [],
+    "url": {
+     "resource": "https://www.discogs.com/artist/6726854",
+     "id": "ebb49310-d773-4d82-9a20-cf044035590f"
+    },
+    "direction": "forward",
+    "target-type": "url",
+    "type-id": "04a5b104-a4c2-4bac-99a1-7b837c37d9e4",
+    "attribute-values": {},
+    "type": "discogs",
+    "source-credit": ""
+   },
+   {
+    "url": {
+     "resource": "https://open.spotify.com/artist/4PY51S3HuOMhnZA0Sx8FRN",
+     "id": "ee5a8d7f-5b25-48b8-9e42-ac5f83127358"
+    },
+    "direction": "forward",
+    "end": null,
+    "attributes": [],
+    "attribute-ids": {},
+    "target-credit": "",
+    "begin": null,
+    "ended": false,
+    "attribute-values": {},
+    "type-id": "769085a1-c2f7-4c24-a532-2375a77693bd",
+    "target-type": "url",
+    "type": "free streaming",
+    "source-credit": ""
+   },
+   {
+    "source-credit": "",
+    "type": "free streaming",
+    "attribute-values": {},
+    "type-id": "769085a1-c2f7-4c24-a532-2375a77693bd",
+    "target-type": "url",
+    "url": {
+     "resource": "https://www.deezer.com/artist/14129261",
+     "id": "c422c206-16d4-47e6-9762-72889e2d4780"
+    },
+    "direction": "forward",
+    "end": null,
+    "attributes": [],
+    "attribute-ids": {},
+    "target-credit": "",
+    "begin": null,
+    "ended": false
+   },
+   {
+    "attribute-ids": {},
+    "target-credit": "",
+    "ended": false,
+    "begin": null,
+    "url": {
+     "resource": "https://www.theskinnerbrothers.com/",
+     "id": "1d232cea-ab1a-4198-bd94-552fcf47594b"
+    },
+    "direction": "forward",
+    "end": null,
+    "attributes": [],
+    "target-type": "url",
+    "attribute-values": {},
+    "type-id": "fe33d22f-c3b0-4d68-bd53-a856badf2b15",
+    "type": "official homepage",
+    "source-credit": ""
+   },
+   {
+    "type-id": "99429741-f3f6-484b-84f8-23af51991770",
+    "attribute-values": {},
+    "target-type": "url",
+    "attributes": [],
+    "end": null,
+    "direction": "forward",
+    "url": {
+     "id": "09a2a156-71fd-4939-8c70-02223d612c97",
+     "resource": "https://twitter.com/TheSkinnerBros"
+    },
+    "begin": null,
+    "target-credit": "",
+    "ended": false,
+    "attribute-ids": {},
+    "source-credit": "",
+    "type": "social network"
+   },
+   {
+    "type": "social network",
+    "source-credit": "",
+    "end": null,
+    "attributes": [],
+    "url": {
+     "id": "5a07d63c-dacf-4fa2-85b9-6427bf418ec8",
+     "resource": "https://www.facebook.com/theskinnerbrothers"
+    },
+    "direction": "forward",
+    "target-credit": "",
+    "begin": null,
+    "ended": false,
+    "attribute-ids": {},
+    "type-id": "99429741-f3f6-484b-84f8-23af51991770",
+    "attribute-values": {},
+    "target-type": "url"
+   },
+   {
+    "attributes": [],
+    "end": null,
+    "direction": "forward",
+    "url": {
+     "resource": "https://www.instagram.com/theskinnerbrothers/",
+     "id": "46ee5c7e-3715-4467-8338-873e5e0ac4ce"
+    },
+    "begin": null,
+    "target-credit": "",
+    "ended": false,
+    "attribute-ids": {},
+    "type-id": "99429741-f3f6-484b-84f8-23af51991770",
+    "attribute-values": {},
+    "target-type": "url",
+    "type": "social network",
+    "source-credit": ""
+   },
+   {
+    "source-credit": "",
+    "type": "songkick",
+    "attribute-values": {},
+    "type-id": "aac9c4bc-a5b9-30b8-9839-e3ac314c6e58",
+    "target-type": "url",
+    "direction": "forward",
+    "url": {
+     "id": "24529a41-d632-4f4a-942a-a0eb5067b2d4",
+     "resource": "https://www.songkick.com/artists/9436299"
+    },
+    "attributes": [],
+    "end": null,
+    "attribute-ids": {},
+    "begin": null,
+    "target-credit": "",
+    "ended": false
+   },
+   {
+    "attribute-values": {},
+    "type-id": "63cc5d1f-f096-4c94-a43f-ecb32ea94161",
+    "target-type": "url",
+    "url": {
+     "resource": "https://tidal.com/artist/40338866",
+     "id": "de4e4e16-7a1e-46cc-9594-02dc07f12cc6"
+    },
+    "direction": "forward",
+    "end": null,
+    "attributes": [],
+    "attribute-ids": {},
+    "target-credit": "",
+    "ended": false,
+    "begin": null,
+    "source-credit": "",
+    "type": "streaming"
+   },
+   {
+    "attributes": [],
+    "end": null,
+    "direction": "forward",
+    "url": {
+     "resource": "https://tidal.com/artist/9487060",
+     "id": "ae19d0c8-083e-48af-96db-8d4ad0cea072"
+    },
+    "ended": false,
+    "target-credit": "",
+    "begin": null,
+    "attribute-ids": {},
+    "type-id": "63cc5d1f-f096-4c94-a43f-ecb32ea94161",
+    "attribute-values": {},
+    "target-type": "url",
+    "type": "streaming",
+    "source-credit": ""
+   },
+   {
+    "target-type": "url",
+    "type-id": "689870a4-a1e4-4912-b17f-7b2664215698",
+    "attribute-values": {},
+    "target-credit": "",
+    "ended": false,
+    "begin": null,
+    "attribute-ids": {},
+    "attributes": [],
+    "end": null,
+    "direction": "forward",
+    "url": {
+     "resource": "https://www.wikidata.org/wiki/Q136488362",
+     "id": "719584be-d6ed-4ddb-af43-e27e6b5d85df"
+    },
+    "source-credit": "",
+    "type": "wikidata"
+   },
+   {
+    "type": "youtube",
+    "source-credit": "",
+    "ended": false,
+    "target-credit": "",
+    "begin": null,
+    "attribute-ids": {},
+    "end": null,
+    "attributes": [],
+    "url": {
+     "id": "d628c330-e9db-4c09-9d69-12b5185a112b",
+     "resource": "https://www.youtube.com/channel/UCIp5TPlRAWLEIyA969K2V3A"
+    },
+    "direction": "forward",
+    "target-type": "url",
+    "type-id": "6a540e5b-58c6-4192-b6ba-dbc71ec8fcf0",
+    "attribute-values": {}
+   }
+  ],
+  "area": {
+   "type-id": null,
+   "name": "London",
+   "type": null,
+   "sort-name": "London",
+   "id": "f03d09b3-39dc-4083-afd6-159e3f0d462f",
+   "disambiguation": "Greater London"
+  },
+  "type": "Group",
+  "isnis": [],
+  "country": "GB",
+  "life-span": {
+   "begin": "2018",
+   "ended": false,
+   "end": null
+  },
+  "begin-area": {
+   "id": "f03d09b3-39dc-4083-afd6-159e3f0d462f",
+   "disambiguation": "Greater London",
+   "sort-name": "London",
+   "type": null,
+   "name": "London",
+   "type-id": null
+  },
+  "sort-name": "Skinner Brothers, The",
+  "ipis": [],
+  "id": "ae1b32a2-107d-4093-a00b-ac6acf838632"
+ },
+ "Sam Tompkins": {
+  "relations": [
+   {
+    "attribute-values": {},
+    "attribute-ids": {},
+    "ended": false,
+    "target-type": "url",
+    "end": null,
+    "target-credit": "",
+    "begin": null,
+    "type-id": "6b3e3c85-0002-4f34-aca6-80ace0d7e846",
+    "url": {
+     "id": "87f8f84c-3a2d-42a4-b4fa-2ae761a52cf8",
+     "resource": "https://www.allmusic.com/artist/mn0003761727"
+    },
+    "attributes": [],
+    "source-credit": "",
+    "direction": "forward",
+    "type": "allmusic"
+   },
+   {
+    "target-type": "url",
+    "ended": false,
+    "attribute-ids": {},
+    "attribute-values": {},
+    "url": {
+     "id": "321f2a98-b91f-41d6-b00d-a09c31612485",
+     "resource": "https://www.bandsintown.com/a/7727900"
+    },
+    "begin": null,
+    "type-id": "ea45ed3d-2d5e-456e-8c32-94b6f51426e2",
+    "end": null,
+    "target-credit": "",
+    "source-credit": "",
+    "attributes": [],
+    "type": "bandsintown",
+    "direction": "forward"
+   },
+   {
+    "attributes": [],
+    "source-credit": "",
+    "direction": "forward",
+    "type": "biography",
+    "attribute-values": {},
+    "attribute-ids": {},
+    "ended": false,
+    "target-type": "url",
+    "end": null,
+    "target-credit": "",
+    "begin": null,
+    "type-id": "78f75830-94e1-4138-8f8a-643e3bb21ce5",
+    "url": {
+     "resource": "https://www.famousbirthdays.com/people/sam-tompkins.html",
+     "id": "51f5d798-589e-4dd0-a360-15d4af15cfb1"
+    }
+   },
+   {
+    "attribute-values": {},
+    "ended": false,
+    "attribute-ids": {},
+    "target-type": "url",
+    "target-credit": "",
+    "end": null,
+    "type-id": "04a5b104-a4c2-4bac-99a1-7b837c37d9e4",
+    "begin": null,
+    "url": {
+     "id": "52f1c121-1892-4fed-96ba-2754698c8cd3",
+     "resource": "https://www.discogs.com/artist/7862238"
+    },
+    "attributes": [],
+    "source-credit": "",
+    "direction": "forward",
+    "type": "discogs"
+   },
+   {
+    "direction": "forward",
+    "type": "free streaming",
+    "attributes": [],
+    "source-credit": "",
+    "begin": null,
+    "type-id": "769085a1-c2f7-4c24-a532-2375a77693bd",
+    "end": null,
+    "target-credit": "",
+    "url": {
+     "resource": "https://open.spotify.com/artist/04uu8U3I1h26Fp2NBkPTRZ",
+     "id": "14f99274-c04f-498c-b160-d349e760a4ef"
+    },
+    "attribute-values": {},
+    "target-type": "url",
+    "ended": false,
+    "attribute-ids": {}
+   },
+   {
+    "attribute-values": {},
+    "target-type": "url",
+    "attribute-ids": {},
+    "ended": false,
+    "begin": null,
+    "type-id": "769085a1-c2f7-4c24-a532-2375a77693bd",
+    "end": null,
+    "target-credit": "",
+    "url": {
+     "id": "19a14f88-8585-4bfc-b6d8-1a9cb319199e",
+     "resource": "https://www.deezer.com/artist/13173401"
+    },
+    "attributes": [],
+    "source-credit": "",
+    "direction": "forward",
+    "type": "free streaming"
+   },
+   {
+    "direction": "forward",
+    "type": "last.fm",
+    "attributes": [],
+    "source-credit": "",
+    "end": null,
+    "target-credit": "",
+    "begin": null,
+    "type-id": "08db8098-c0df-4b78-82c3-c8697b4bba7f",
+    "url": {
+     "resource": "https://www.last.fm/music/Sam+Tompkins",
+     "id": "233e21da-79d1-46d0-a8cd-fb6af1d02e40"
+    },
+    "attribute-values": {},
+    "attribute-ids": {},
+    "ended": false,
+    "target-type": "url"
+   },
+   {
+    "attribute-values": {},
+    "target-type": "url",
+    "ended": false,
+    "attribute-ids": {},
+    "type-id": "e4d73442-3762-45a8-905c-401da65544ed",
+    "begin": null,
+    "target-credit": "",
+    "end": null,
+    "url": {
+     "id": "3924dfed-d5b1-4d41-be67-930564e4abab",
+     "resource": "https://genius.com/artists/Sam-tompkins"
+    },
+    "attributes": [],
+    "source-credit": "",
+    "direction": "forward",
+    "type": "lyrics"
+   },
+   {
+    "attributes": [],
+    "source-credit": "",
+    "direction": "forward",
+    "type": "lyrics",
+    "attribute-values": {},
+    "attribute-ids": {},
+    "ended": false,
+    "target-type": "url",
+    "target-credit": "",
+    "end": null,
+    "type-id": "e4d73442-3762-45a8-905c-401da65544ed",
+    "begin": null,
+    "url": {
+     "id": "b914528d-bff6-41f7-9724-3d331dba92e4",
+     "resource": "https://www.musixmatch.com/artist/Sam-Tompkins"
+    }
+   },
+   {
+    "attribute-values": {},
+    "ended": false,
+    "attribute-ids": {},
+    "target-type": "url",
+    "target-credit": "",
+    "end": null,
+    "type-id": "fe33d22f-c3b0-4d68-bd53-a856badf2b15",
+    "begin": null,
+    "url": {
+     "id": "c9999b12-0336-4afe-b117-b74c2e1b83fd",
+     "resource": "https://www.samtompkins.com/"
+    },
+    "attributes": [],
+    "source-credit": "",
+    "direction": "forward",
+    "type": "official homepage"
+   },
+   {
+    "attribute-values": {},
+    "target-type": "url",
+    "attribute-ids": {},
+    "ended": false,
+    "type-id": "99429741-f3f6-484b-84f8-23af51991770",
+    "begin": null,
+    "target-credit": "",
+    "end": null,
+    "url": {
+     "resource": "https://twitter.com/samtompkinsuk",
+     "id": "0fef0fc2-4903-493b-b2e1-e30f056ab559"
+    },
+    "attributes": [],
+    "source-credit": "",
+    "direction": "forward",
+    "type": "social network"
+   },
+   {
+    "type-id": "99429741-f3f6-484b-84f8-23af51991770",
+    "begin": null,
+    "target-credit": "",
+    "end": null,
+    "url": {
+     "resource": "https://www.facebook.com/SamTompkinsUK",
+     "id": "60f55a0b-d9ac-4d85-90e6-103511be6a4c"
+    },
+    "attribute-values": {},
+    "target-type": "url",
+    "attribute-ids": {},
+    "ended": false,
+    "direction": "forward",
+    "type": "social network",
+    "attributes": [],
+    "source-credit": ""
+   },
+   {
+    "direction": "forward",
+    "type": "social network",
+    "attributes": [],
+    "source-credit": "",
+    "end": null,
+    "target-credit": "",
+    "begin": null,
+    "type-id": "99429741-f3f6-484b-84f8-23af51991770",
+    "url": {
+     "id": "f88c8f23-785a-414e-940d-1b29ce2c3aa2",
+     "resource": "https://www.instagram.com/samtompkinsuk/"
+    },
+    "attribute-values": {},
+    "attribute-ids": {},
+    "ended": false,
+    "target-type": "url"
+   },
+   {
+    "source-credit": "",
+    "attributes": [],
+    "type": "songkick",
+    "direction": "forward",
+    "ended": false,
+    "attribute-ids": {},
+    "target-type": "url",
+    "attribute-values": {},
+    "url": {
+     "resource": "https://www.songkick.com/artists/9409924",
+     "id": "125ae20d-32e7-4c54-a270-dc1215d3b0ec"
+    },
+    "target-credit": "",
+    "end": null,
+    "type-id": "aac9c4bc-a5b9-30b8-9839-e3ac314c6e58",
+    "begin": null
+   },
+   {
+    "source-credit": "",
+    "attributes": [],
+    "type": "soundcloud",
+    "direction": "forward",
+    "attribute-ids": {},
+    "ended": false,
+    "target-type": "url",
+    "attribute-values": {},
+    "url": {
+     "id": "a72eefed-e915-4f02-ab25-bfd63df02bd9",
+     "resource": "https://soundcloud.com/samtompkinsuk"
+    },
+    "end": null,
+    "target-credit": "",
+    "begin": null,
+    "type-id": "89e4a949-0976-440d-bda1-5f772c1e5710"
+   },
+   {
+    "target-type": "url",
+    "ended": true,
+    "attribute-ids": {},
+    "attribute-values": {},
+    "url": {
+     "resource": "https://us.napster.com/artist/sam-tompkins",
+     "id": "56e09973-7d99-4db7-be9d-2cfbc1382e59"
+    },
+    "type-id": "63cc5d1f-f096-4c94-a43f-ecb32ea94161",
+    "begin": null,
+    "target-credit": "",
+    "end": "2022-06-08",
+    "source-credit": "",
+    "attributes": [],
+    "type": "streaming",
+    "direction": "forward"
+   },
+   {
+    "target-credit": "",
+    "end": null,
+    "type-id": "63cc5d1f-f096-4c94-a43f-ecb32ea94161",
+    "begin": null,
+    "url": {
+     "id": "3ece3a60-ce50-41d6-ba8e-aa0d857f8b65",
+     "resource": "https://music.amazon.us/artists/B004NPM038"
+    },
+    "attribute-values": {},
+    "attribute-ids": {},
+    "ended": false,
+    "target-type": "url",
+    "direction": "forward",
+    "type": "streaming",
+    "attributes": [],
+    "source-credit": ""
+   },
+   {
+    "type": "streaming",
+    "direction": "forward",
+    "source-credit": "",
+    "attributes": [],
+    "url": {
+     "id": "3110ebc1-a8fb-427e-809c-1503a2a398ac",
+     "resource": "https://music.apple.com/us/artist/420433769"
+    },
+    "begin": null,
+    "type-id": "63cc5d1f-f096-4c94-a43f-ecb32ea94161",
+    "end": null,
+    "target-credit": "",
+    "target-type": "url",
+    "attribute-ids": {},
+    "ended": false,
+    "attribute-values": {}
+   },
+   {
+    "ended": false,
+    "attribute-ids": {},
+    "target-type": "url",
+    "attribute-values": {},
+    "url": {
+     "id": "2bfa1acb-680b-4bd3-90b2-85694cee7cb1",
+     "resource": "https://tidal.com/artist/9058545"
+    },
+    "target-credit": "",
+    "end": null,
+    "type-id": "63cc5d1f-f096-4c94-a43f-ecb32ea94161",
+    "begin": null,
+    "source-credit": "",
+    "attributes": [],
+    "type": "streaming",
+    "direction": "forward"
+   },
+   {
+    "target-type": "url",
+    "attribute-ids": {},
+    "ended": false,
+    "attribute-values": {},
+    "url": {
+     "id": "bd642cbf-215b-4b17-a323-b41c7678fd87",
+     "resource": "https://www.youtube.com/channel/UCN-lWv8IwDNljiJA6oDCERA"
+    },
+    "begin": null,
+    "type-id": "6a540e5b-58c6-4192-b6ba-dbc71ec8fcf0",
+    "end": null,
+    "target-credit": "",
+    "source-credit": "",
+    "attributes": [],
+    "type": "youtube",
+    "direction": "forward"
+   }
+  ],
+  "id": "0bd1d730-f49b-4661-bf8e-60f30af9f7f5",
+  "isnis": [],
+  "area": {
+   "id": "16fe6dbc-b7aa-4935-a150-5d90660af8a5",
+   "name": "Brighton",
+   "disambiguation": "",
+   "type-id": null,
+   "type": null,
+   "sort-name": "Brighton"
+  },
+  "gender": "Male",
+  "sort-name": "Tompkins, Sam",
+  "gender-id": "36d3d30a-839d-3eda-8cb3-29be4384e4a9",
+  "type-id": "b6e035f4-3ce9-331c-97df-83397230b0df",
+  "ipis": [
+   "00871424533"
+  ],
+  "country": "GB",
+  "life-span": {
+   "ended": false,
+   "end": null,
+   "begin": "1997-04-18"
+  },
+  "name": "Sam Tompkins",
+  "disambiguation": "",
+  "begin-area": {
+   "type": null,
+   "sort-name": "Brighton",
+   "type-id": null,
+   "id": "16fe6dbc-b7aa-4935-a150-5d90660af8a5",
+   "name": "Brighton",
+   "disambiguation": ""
+  },
+  "end-area": null,
+  "type": "Person"
+ },
+ "Chris Webby": {
+  "disambiguation": "US rapper",
+  "begin-area": {
+   "sort-name": "Norwalk",
+   "id": "dc723efa-f949-4f26-b3d6-85aebd45fefc",
+   "type-id": null,
+   "disambiguation": "",
+   "type": null,
+   "name": "Norwalk"
+  },
+  "country": "US",
+  "type": "Person",
+  "name": "Chris Webby",
+  "gender-id": "36d3d30a-839d-3eda-8cb3-29be4384e4a9",
+  "gender": "Male",
+  "end-area": null,
+  "id": "4771b7f6-f4e8-4d5d-81c4-4fd3c6accc7c",
+  "sort-name": "Webby, Chris",
+  "ipis": [],
+  "life-span": {
+   "begin": "1988-10-13",
+   "end": null,
+   "ended": false
+  },
+  "area": {
+   "disambiguation": "",
+   "iso-3166-1-codes": [
+    "US"
+   ],
+   "id": "489ce91b-6658-3307-9877-795b68554c98",
+   "sort-name": "United States",
+   "name": "United States",
+   "type": null,
+   "type-id": null
+  },
+  "type-id": "b6e035f4-3ce9-331c-97df-83397230b0df",
+  "isnis": [],
+  "relations": [
+   {
+    "attribute-values": {},
+    "ended": false,
+    "type-id": "5be4c609-9afa-4ea0-910b-12ffb71e3821",
+    "direction": "forward",
+    "target-credit": "",
+    "attribute-ids": {},
+    "attributes": [],
+    "artist": {
+     "disambiguation": "Hip Hop",
+     "country": null,
+     "type-id": "e431f5f6-b5d2-343d-8b36-72607fffb74b",
+     "type": "Group",
+     "name": "Inpatient",
+     "id": "5d88f23e-2cbc-44a5-926d-1bea7bba46c4",
+     "sort-name": "Inpatient"
+    },
+    "end": null,
+    "type": "member of band",
+    "target-type": "artist",
+    "begin": null,
+    "source-credit": ""
+   },
+   {
+    "attribute-values": {},
+    "type-id": "6b3e3c85-0002-4f34-aca6-80ace0d7e846",
+    "ended": false,
+    "direction": "forward",
+    "target-credit": "",
+    "url": {
+     "resource": "https://www.allmusic.com/artist/mn0002782041",
+     "id": "cc2675c7-dd6b-4cae-a993-d95ee47171c4"
+    },
+    "attribute-ids": {},
+    "attributes": [],
+    "end": null,
+    "type": "allmusic",
+    "target-type": "url",
+    "source-credit": "",
+    "begin": null
+   },
+   {
+    "begin": null,
+    "source-credit": "",
+    "target-type": "url",
+    "type": "discogs",
+    "end": null,
+    "attributes": [],
+    "attribute-ids": {},
+    "url": {
+     "resource": "https://www.discogs.com/artist/2467994",
+     "id": "8578b9e8-004c-4de1-bb1b-0a9a98a06baf"
+    },
+    "target-credit": "",
+    "direction": "forward",
+    "type-id": "04a5b104-a4c2-4bac-99a1-7b837c37d9e4",
+    "attribute-values": {},
+    "ended": false
+   },
+   {
+    "direction": "forward",
+    "target-credit": "",
+    "attribute-values": {},
+    "type-id": "769085a1-c2f7-4c24-a532-2375a77693bd",
+    "ended": false,
+    "attribute-ids": {},
+    "url": {
+     "id": "3c2879bf-ae62-4bd2-be34-759203db93b0",
+     "resource": "https://open.spotify.com/artist/3IstlZaHyUP9SONpulb4SM"
+    },
+    "attributes": [],
+    "end": null,
+    "type": "free streaming",
+    "target-type": "url",
+    "source-credit": "",
+    "begin": null
+   },
+   {
+    "type": "free streaming",
+    "target-type": "url",
+    "begin": null,
+    "source-credit": "",
+    "direction": "forward",
+    "target-credit": "",
+    "attribute-values": {},
+    "ended": false,
+    "type-id": "769085a1-c2f7-4c24-a532-2375a77693bd",
+    "attribute-ids": {},
+    "url": {
+     "id": "396d2ce1-2a71-4d26-a27a-7af105324101",
+     "resource": "https://www.deezer.com/artist/432049"
+    },
+    "attributes": [],
+    "end": null
+   },
+   {
+    "type": "last.fm",
+    "source-credit": "",
+    "begin": null,
+    "target-type": "url",
+    "url": {
+     "id": "c71e729b-88f0-4537-845e-58c067ea9d5c",
+     "resource": "https://www.last.fm/music/Chris%20Webby"
+    },
+    "attribute-ids": {},
+    "type-id": "08db8098-c0df-4b78-82c3-c8697b4bba7f",
+    "attribute-values": {},
+    "ended": false,
+    "direction": "forward",
+    "target-credit": "",
+    "end": null,
+    "attributes": []
+   },
+   {
+    "begin": null,
+    "source-credit": "",
+    "target-type": "url",
+    "type": "official homepage",
+    "end": null,
+    "attributes": [],
+    "url": {
+     "resource": "http://listentowebby.com/",
+     "id": "8ef6d676-767f-4b5c-b405-bcb2809b9540"
+    },
+    "attribute-ids": {},
+    "attribute-values": {},
+    "type-id": "fe33d22f-c3b0-4d68-bd53-a856badf2b15",
+    "ended": false,
+    "target-credit": "",
+    "direction": "forward"
+   },
+   {
+    "end": null,
+    "attributes": [],
+    "url": {
+     "resource": "https://rateyourmusic.com/artist/chris_webby",
+     "id": "e37a7b3e-eb23-4763-8932-56cfa5a81889"
+    },
+    "attribute-ids": {},
+    "attribute-values": {},
+    "ended": false,
+    "type-id": "d94fb61c-fa20-4e3c-a19a-71a949fb2c55",
+    "target-credit": "",
+    "direction": "forward",
+    "source-credit": "",
+    "begin": null,
+    "target-type": "url",
+    "type": "other databases"
+   },
+   {
+    "target-credit": "",
+    "direction": "forward",
+    "attribute-values": {},
+    "type-id": "f8319a2f-f824-4617-81c8-be6560b3b203",
+    "ended": false,
+    "attribute-ids": {},
+    "url": {
+     "id": "89c07a9c-c830-4b87-b18f-861510051123",
+     "resource": "https://open.qobuz.com/artist/829563"
+    },
+    "attributes": [],
+    "end": null,
+    "type": "purchase for download",
+    "target-type": "url",
+    "source-credit": "",
+    "begin": null
+   },
+   {
+    "source-credit": "",
+    "begin": null,
+    "target-type": "url",
+    "type": "social network",
+    "end": null,
+    "attributes": [],
+    "attribute-ids": {},
+    "url": {
+     "resource": "https://twitter.com/ChrisWebby",
+     "id": "f1b0c628-963e-4983-9c35-b5b538012309"
+    },
+    "direction": "forward",
+    "target-credit": "",
+    "ended": false,
+    "attribute-values": {},
+    "type-id": "99429741-f3f6-484b-84f8-23af51991770"
+   },
+   {
+    "type": "social network",
+    "target-type": "url",
+    "source-credit": "",
+    "begin": null,
+    "target-credit": "",
+    "direction": "forward",
+    "attribute-values": {},
+    "type-id": "99429741-f3f6-484b-84f8-23af51991770",
+    "ended": false,
+    "attribute-ids": {},
+    "url": {
+     "id": "f25ac362-49d1-40e6-a4b3-b63637577fc6",
+     "resource": "https://www.facebook.com/chriswebby"
+    },
+    "attributes": [],
+    "end": null
+   },
+   {
+    "attributes": [],
+    "end": null,
+    "ended": false,
+    "attribute-values": {},
+    "type-id": "aac9c4bc-a5b9-30b8-9839-e3ac314c6e58",
+    "target-credit": "",
+    "direction": "forward",
+    "url": {
+     "resource": "https://www.songkick.com/artists/3405306",
+     "id": "ace7be1b-5e0e-4aef-a369-a1c7be62fc79"
+    },
+    "attribute-ids": {},
+    "target-type": "url",
+    "begin": null,
+    "source-credit": "",
+    "type": "songkick"
+   },
+   {
+    "direction": "forward",
+    "target-credit": "",
+    "attribute-values": {},
+    "ended": false,
+    "type-id": "89e4a949-0976-440d-bda1-5f772c1e5710",
+    "attribute-ids": {},
+    "url": {
+     "resource": "https://soundcloud.com/chriswebbymusic",
+     "id": "168b9ba9-268f-46bd-a91b-bf3633b7c29e"
+    },
+    "attributes": [],
+    "end": null,
+    "type": "soundcloud",
+    "target-type": "url",
+    "begin": null,
+    "source-credit": ""
+   },
+   {
+    "type": "streaming",
+    "source-credit": "",
+    "begin": null,
+    "target-type": "url",
+    "url": {
+     "resource": "https://music.apple.com/gb/artist/444917427",
+     "id": "4c41634f-abbd-4eff-99cd-17786060ea47"
+    },
+    "attribute-ids": {},
+    "attribute-values": {},
+    "type-id": "63cc5d1f-f096-4c94-a43f-ecb32ea94161",
+    "ended": false,
+    "target-credit": "",
+    "direction": "forward",
+    "end": null,
+    "attributes": []
+   },
+   {
+    "attribute-ids": {},
+    "url": {
+     "id": "89c07a9c-c830-4b87-b18f-861510051123",
+     "resource": "https://open.qobuz.com/artist/829563"
+    },
+    "target-credit": "",
+    "direction": "forward",
+    "type-id": "63cc5d1f-f096-4c94-a43f-ecb32ea94161",
+    "attribute-values": {},
+    "ended": false,
+    "end": null,
+    "attributes": [],
+    "type": "streaming",
+    "begin": null,
+    "source-credit": "",
+    "target-type": "url"
+   },
+   {
+    "begin": null,
+    "source-credit": "",
+    "target-type": "url",
+    "type": "streaming",
+    "end": null,
+    "attributes": [],
+    "attribute-ids": {},
+    "url": {
+     "resource": "https://tidal.com/artist/4346186",
+     "id": "1bf2c2c6-9ee3-4825-9c3c-c44aacbaa5ef"
+    },
+    "direction": "forward",
+    "target-credit": "",
+    "attribute-values": {},
+    "type-id": "63cc5d1f-f096-4c94-a43f-ecb32ea94161",
+    "ended": false
+   },
+   {
+    "direction": "forward",
+    "target-credit": "",
+    "type-id": "689870a4-a1e4-4912-b17f-7b2664215698",
+    "attribute-values": {},
+    "ended": false,
+    "attribute-ids": {},
+    "url": {
+     "resource": "https://www.wikidata.org/wiki/Q16232508",
+     "id": "b8cd56c6-11ce-497a-9210-d23e1857e467"
+    },
+    "attributes": [],
+    "end": null,
+    "type": "wikidata",
+    "target-type": "url",
+    "source-credit": "",
+    "begin": null
+   }
+  ]
+ },
+ "CHINCHILLA": {
+  "disambiguation": "UK",
+  "life-span": {
+   "ended": false,
+   "begin": "1996-12-02",
+   "end": null
+  },
+  "name": "CHINCHILLA",
+  "country": "GB",
+  "ipis": [
+   "00890417716"
+  ],
+  "type": "Person",
+  "end-area": null,
+  "begin-area": {
+   "type-id": null,
+   "sort-name": "London",
+   "type": null,
+   "name": "London",
+   "id": "f03d09b3-39dc-4083-afd6-159e3f0d462f",
+   "disambiguation": "Greater London"
+  },
+  "area": {
+   "type-id": null,
+   "type": null,
+   "sort-name": "London",
+   "disambiguation": "Greater London",
+   "id": "f03d09b3-39dc-4083-afd6-159e3f0d462f",
+   "name": "London"
+  },
+  "id": "4407ef33-e8c2-4749-9a80-a9db9337e4c7",
+  "isnis": [
+   "0000000506957740"
+  ],
+  "relations": [
+   {
+    "direction": "forward",
+    "type": "allmusic",
+    "attributes": [],
+    "source-credit": "",
+    "end": null,
+    "target-credit": "",
+    "begin": null,
+    "type-id": "6b3e3c85-0002-4f34-aca6-80ace0d7e846",
+    "url": {
+     "resource": "https://www.allmusic.com/artist/mn0002236512",
+     "id": "58f6ba6b-08a1-4e8f-a898-68db3b5075ed"
+    },
+    "attribute-values": {},
+    "attribute-ids": {},
+    "ended": false,
+    "target-type": "url"
+   },
+   {
+    "type": "discogs",
+    "direction": "forward",
+    "source-credit": "",
+    "attributes": [],
+    "url": {
+     "resource": "https://www.discogs.com/artist/10470004",
+     "id": "4c6bf49c-7543-46ad-be33-1cd6dce778cd"
+    },
+    "type-id": "04a5b104-a4c2-4bac-99a1-7b837c37d9e4",
+    "begin": null,
+    "target-credit": "",
+    "end": null,
+    "target-type": "url",
+    "ended": false,
+    "attribute-ids": {},
+    "attribute-values": {}
+   },
+   {
+    "attribute-values": {},
+    "target-type": "url",
+    "ended": false,
+    "attribute-ids": {},
+    "begin": null,
+    "type-id": "04a5b104-a4c2-4bac-99a1-7b837c37d9e4",
+    "end": null,
+    "target-credit": "",
+    "url": {
+     "id": "cb18f18f-b2c3-478a-a13d-5224efd8fd31",
+     "resource": "https://www.discogs.com/artist/7517034"
+    },
+    "attributes": [],
+    "source-credit": "",
+    "direction": "forward",
+    "type": "discogs"
+   },
+   {
+    "attributes": [],
+    "source-credit": "",
+    "direction": "forward",
+    "type": "free streaming",
+    "attribute-values": {},
+    "ended": false,
+    "attribute-ids": {},
+    "target-type": "url",
+    "end": null,
+    "target-credit": "",
+    "begin": null,
+    "type-id": "769085a1-c2f7-4c24-a532-2375a77693bd",
+    "url": {
+     "id": "8583b634-f68b-49e2-a92c-b57b96a0c90a",
+     "resource": "https://audiomack.com/chinchilla"
+    }
+   },
+   {
+    "attributes": [],
+    "source-credit": "",
+    "direction": "forward",
+    "type": "free streaming",
+    "attribute-values": {},
+    "target-type": "url",
+    "ended": false,
+    "attribute-ids": {},
+    "type-id": "769085a1-c2f7-4c24-a532-2375a77693bd",
+    "begin": null,
+    "target-credit": "",
+    "end": null,
+    "url": {
+     "id": "a69d2a30-ff8a-44f2-9971-2136d271a624",
+     "resource": "https://open.spotify.com/artist/7iNrvS80wnHDGVxw3qNRiI"
+    }
+   },
+   {
+    "source-credit": "",
+    "attributes": [],
+    "type": "free streaming",
+    "direction": "forward",
+    "target-type": "url",
+    "ended": false,
+    "attribute-ids": {},
+    "attribute-values": {},
+    "url": {
+     "id": "aed35dae-d259-442e-b747-48f2f712caa2",
+     "resource": "https://play.anghami.com/artist/297587"
+    },
+    "begin": null,
+    "type-id": "769085a1-c2f7-4c24-a532-2375a77693bd",
+    "end": null,
+    "target-credit": ""
+   },
+   {
+    "attribute-values": {},
+    "target-type": "url",
+    "attribute-ids": {},
+    "ended": false,
+    "begin": null,
+    "type-id": "769085a1-c2f7-4c24-a532-2375a77693bd",
+    "end": null,
+    "target-credit": "",
+    "url": {
+     "id": "f8d38693-0bfa-47ab-a331-de5905d47503",
+     "resource": "https://www.deezer.com/artist/4815"
+    },
+    "attributes": [],
+    "source-credit": "",
+    "direction": "forward",
+    "type": "free streaming"
+   },
+   {
+    "target-credit": "",
+    "end": null,
+    "type-id": "94c8b0cc-4477-4106-932c-da60e63de61c",
+    "begin": null,
+    "url": {
+     "resource": "https://www.imdb.com/name/nm13761710/",
+     "id": "1b4d7039-47e0-4648-9c23-905d6b421028"
+    },
+    "attribute-values": {},
+    "attribute-ids": {},
+    "ended": false,
+    "target-type": "url",
+    "direction": "forward",
+    "type": "IMDb",
+    "attributes": [],
+    "source-credit": ""
+   },
+   {
+    "attributes": [],
+    "source-credit": "CHINCHILLA (UK)",
+    "direction": "forward",
+    "type": "lyrics",
+    "attribute-values": {},
+    "target-type": "url",
+    "attribute-ids": {},
+    "ended": false,
+    "begin": null,
+    "type-id": "e4d73442-3762-45a8-905c-401da65544ed",
+    "end": null,
+    "target-credit": "",
+    "url": {
+     "resource": "https://genius.com/artists/Chinchilla-uk",
+     "id": "26a82cf8-cb18-4caa-a2df-ff679681ff79"
+    }
+   },
+   {
+    "attributes": [],
+    "source-credit": "",
+    "direction": "forward",
+    "type": "lyrics",
+    "attribute-values": {},
+    "attribute-ids": {},
+    "ended": false,
+    "target-type": "url",
+    "target-credit": "",
+    "end": null,
+    "type-id": "e4d73442-3762-45a8-905c-401da65544ed",
+    "begin": null,
+    "url": {
+     "resource": "https://www.musixmatch.com/artist/16539",
+     "id": "21767666-7b92-43b9-9276-3d547e3a32e1"
+    }
+   },
+   {
+    "target-type": "url",
+    "ended": false,
+    "attribute-ids": {},
+    "attribute-values": {},
+    "url": {
+     "id": "5b16e081-ce5a-42af-ad29-97f1a0ecf7b6",
+     "resource": "https://rateyourmusic.com/artist/chinchilla-1"
+    },
+    "type-id": "d94fb61c-fa20-4e3c-a19a-71a949fb2c55",
+    "begin": null,
+    "target-credit": "",
+    "end": null,
+    "source-credit": "",
+    "attributes": [],
+    "type": "other databases",
+    "direction": "forward"
+   },
+   {
+    "source-credit": "",
+    "attributes": [],
+    "type": "purchase for download",
+    "direction": "forward",
+    "ended": false,
+    "attribute-ids": {},
+    "target-type": "url",
+    "attribute-values": {},
+    "url": {
+     "id": "bb742323-cb93-4934-9053-67fc8753127c",
+     "resource": "https://dmusic.docomo.ne.jp/artist/2001377080"
+    },
+    "target-credit": "",
+    "end": null,
+    "type-id": "f8319a2f-f824-4617-81c8-be6560b3b203",
+    "begin": null
+   },
+   {
+    "direction": "forward",
+    "type": "purchase for download",
+    "attributes": [],
+    "source-credit": "",
+    "end": null,
+    "target-credit": "",
+    "begin": null,
+    "type-id": "f8319a2f-f824-4617-81c8-be6560b3b203",
+    "url": {
+     "id": "5448b80e-8c90-4cb9-bd7f-07a75f73aed1",
+     "resource": "https://dmusic.docomo.ne.jp/artist/2001859119"
+    },
+    "attribute-values": {},
+    "attribute-ids": {},
+    "ended": false,
+    "target-type": "url"
+   },
+   {
+    "target-credit": "",
+    "end": null,
+    "type-id": "f8319a2f-f824-4617-81c8-be6560b3b203",
+    "begin": null,
+    "url": {
+     "id": "93bccb54-9857-4a53-8c48-c7c9029c7966",
+     "resource": "https://mora.jp/artist/1323416/"
+    },
+    "attribute-values": {},
+    "attribute-ids": {},
+    "ended": false,
+    "target-type": "url",
+    "direction": "forward",
+    "type": "purchase for download",
+    "attributes": [],
+    "source-credit": ""
+   },
+   {
+    "url": {
+     "id": "9ae00d87-5bda-46fd-ad77-7bf04ecd1d2a",
+     "resource": "https://mora.jp/artist/1805721/"
+    },
+    "begin": null,
+    "type-id": "f8319a2f-f824-4617-81c8-be6560b3b203",
+    "end": null,
+    "target-credit": "",
+    "target-type": "url",
+    "attribute-ids": {},
+    "ended": false,
+    "attribute-values": {},
+    "type": "purchase for download",
+    "direction": "forward",
+    "source-credit": "",
+    "attributes": []
+   },
+   {
+    "url": {
+     "resource": "https://music.apple.com/gb/artist/1455266242",
+     "id": "7875bd44-c564-4328-a0db-c06a331ca327"
+    },
+    "type-id": "f8319a2f-f824-4617-81c8-be6560b3b203",
+    "begin": null,
+    "target-credit": "",
+    "end": null,
+    "target-type": "url",
+    "ended": false,
+    "attribute-ids": {},
+    "attribute-values": {},
+    "type": "purchase for download",
+    "direction": "forward",
+    "source-credit": "",
+    "attributes": []
+   },
+   {
+    "direction": "forward",
+    "type": "purchase for download",
+    "attributes": [],
+    "source-credit": "",
+    "end": null,
+    "target-credit": "",
+    "begin": null,
+    "type-id": "f8319a2f-f824-4617-81c8-be6560b3b203",
+    "url": {
+     "id": "5627ecfb-12d4-40d6-b021-0f07b6959b90",
+     "resource": "https://music.bugs.co.kr/artist/80333019"
+    },
+    "attribute-values": {},
+    "ended": false,
+    "attribute-ids": {},
+    "target-type": "url"
+   },
+   {
+    "type": "purchase for download",
+    "direction": "forward",
+    "source-credit": "",
+    "attributes": [],
+    "url": {
+     "id": "204e0c64-bd95-4dc3-a455-5054956b865d",
+     "resource": "https://open.qobuz.com/artist/29835274"
+    },
+    "end": null,
+    "target-credit": "",
+    "begin": null,
+    "type-id": "f8319a2f-f824-4617-81c8-be6560b3b203",
+    "attribute-ids": {},
+    "ended": false,
+    "target-type": "url",
+    "attribute-values": {}
+   },
+   {
+    "end": null,
+    "target-credit": "",
+    "begin": null,
+    "type-id": "f8319a2f-f824-4617-81c8-be6560b3b203",
+    "url": {
+     "resource": "https://ototoy.jp/_/default/a/684498",
+     "id": "c77b49fc-b885-4add-bd3e-47b02295cc9f"
+    },
+    "attribute-values": {},
+    "ended": false,
+    "attribute-ids": {},
+    "target-type": "url",
+    "direction": "forward",
+    "type": "purchase for download",
+    "attributes": [],
+    "source-credit": ""
+   },
+   {
+    "begin": null,
+    "type-id": "f8319a2f-f824-4617-81c8-be6560b3b203",
+    "end": null,
+    "target-credit": "",
+    "url": {
+     "id": "eff69ca8-c3eb-41d3-9cfc-3ca2cdb44595",
+     "resource": "https://recochoku.jp/artist/2001859119/"
+    },
+    "attribute-values": {},
+    "target-type": "url",
+    "attribute-ids": {},
+    "ended": false,
+    "direction": "forward",
+    "type": "purchase for download",
+    "attributes": [],
+    "source-credit": ""
+   },
+   {
+    "end": null,
+    "target-credit": "",
+    "begin": null,
+    "type-id": "f8319a2f-f824-4617-81c8-be6560b3b203",
+    "url": {
+     "id": "f058918b-01e6-4039-a3d3-ff7abb874519",
+     "resource": "https://www.genie.co.kr/detail/artistInfo?xxnm=80385791"
+    },
+    "attribute-values": {},
+    "attribute-ids": {},
+    "ended": false,
+    "target-type": "url",
+    "direction": "forward",
+    "type": "purchase for download",
+    "attributes": [],
+    "source-credit": ""
+   },
+   {
+    "target-type": "url",
+    "ended": false,
+    "attribute-ids": {},
+    "attribute-values": {},
+    "url": {
+     "id": "97c46d38-a6a9-4152-bdb7-6d9fab31d7c6",
+     "resource": "https://www.melon.com/artist/detail.htm?artistId=1097109"
+    },
+    "type-id": "f8319a2f-f824-4617-81c8-be6560b3b203",
+    "begin": null,
+    "target-credit": "",
+    "end": null,
+    "source-credit": "",
+    "attributes": [],
+    "type": "purchase for download",
+    "direction": "forward"
+   },
+   {
+    "attributes": [],
+    "source-credit": "",
+    "direction": "forward",
+    "type": "purchase for download",
+    "attribute-values": {},
+    "target-type": "url",
+    "ended": false,
+    "attribute-ids": {},
+    "type-id": "f8319a2f-f824-4617-81c8-be6560b3b203",
+    "begin": null,
+    "target-credit": "",
+    "end": null,
+    "url": {
+     "id": "a2fc1efd-2675-4351-86b9-ef29aef825fd",
+     "resource": "https://www.qobuz.com/gb-en/interpreter/chinchilla/575282"
+    }
+   },
+   {
+    "attributes": [],
+    "source-credit": "",
+    "direction": "forward",
+    "type": "social network",
+    "attribute-values": {},
+    "target-type": "url",
+    "ended": false,
+    "attribute-ids": {},
+    "begin": null,
+    "type-id": "99429741-f3f6-484b-84f8-23af51991770",
+    "end": null,
+    "target-credit": "",
+    "url": {
+     "resource": "https://twitter.com/chinchillamusic",
+     "id": "3aead3fe-cec9-4fdb-87d4-ba8c97ccf7c8"
+    }
+   },
+   {
+    "attributes": [],
+    "source-credit": "",
+    "direction": "forward",
+    "type": "social network",
+    "attribute-values": {},
+    "target-type": "url",
+    "attribute-ids": {},
+    "ended": false,
+    "type-id": "99429741-f3f6-484b-84f8-23af51991770",
+    "begin": null,
+    "target-credit": "",
+    "end": null,
+    "url": {
+     "resource": "https://www.facebook.com/1711533489089375",
+     "id": "46571ce4-b972-4d15-ad8b-e7edb0ed41f8"
+    }
+   },
+   {
+    "attribute-values": {},
+    "attribute-ids": {},
+    "ended": false,
+    "target-type": "url",
+    "target-credit": "",
+    "end": null,
+    "type-id": "99429741-f3f6-484b-84f8-23af51991770",
+    "begin": null,
+    "url": {
+     "id": "6d2c8425-0be7-4197-b057-0d82ad94d0d8",
+     "resource": "https://www.instagram.com/chinchilla_music/"
+    },
+    "attributes": [],
+    "source-credit": "",
+    "direction": "forward",
+    "type": "social network"
+   },
+   {
+    "target-type": "url",
+    "ended": false,
+    "attribute-ids": {},
+    "attribute-values": {},
+    "url": {
+     "resource": "https://soundcloud.com/chinchilla20696",
+     "id": "0b6384a3-62dd-48ce-a1b7-4c8e31b9c795"
+    },
+    "type-id": "89e4a949-0976-440d-bda1-5f772c1e5710",
+    "begin": null,
+    "target-credit": "",
+    "end": null,
+    "source-credit": "",
+    "attributes": [],
+    "type": "soundcloud",
+    "direction": "forward"
+   },
+   {
+    "direction": "forward",
+    "type": "soundcloud",
+    "attributes": [],
+    "source-credit": "",
+    "end": null,
+    "target-credit": "",
+    "begin": null,
+    "type-id": "89e4a949-0976-440d-bda1-5f772c1e5710",
+    "url": {
+     "resource": "https://soundcloud.com/chinchilla-music",
+     "id": "a4cef7f1-2ed9-4306-b732-522a0eab4573"
+    },
+    "attribute-values": {},
+    "attribute-ids": {},
+    "ended": false,
+    "target-type": "url"
+   },
+   {
+    "attributes": [],
+    "source-credit": "",
+    "direction": "forward",
+    "type": "streaming",
+    "attribute-values": {},
+    "target-type": "url",
+    "attribute-ids": {},
+    "ended": false,
+    "begin": null,
+    "type-id": "63cc5d1f-f096-4c94-a43f-ecb32ea94161",
+    "end": null,
+    "target-credit": "",
+    "url": {
+     "id": "570399de-6722-4643-a5bc-55ead26ce083",
+     "resource": "https://music.amazon.co.uk/artists/B001E49Q7E"
+    }
+   },
+   {
+    "ended": false,
+    "attribute-ids": {},
+    "target-type": "url",
+    "attribute-values": {},
+    "url": {
+     "id": "7875bd44-c564-4328-a0db-c06a331ca327",
+     "resource": "https://music.apple.com/gb/artist/1455266242"
+    },
+    "end": null,
+    "target-credit": "",
+    "begin": null,
+    "type-id": "63cc5d1f-f096-4c94-a43f-ecb32ea94161",
+    "source-credit": "",
+    "attributes": [],
+    "type": "streaming",
+    "direction": "forward"
+   },
+   {
+    "attributes": [],
+    "source-credit": "",
+    "direction": "forward",
+    "type": "streaming",
+    "attribute-values": {},
+    "ended": false,
+    "attribute-ids": {},
+    "target-type": "url",
+    "end": null,
+    "target-credit": "",
+    "begin": null,
+    "type-id": "63cc5d1f-f096-4c94-a43f-ecb32ea94161",
+    "url": {
+     "id": "5627ecfb-12d4-40d6-b021-0f07b6959b90",
+     "resource": "https://music.bugs.co.kr/artist/80333019"
+    }
+   },
+   {
+    "attribute-values": {},
+    "attribute-ids": {},
+    "ended": false,
+    "target-type": "url",
+    "target-credit": "",
+    "end": null,
+    "type-id": "63cc5d1f-f096-4c94-a43f-ecb32ea94161",
+    "begin": null,
+    "url": {
+     "resource": "https://music.line.me/artist/mi000000001b860439",
+     "id": "e1d2d243-d2a7-471b-b819-5cd617f01f11"
+    },
+    "attributes": [],
+    "source-credit": "",
+    "direction": "forward",
+    "type": "streaming"
+   },
+   {
+    "type": "streaming",
+    "direction": "forward",
+    "source-credit": "",
+    "attributes": [],
+    "url": {
+     "resource": "https://music.line.me/artist/mi000000001f060099",
+     "id": "9ccc0e2e-9eb6-472f-803d-6154c897959c"
+    },
+    "type-id": "63cc5d1f-f096-4c94-a43f-ecb32ea94161",
+    "begin": null,
+    "target-credit": "",
+    "end": null,
+    "target-type": "url",
+    "attribute-ids": {},
+    "ended": false,
+    "attribute-values": {}
+   },
+   {
+    "target-type": "url",
+    "ended": false,
+    "attribute-ids": {},
+    "attribute-values": {},
+    "url": {
+     "id": "204e0c64-bd95-4dc3-a455-5054956b865d",
+     "resource": "https://open.qobuz.com/artist/29835274"
+    },
+    "begin": null,
+    "type-id": "63cc5d1f-f096-4c94-a43f-ecb32ea94161",
+    "end": null,
+    "target-credit": "",
+    "source-credit": "",
+    "attributes": [],
+    "type": "streaming",
+    "direction": "forward"
+   },
+   {
+    "source-credit": "",
+    "attributes": [],
+    "type": "streaming",
+    "direction": "forward",
+    "attribute-ids": {},
+    "ended": false,
+    "target-type": "url",
+    "attribute-values": {},
+    "url": {
+     "id": "4df39e39-2008-41d0-bf65-300d8e4a2ccc",
+     "resource": "https://tidal.com/artist/22540155"
+    },
+    "end": null,
+    "target-credit": "",
+    "begin": null,
+    "type-id": "63cc5d1f-f096-4c94-a43f-ecb32ea94161"
+   },
+   {
+    "attributes": [],
+    "source-credit": "",
+    "direction": "forward",
+    "type": "streaming",
+    "attribute-values": {},
+    "attribute-ids": {},
+    "ended": false,
+    "target-type": "url",
+    "end": null,
+    "target-credit": "",
+    "begin": null,
+    "type-id": "63cc5d1f-f096-4c94-a43f-ecb32ea94161",
+    "url": {
+     "id": "97945b62-d8c1-424d-966d-c8df0e85c530",
+     "resource": "https://tidal.com/artist/3787590"
+    }
+   },
+   {
+    "type": "streaming",
+    "direction": "forward",
+    "source-credit": "",
+    "attributes": [],
+    "url": {
+     "resource": "https://tidal.com/artist/39374520",
+     "id": "ee759626-9e0c-448c-b7c8-c34fee3a4b7e"
+    },
+    "end": null,
+    "target-credit": "",
+    "begin": null,
+    "type-id": "63cc5d1f-f096-4c94-a43f-ecb32ea94161",
+    "attribute-ids": {},
+    "ended": false,
+    "target-type": "url",
+    "attribute-values": {}
+   },
+   {
+    "type": "streaming",
+    "direction": "forward",
+    "source-credit": "",
+    "attributes": [],
+    "url": {
+     "resource": "https://vibe.naver.com/artist/41361",
+     "id": "30ecffba-24c0-44b5-8bfa-5fb0ef3b50f8"
+    },
+    "type-id": "63cc5d1f-f096-4c94-a43f-ecb32ea94161",
+    "begin": null,
+    "target-credit": "",
+    "end": null,
+    "target-type": "url",
+    "attribute-ids": {},
+    "ended": false,
+    "attribute-values": {}
+   },
+   {
+    "attribute-values": {},
+    "ended": false,
+    "attribute-ids": {},
+    "target-type": "url",
+    "target-credit": "",
+    "end": null,
+    "type-id": "63cc5d1f-f096-4c94-a43f-ecb32ea94161",
+    "begin": null,
+    "url": {
+     "resource": "https://www.amazon.com/gp/product/B000QKUS56",
+     "id": "34421cf8-d182-43d0-addb-d334cb26904e"
+    },
+    "attributes": [],
+    "source-credit": "",
+    "direction": "forward",
+    "type": "streaming"
+   },
+   {
+    "type": "streaming",
+    "direction": "forward",
+    "source-credit": "",
+    "attributes": [],
+    "url": {
+     "id": "40e6389f-b521-4448-bb59-37501c47920b",
+     "resource": "https://www.beatsource.com/artist/chinchilla/181254"
+    },
+    "target-credit": "",
+    "end": null,
+    "type-id": "63cc5d1f-f096-4c94-a43f-ecb32ea94161",
+    "begin": null,
+    "attribute-ids": {},
+    "ended": false,
+    "target-type": "url",
+    "attribute-values": {}
+   },
+   {
+    "attribute-values": {},
+    "target-type": "url",
+    "ended": false,
+    "attribute-ids": {},
+    "type-id": "63cc5d1f-f096-4c94-a43f-ecb32ea94161",
+    "begin": null,
+    "target-credit": "",
+    "end": null,
+    "url": {
+     "resource": "https://www.genie.co.kr/detail/artistInfo?xxnm=80385791",
+     "id": "f058918b-01e6-4039-a3d3-ff7abb874519"
+    },
+    "attributes": [],
+    "source-credit": "",
+    "direction": "forward",
+    "type": "streaming"
+   },
+   {
+    "attribute-values": {},
+    "target-type": "url",
+    "attribute-ids": {},
+    "ended": false,
+    "begin": null,
+    "type-id": "63cc5d1f-f096-4c94-a43f-ecb32ea94161",
+    "end": null,
+    "target-credit": "",
+    "url": {
+     "id": "5c7acfba-d926-436b-b735-3ac4c73ff588",
+     "resource": "https://www.kkbox.com/jp/ja/artist/PZssmnZg4cM7tVtQkq"
+    },
+    "attributes": [],
+    "source-credit": "",
+    "direction": "forward",
+    "type": "streaming"
+   },
+   {
+    "target-type": "url",
+    "attribute-ids": {},
+    "ended": false,
+    "attribute-values": {},
+    "url": {
+     "id": "97c46d38-a6a9-4152-bdb7-6d9fab31d7c6",
+     "resource": "https://www.melon.com/artist/detail.htm?artistId=1097109"
+    },
+    "type-id": "63cc5d1f-f096-4c94-a43f-ecb32ea94161",
+    "begin": null,
+    "target-credit": "",
+    "end": null,
+    "source-credit": "",
+    "attributes": [],
+    "type": "streaming",
+    "direction": "forward"
+   },
+   {
+    "attribute-values": {},
+    "attribute-ids": {},
+    "ended": false,
+    "target-type": "url",
+    "target-credit": "",
+    "end": null,
+    "type-id": "63cc5d1f-f096-4c94-a43f-ecb32ea94161",
+    "begin": null,
+    "url": {
+     "resource": "https://www.qobuz.com/gb-en/interpreter/chinchilla/575282",
+     "id": "a2fc1efd-2675-4351-86b9-ef29aef825fd"
+    },
+    "attributes": [],
+    "source-credit": "",
+    "direction": "forward",
+    "type": "streaming"
+   },
+   {
+    "target-type": "url",
+    "attribute-ids": {},
+    "ended": true,
+    "attribute-values": {},
+    "url": {
+     "resource": "https://web.napster.com/artist/art.20472",
+     "id": "301d17da-4682-4c1c-a19c-3ab00424901c"
+    },
+    "begin": null,
+    "type-id": "63cc5d1f-f096-4c94-a43f-ecb32ea94161",
+    "end": null,
+    "target-credit": "",
+    "source-credit": "",
+    "attributes": [],
+    "type": "streaming",
+    "direction": "forward"
+   },
+   {
+    "type": "wikidata",
+    "direction": "forward",
+    "source-credit": "",
+    "attributes": [],
+    "url": {
+     "id": "021ca30d-4d4d-4bf4-9c73-9f28c0979cfb",
+     "resource": "https://www.wikidata.org/wiki/Q123361702"
+    },
+    "end": null,
+    "target-credit": "",
+    "begin": null,
+    "type-id": "689870a4-a1e4-4912-b17f-7b2664215698",
+    "ended": false,
+    "attribute-ids": {},
+    "target-type": "url",
+    "attribute-values": {}
+   },
+   {
+    "source-credit": "CHINCHILLAMusicVEVO",
+    "attributes": [],
+    "type": "youtube",
+    "direction": "forward",
+    "ended": false,
+    "attribute-ids": {},
+    "target-type": "url",
+    "attribute-values": {},
+    "url": {
+     "id": "0432592c-d618-45a0-802a-2c0d546e431a",
+     "resource": "https://www.youtube.com/channel/UCO60azVR9BSu6szZKHx9WZg"
+    },
+    "end": null,
+    "target-credit": "",
+    "begin": null,
+    "type-id": "6a540e5b-58c6-4192-b6ba-dbc71ec8fcf0"
+   },
+   {
+    "type": "youtube",
+    "direction": "forward",
+    "source-credit": "",
+    "attributes": [],
+    "url": {
+     "resource": "https://www.youtube.com/channel/UCZc7gfR6BH-mGJh0_EgHAIQ",
+     "id": "1ff8ca4f-1ee1-4a58-8004-5ed305a52cd3"
+    },
+    "target-credit": "",
+    "end": null,
+    "type-id": "6a540e5b-58c6-4192-b6ba-dbc71ec8fcf0",
+    "begin": null,
+    "attribute-ids": {},
+    "ended": false,
+    "target-type": "url",
+    "attribute-values": {}
+   },
+   {
+    "url": {
+     "id": "f15ca97d-24e5-47ce-acdc-f62a99952786",
+     "resource": "https://music.youtube.com/channel/UC7fA_d3JAYXUqATWIQ4UF1A"
+    },
+    "end": null,
+    "target-credit": "",
+    "begin": null,
+    "type-id": "631712a0-7525-42ba-b7a3-605aa7a238c4",
+    "ended": false,
+    "attribute-ids": {},
+    "target-type": "url",
+    "attribute-values": {},
+    "type": "youtube music",
+    "direction": "forward",
+    "source-credit": "",
+    "attributes": []
+   }
+  ],
+  "type-id": "b6e035f4-3ce9-331c-97df-83397230b0df",
+  "gender-id": "93452b5a-a947-30c8-934f-6a4056b151c2",
+  "sort-name": "CHINCHILLA",
+  "gender": "Female"
+ }
+}

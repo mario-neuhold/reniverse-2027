@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import { test } from "node:test";
-import { ALBUMS, DIMENSIONS, buildGalaxies, galaxyRadius, seriesParts, VIDEOS, videoForTrack } from "./data.ts";
+import { ALBUMS, DIMENSIONS, buildGalaxies, galaxyRadius, seriesParts, VIDEOS, versionsOf, videoForTrack } from "./data.ts";
 
 test("series share one orbit, parts evenly spaced in part order", () => {
   const ren = buildGalaxies("collective").find((g) => g.name === "Ren")!;
@@ -44,4 +44,22 @@ test("album tracks match their videos despite title differences", () => {
   assert.equal(videoForTrack("Sick Boi", ALBUMS["Sick Boi"].tracks[17]), undefined);
   assert.equal(new Set(VIDEOS.map((v) => v.youtubeId)).size, VIDEOS.length);
   for (const video of VIDEOS) if (video.album) assert.ok(ALBUMS[video.album], `${video.id}: unknown album ${video.album}`);
+});
+
+test("versions point at a primary video and stay out of galaxies", () => {
+  const ids = new Set(VIDEOS.map((v) => v.id));
+  assert.equal(ids.size, VIDEOS.length);
+  for (const v of VIDEOS) if (v.versionOf) assert.ok(ids.has(v.versionOf) && !VIDEOS.find((p) => p.id === v.versionOf)?.versionOf, v.id);
+  const chalk = VIDEOS.find((v) => v.id === "chinchilla-chalk-outlines")!;
+  assert.deepEqual(versionsOf(chalk).map((v) => v.version), ["Lyric Video", "Live"]);
+  assert.deepEqual(versionsOf(versionsOf(chalk)[1]).map((v) => v.id), versionsOf(chalk).map((v) => v.id));
+  for (const dim of DIMENSIONS) if (dim !== "type") for (const g of buildGalaxies(dim)) for (const v of g.videos) assert.ok(!v.versionOf, `${g.key} contains version ${v.id}`);
+});
+
+test("every video has a type, type galaxies include versions, about links resolve", () => {
+  for (const v of VIDEOS) assert.ok(v.type, v.id);
+  const live = buildGalaxies("type").find((g) => g.name === "Live")!;
+  assert.ok(live.videos.some((v) => v.id === "chinchilla-chalk-outlines-live"));
+  assert.ok(buildGalaxies("type").some((g) => g.name === "Reaction"));
+  for (const v of VIDEOS) if (v.about) assert.ok(VIDEOS.some((p) => p.id === v.about && !p.versionOf), `${v.id} about ${v.about}`);
 });

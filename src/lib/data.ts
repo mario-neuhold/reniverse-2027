@@ -8,15 +8,19 @@ export type Video = {
   album?: string;
   series?: string;
   part?: number;
+  type: string;
+  version?: string;
+  versionOf?: string;
+  about?: string;
   genres: string[];
   moods: string[];
   topics: string[];
 };
 
-export const DIMENSIONS = ["collective", "genre", "mood", "topic", "album"] as const;
+export const DIMENSIONS = ["collective", "type", "genre", "mood", "topic", "album"] as const;
 export type Dimension = (typeof DIMENSIONS)[number];
 
-export const DIMENSION_LABELS: Record<Dimension, string> = { collective: "Artist(s)", genre: "Genre", mood: "Mood", topic: "Topic", album: "Album" };
+export const DIMENSION_LABELS: Record<Dimension, string> = { collective: "Artist(s)", type: "Type", genre: "Genre", mood: "Mood", topic: "Topic", album: "Album" };
 
 export type Galaxy = {
   key: string;
@@ -66,12 +70,13 @@ export function placeholderImage(label: string, kind: "cover" | "text") {
 
 const HI_REN = "s_nc1IVoMxc";
 
-type Extra = Partial<Pick<Video, "album" | "series" | "part" | "youtubeId" | "thumbnail">>;
+type Extra = Partial<Pick<Video, "album" | "series" | "part" | "youtubeId" | "thumbnail" | "type" | "version" | "versionOf" | "about">>;
 
 const v = (id: string, title: string, collective: string, year: number, genres: string[], moods: string[], topics: string[], extra: Extra = {}): Video => ({
   id,
   title,
   youtubeId: HI_REN,
+  type: "Music Video",
   collective,
   year,
   genres,
@@ -100,137 +105,223 @@ export const galaxyImage = (name: string): string | undefined => GALAXY_IMAGES[n
 
 
 export const VIDEOS: Video[] = [
-  v("its-alright", "It's Alright", "Ren", 2016, ["Blues", "Busking"], ["Hopeful"], ["Love"], { album: "Freckled Angels", youtubeId: "hCsQDY8A6og" }),
-  v("dominoes", "Dominoes", "Ren", 2019, ["Folk"], [], [], { album: "Freckled Angels", youtubeId: "bbbjWEnC3Gc" }),
-  v("satellite-girl", "Satellite Girl", "Ren", 2015, ["Folk"], [], [], { album: "Freckled Angels", youtubeId: "y22m3KksPRw" }),
-  v("1990s", "1990s", "Ren", 2017, ["Folk"], [], [], { album: "Freckled Angels", youtubeId: "J2H7wDR9eTU" }),
-  v("crutch", "Crutch", "Ren", 2016, ["Folk"], [], [], { album: "Freckled Angels", youtubeId: "3gC2kq6E5Mo" }),
-  v("freckled-angels", "Freckled Angels", "Ren", 2015, ["Folk"], [], [], { album: "Freckled Angels", youtubeId: "xRm7DV8jObg" }),
-  v("jennys-tale", "Jenny's Tale", "Ren", 2019, ["Folk", "Spoken Word"], ["Melancholic", "Dark"], ["Storytelling", "Society"], { album: "The Tale of Jenny & Screech", series: "The Tale of Jenny & Screech", part: 2, youtubeId: "ZT4PtvgakLU" }),
-  v("screechs-tale", "Screech's Tale", "Ren", 2019, ["Folk", "Spoken Word"], ["Melancholic", "Dark"], ["Storytelling", "Society"], { album: "The Tale of Jenny & Screech", series: "The Tale of Jenny & Screech", part: 3, youtubeId: "HVsrl8zDXnU" }),
-  v("violets-tale", "Violet's Tale", "Ren", 2022, ["Folk", "Spoken Word"], ["Melancholic", "Dark"], ["Storytelling", "Society"], { album: "The Tale of Jenny & Screech", series: "The Tale of Jenny & Screech", part: 1, youtubeId: "a4R9Vk5_CbU" }),
-  v("seven-sins", "Seven Sins", "Ren", 2024, ["Hip Hop"], ["Dark"], ["Religion"], { album: "Sick Boi", youtubeId: "bXS2MF5XW60" }),
-  v("sick-boi", "Sick Boi", "Ren", 2023, ["Hip Hop"], ["Dark"], ["Illness", "Mental Health"], { album: "Sick Boi", youtubeId: "3Q6uCrpzbPY" }),
-  v("animal-flow", "Animal Flow", "Ren", 2023, ["Hip Hop"], ["Playful"], ["Nature"], { album: "Sick Boi", youtubeId: "F4mUnmFbVNg" }),
-  v("money-game-part-3", "Money Game Part 3", "Ren", 2023, ["Hip Hop"], ["Angry", "Dark"], ["Society", "Money"], { album: "Sick Boi", series: "Money Game", part: 3, youtubeId: "nyWbun_PbTc" }),
-  v("lost-all-faith", "Lost All Faith", "Ren", 2023, ["Hip Hop"], [], [], { album: "Sick Boi", youtubeId: "hVuTGHClU_A" }),
-  v("genesis", "Genesis", "Ren", 2022, ["Hip Hop"], ["Dark"], ["Religion", "Society"], { album: "Sick Boi", youtubeId: "YzsTdLIcbzU" }),
-  v("murderer", "Murderer", "Ren", 2023, ["Hip Hop"], ["Dark", "Angry"], ["Society"], { album: "Sick Boi", youtubeId: "hscHqw7CIFo" }),
-  v("suicide", "Suicide", "Ren", 2023, ["Hip Hop", "Folk"], ["Dark", "Cathartic"], ["Mental Health"], { album: "Sick Boi", youtubeId: "n3JNtfi4Vb0" }),
-  v("illest-of-our-time", "Illest of Our Time", "Ren", 2023, ["Hip Hop"], ["Cathartic"], ["Illness"], { album: "Sick Boi", youtubeId: "tB-JGSdBerE" }),
-  v("love-music-part-4", "Love Music Part 4", "Ren", 2023, ["Hip Hop"], [], [], { album: "Sick Boi", series: "Love Music", part: 4, youtubeId: "INheMTgUsuI" }),
-  v("uninvited", "Uninvited", "Ren", 2023, ["Hip Hop"], [], [], { album: "Sick Boi", youtubeId: "rXxVv1zxNeM" }),
-  v("what-you-want", "What You Want", "Ren", 2022, ["Hip Hop"], [], [], { album: "Sick Boi", youtubeId: "jrjp4Du0rEc" }),
-  v("the-hunger", "The Hunger", "Ren", 2022, ["Hip Hop", "Rock"], ["Angry", "Dark"], ["Society"], { album: "Sick Boi", youtubeId: "1T_fLytBFM4" }),
-  v("down-on-the-beat", "Down on the Beat", "Ren", 2023, ["Hip Hop"], [], [], { album: "Sick Boi", youtubeId: "XjN7TZh-UY0" }),
-  v("masochist", "Masochist", "Ren", 2023, ["Hip Hop"], [], [], { album: "Sick Boi", youtubeId: "OKST_i7Caxw" }),
-  v("loco", "Loco", "Ren", 2024, ["Hip Hop"], [], [], { album: "Sick Boi", youtubeId: "AFl2tn7Ty2k" }),
-  v("wicked-ways", "Wicked Ways", "Ren", 2023, ["Hip Hop"], [], [], { album: "Sick Boi", youtubeId: "P5xz57kmgHA" }),
-  v("prologue-sunflowers", "Prologue - Sunflowers", "Ren", 2025, ["Folk", "Spoken Word"], ["Melancholic", "Dark"], ["Storytelling", "Art", "Mental Health"], { album: "Vincent's Tale", series: "Vincent's Tale", part: 1, youtubeId: "vZ1MnVHARME" }),
-  v("self-portrait", "Self Portrait", "Ren", 2025, ["Folk", "Spoken Word"], ["Melancholic", "Dark"], ["Storytelling", "Art", "Mental Health"], { album: "Vincent's Tale", series: "Vincent's Tale", part: 2, youtubeId: "d-myXdYvu3w" }),
-  v("the-bedroom", "The Bedroom", "Ren", 2026, ["Folk", "Spoken Word"], ["Melancholic", "Dark"], ["Storytelling", "Art", "Mental Health"], { album: "Vincent's Tale", series: "Vincent's Tale", part: 3, youtubeId: "Xu8Xm4gpDP8" }),
-  v("skinner-so-the-story-goes", "So the Story Goes...", "Ren & The Skinner Brothers", 2025, ["Indie", "Rock"], ["Playful"], ["Love"], { album: "Sick Sick Soul (Vol.1)", youtubeId: "u1qtyMPokZM" }),
-  v("skinner-ctrl-alt-delete", "CTRL ALT DELETE", "Ren & The Skinner Brothers", 2025, ["Indie", "Rock"], ["Cathartic"], ["Money"], { album: "Sick Sick Soul (Vol.1)", youtubeId: "X--PXyB1Zw0" }),
-  v("skinner-truth-or-dare", "Truth or Dare", "Ren & The Skinner Brothers", 2025, ["Indie", "Rock"], ["Melancholic"], ["Identity"], { album: "Sick Sick Soul (Vol.1)", youtubeId: "FmaBhsRfhIw" }),
-  v("skinner-dream-life", "Dream Life", "Ren & The Skinner Brothers", 2025, ["Indie", "Rock"], ["Hopeful"], ["Mental Health"], { album: "Sick Sick Soul (Vol.1)", youtubeId: "0HhRNbZ0wRY" }),
-  v("skinner-twos-on-a-cigarette", "Two's on a Cigarette", "Ren & The Skinner Brothers", 2025, ["Indie", "Rock"], ["Dark"], ["Society"], { album: "Sick Sick Soul (Vol.1)", youtubeId: "1WCfWxgEY8E" }),
-  v("skinner-pink-heineken", "Pink Heineken", "Ren & The Skinner Brothers", 2025, ["Indie", "Rock"], ["Angry"], ["Illness"], { album: "Sick Sick Soul (Vol.1)", youtubeId: "Ra8gSw7Djvo" }),
-  v("inpatient-madhouse", "Madhouse", "Inpatient", 2026, ["Hip Hop"], ["Dark"], ["Mental Health"], { album: "Asylum", youtubeId: "7meWEiJEHeI" }),
-  v("inpatient-instigator", "Instigator", "Inpatient", 2026, ["Hip Hop"], ["Angry"], ["Society"], { album: "Asylum", youtubeId: "uoIlEWKReqE" }),
-  v("inpatient-neurodivergent", "Neurodivergent", "Inpatient", 2026, ["Hip Hop"], ["Playful"], ["Illness"], { album: "Asylum", youtubeId: "7y4MUCCHFGY" }),
-  v("inpatient-down-the-road", "Down the Road", "Inpatient", 2026, ["Hip Hop"], ["Dark"], ["Mental Health"], { album: "Asylum", youtubeId: "6jPLEVrL4BI" }),
-  v("inpatient-bad-company", "Bad Company", "Inpatient", 2026, ["Hip Hop"], ["Angry"], ["Society"], { album: "Asylum", youtubeId: "IImkLCKxAcs" }),
-  v("inpatient-asylum", "Asylum", "Inpatient", 2026, ["Hip Hop"], ["Playful"], ["Illness"], { album: "Asylum", youtubeId: "K9T6ASpDtVI" }),
-  v("inpatient-me-and-my-monster", "Me and My Monster", "Inpatient", 2026, ["Hip Hop"], ["Dark"], ["Mental Health"], { album: "Asylum", youtubeId: "ZU0yRhvoQj8" }),
-  v("inpatient-smoking-gun", "Smoking Gun", "Inpatient", 2026, ["Hip Hop"], ["Angry"], ["Society"], { album: "Asylum", youtubeId: "O431N-XdZpQ" }),
-  v("inpatient-tarantula", "Tarantula", "Inpatient", 2026, ["Hip Hop"], ["Playful"], ["Illness"], { album: "Asylum", youtubeId: "0DTrjpIb4QI" }),
-  v("inpatient-mason-jar", "Mason Jar", "Inpatient", 2026, ["Hip Hop"], ["Dark"], ["Mental Health"], { album: "Asylum", youtubeId: "cGo0pVcUt5o" }),
-  v("inpatient-silence", "Silence", "Inpatient", 2026, ["Hip Hop"], ["Angry"], ["Society"], { album: "Asylum", youtubeId: "A27AV1iHl_Q" }),
-  v("inpatient-dr-meyers", "Dr. Meyers", "Inpatient", 2026, ["Hip Hop"], ["Playful"], ["Illness"], { album: "Asylum", youtubeId: "GKTthHxp9_A" }),
-  v("inpatient-caskets", "Caskets", "Inpatient", 2026, ["Hip Hop"], ["Dark"], ["Mental Health"], { album: "Asylum", youtubeId: "Hd19DLlHA7w" }),
-  v("inpatient-end-of-the-world", "End of the World", "Inpatient", 2026, ["Hip Hop"], ["Angry"], ["Society"], { album: "Asylum", youtubeId: "O7ICrxgpmlI" }),
-  v("inpatient-lunatic-lullaby", "Lunatic Lullaby", "Inpatient", 2026, ["Hip Hop"], ["Playful"], ["Illness"], { album: "Asylum", youtubeId: "ExIP3rlANp0" }),
-  v("bp-praise-you", "Praise You", "The Big Push", 2019, ["Busking", "Pop"], ["Playful"], ["Music"], { album: "Busking Sessions", youtubeId: "5vbA514eVDc" }),
-  v("bp-bongo-bongo", "Bongo Bongo", "The Big Push", 2020, ["Busking", "Rock"], [], [], { album: "Busking Sessions", youtubeId: "EQAUupOFarw" }),
-  v("bp-english-man-in-new-york", "English man in New-York", "The Big Push", 2018, ["Busking", "Rock"], [], [], { album: "Busking Sessions", youtubeId: "ZI9Q295iJl4" }),
-  v("bp-its-alright-live", "It's Alright - Live", "The Big Push", 2019, ["Busking", "Rock"], [], [], { album: "Busking Sessions", youtubeId: "5vqU2t29XN4" }),
-  v("bp-what-kind-of-woman-is-this", "What kind of woman is this", "The Big Push", 2018, ["Busking", "Rock"], [], [], { album: "Busking Sessions", youtubeId: "8Rpbg9FG1-o" }),
-  v("bp-sympathy-for-the-devil", "Sympathy for the devil", "The Big Push", 2019, ["Busking", "Rock"], [], [], { album: "Busking Sessions", youtubeId: "i6tGeUVCw3g" }),
-  v("bp-wade-in-the-water", "Wade in the water", "The Big Push", 2019, ["Busking", "Rock"], [], [], { album: "Busking Sessions", youtubeId: "DbL7Frf6nJI" }),
-  v("bp-my-generation", "My generation", "The Big Push", 2019, ["Busking", "Rock"], [], [], { album: "Busking Sessions", youtubeId: "OGJxccarvkE" }),
-  v("bp-be-bop-a-lula", "Be bop a lula", "The Big Push", 2019, ["Busking", "Rock"], [], [], { album: "Busking Sessions", youtubeId: "Ay2WBiKJfrY" }),
-  v("bp-watch-out-live", "Watch Out - Live", "The Big Push", 2021, ["Busking", "Rock"], [], [], { album: "Busking Sessions", youtubeId: "x0YPR4wX2rg" }),
-  v("bp-war-pigs", "War Pigs", "The Big Push", 2021, ["Busking", "Rock"], [], [], { album: "Busking Sessions", youtubeId: "azAD9KE9HKE" }),
-  v("bp-i-shot-the-sheriff", "I shot the sheriff", "The Big Push", 2020, ["Busking", "Rock"], [], [], { album: "Busking Sessions", youtubeId: "Q_Qxpev7A4M" }),
-  v("bp-guns-of-brixton", "Guns Of Brixton", "The Big Push", 2020, ["Busking", "Rock"], ["Angry"], ["Society"], { album: "Busking Sessions", youtubeId: "wC9KrhHBOw8" }),
-  v("bp-johnny-b-goode", "Johnny B Goode", "The Big Push", 2020, ["Busking", "Rock"], [], [], { album: "Busking Sessions", youtubeId: "91hcRu5ixmE" }),
-  v("bp-lonely-boy", "Lonely Boy", "The Big Push", 2019, ["Busking", "Rock"], [], [], { album: "Busking Sessions", youtubeId: "nxVCK6XBZpY" }),
-  v("bp-these-boots-are-made-for-walkin", "These boots are made for walkin'", "The Big Push", 2020, ["Busking", "Rock"], [], [], { album: "Busking Sessions", youtubeId: "ZlJ0wSzBWKw" }),
-  v("bp-paint-it-black", "Paint it black", "The Big Push", 2021, ["Busking", "Rock"], [], [], { album: "Busking Sessions", youtubeId: "9MkngQ2ojT4" }),
-  v("bp-heroes", "Heroes", "The Big Push", 2020, ["Busking", "Rock"], [], [], { album: "Busking Sessions", youtubeId: "nTywwhxQ3Nk" }),
-  v("bp-acustarus", "Acustarus", "The Big Push", 2020, ["Busking", "Rock"], [], [], { album: "Busking Sessions", youtubeId: "azs5cn5Orq8" }),
-  v("bp-sweet-little-lady-acoustic", "Sweet Little Lady - Acoustic", "The Big Push", 2020, ["Busking", "Rock"], [], [], { album: "Busking Sessions", youtubeId: "7gARCb013cw" }),
-  v("bp-swan-song", "Swan Song", "The Big Push", 2020, ["Busking", "Rock"], [], [], { album: "Busking Sessions", youtubeId: "2AFA4sF69mY" }),
-  v("bp-watch-out", "Watch Out", "The Big Push", 2021, ["Blues", "Rock"], ["Playful"], ["Society"], { album: "Can Do Will Do", youtubeId: "P0GGFjsrhuU" }),
-  v("bp-xbox-marijuana", "Xbox Marijuana", "The Big Push", 2021, ["Blues", "Rock"], [], [], { album: "Can Do Will Do", youtubeId: "SnysmGissKw" }),
-  v("bp-mannequin", "Mannequin", "The Big Push", 2021, ["Blues", "Rock"], [], [], { album: "Can Do Will Do", youtubeId: "yu1jhwNrryY" }),
-  v("bp-when-she-goes", "When She Goes", "The Big Push", 2021, ["Blues", "Rock"], [], [], { album: "Can Do Will Do", youtubeId: "0vfvViyyWXk" }),
-  v("bp-all-my-heroes", "All My Heroes", "The Big Push", 2021, ["Blues", "Rock"], [], [], { album: "Can Do Will Do", youtubeId: "ESd5YihFvis" }),
-  v("bp-precious", "Precious", "The Big Push", 2021, ["Blues", "Rock"], [], [], { album: "Can Do Will Do", youtubeId: "IlzN1hF_re8" }),
-  v("cant-stop-me", "Can't Stop Me", "Ren", 2012, ["Folk"], [], [], { album: "Love Music", youtubeId: "lyWoZ-_CoMI" }),
-  v("the-first-night", "The First Night", "Ren", 2026, ["Folk", "Spoken Word"], ["Melancholic", "Dark"], ["Storytelling", "Art", "Mental Health"], { album: "Vincent's Tale", series: "Vincent's Tale", part: 4, youtubeId: "-1r0bxN-Ycw" }),
-  v("the-second-night", "The Second Night", "Ren", 2026, ["Folk", "Spoken Word"], ["Melancholic", "Dark"], ["Storytelling", "Art", "Mental Health"], { album: "Vincent's Tale", series: "Vincent's Tale", part: 5, youtubeId: "vM6zjlxmrGE" }),
-  v("the-third-night", "The Third Night", "Ren", 2026, ["Folk", "Spoken Word"], ["Melancholic", "Dark"], ["Storytelling", "Art", "Mental Health"], { album: "Vincent's Tale", series: "Vincent's Tale", part: 6, youtubeId: "QJzZI0-8als" }),
-  v("starry-night", "Starry Night", "Ren", 2026, ["Folk", "Spoken Word"], ["Melancholic", "Dark"], ["Storytelling", "Art", "Mental Health"], { album: "Vincent's Tale", series: "Vincent's Tale", part: 7, youtubeId: "MTn_bhTVr2U" }),
-  v("hi-ren", "Hi Ren", "Ren", 2022, ["Folk", "Hip Hop"], ["Dark", "Cathartic"], ["Mental Health", "Illness"], { youtubeId: "s_nc1IVoMxc" }),
-  v("money-game-part-1", "Money Game Part 1", "Ren", 2019, ["Hip Hop"], ["Angry"], ["Society", "Money"], { series: "Money Game", part: 1, youtubeId: "0ivQwwgW4OY" }),
-  v("money-game-part-2", "Money Game Part 2", "Ren", 2022, ["Hip Hop"], ["Angry"], ["Society", "Money"], { series: "Money Game", part: 2, youtubeId: "DxNUwVuG6Lw" }),
-  v("the-tale-of-jenny-screech", "The Tale of Jenny & Screech", "Ren", 2022, ["Hip Hop"], [], [], { youtubeId: "TYAnqQ--KX0" }),
-  v("losing-it", "Losing It", "Ren", 2022, ["Hip Hop"], ["Playful"], ["Mental Health"], { youtubeId: "mLvAGjhDssc" }),
-  v("humble", "Humble", "Ren", 2019, ["Hip Hop"], ["Angry"], ["Society"], { youtubeId: "PO9UC2Zt59c" }),
-  v("kujo-beat-down", "Kujo Beat Down", "Ren", 2024, ["Hip Hop", "Beatbox"], ["Playful"], ["Music"], { youtubeId: "it_hPbqcYOA" }),
-  v("mackay", "Mackay", "Ren", 2024, ["Hip Hop"], ["Angry"], ["Society"], { youtubeId: "TDrFh9RnpQ4" }),
-  v("troubles", "Troubles", "Ren", 2024, ["Folk"], ["Melancholic"], ["Mental Health"], { youtubeId: "pt7Bpy27d1M" }),
-  v("slaughter-house", "Slaughter House", "Ren", 2024, ["Hip Hop"], ["Dark"], ["Society"], { youtubeId: "_fTylzY3RsU" }),
-  v("for-joe", "For Joe", "Ren", 2023, ["Folk"], ["Melancholic", "Cathartic"], ["Grief", "Friendship"], { youtubeId: "ebX5ZvrT6-o" }),
-  v("money-ties", "Money Ties", "Ren", 2024, ["Hip Hop"], [], [], { youtubeId: "Uq3Z6D74dSA" }),
-  v("power", "Power", "Ren", 2022, ["Hip Hop"], [], [], { youtubeId: "6_hnhVDtzTY" }),
-  v("depression", "Depression", "Ren", 2018, ["Hip Hop"], [], [], { youtubeId: "VCZj2w0iXO8" }),
-  v("insomnia", "Insomnia", "Ren", 2018, ["Hip Hop"], [], [], { youtubeId: "IBgp2OX7hYs" }),
-  v("penitence", "Penitence", "Ren", 2020, ["Hip Hop"], [], [], { youtubeId: "R-7UHDoKlMw" }),
-  v("children-of-the-moon", "Children of the Moon", "Ren", 2018, ["Hip Hop"], [], [], { youtubeId: "6e4Abttm0Fs" }),
-  v("everybody-drops", "Everybody Drops", "Ren", 2020, ["Hip Hop"], [], [], { youtubeId: "xG6ckC1Q4eU" }),
-  v("right-here-right-now", "Right Here, Right Now", "Ren", 2022, ["Hip Hop"], [], [], { youtubeId: "yVaJUdllr3c" }),
-  v("wildfire", "Wildfire", "Ren", 2022, ["Hip Hop"], [], [], { youtubeId: "bEVfqR5PJE8" }),
-  v("all-my-life", "All My Life", "Ren", 2022, ["Hip Hop"], [], [], { youtubeId: "mViaIY98gUA" }),
-  v("bittersweet-symphony", "Bittersweet Symphony", "Ren", 2023, ["Hip Hop"], [], [], { youtubeId: "JwtEOp7pC1A" }),
-  v("eden", "Eden", "Ren", 2023, ["Hip Hop"], [], [], { youtubeId: "NdSLsRKnafI" }),
-  v("life-is-funny", "Life Is Funny", "Ren", 2020, ["Hip Hop"], [], [], { youtubeId: "rV8U73JHs0Q" }),
-  v("dear-god", "Dear God", "Ren", 2020, ["Hip Hop"], [], [], { youtubeId: "uOiB2AYUdMQ" }),
-  v("ocean", "Ocean", "Ren", 2020, ["Hip Hop"], [], [], { youtubeId: "xoi7pI0zGPA" }),
-  v("heretic", "Heretic", "Ren", 2020, ["Hip Hop"], [], [], { youtubeId: "wukFdoXRZKM" }),
-  v("ready-for-you", "Ready For You", "Ren", 2020, ["Hip Hop"], [], [], { youtubeId: "PdPVzKTJWXI" }),
-  v("crucify-your-culture", "Crucify Your Culture", "Ren", 2020, ["Hip Hop"], [], [], { youtubeId: "LfS41H29asw" }),
-  v("fred-again-mash-up", "Fred Again Mash Up", "Ren", 2024, ["Hip Hop"], [], [], { youtubeId: "8ASggnoga9Q" }),
-  v("halftime", "Halftime", "Ren", 2024, ["Hip Hop"], [], [], { youtubeId: "e3_KfTO7dfw" }),
-  v("dumb-king-come", "Dumb King Come", "Ren", 2023, ["Hip Hop"], [], [], { youtubeId: "gcVUnFisx_Q" }),
-  v("love-music-part-3", "Love Music Part 3", "Ren", 2020, ["Hip Hop"], [], [], { series: "Love Music", part: 3, youtubeId: "OjElKx6q2Wc" }),
-  v("girls", "Girls!", "Ren", 2018, ["Hip Hop"], [], [], { youtubeId: "ZDRqITGHhMU" }),
-  v("do-you-believe", "Do You Believe", "Ren", 2016, ["Hip Hop"], [], [], { youtubeId: "EGgowW6AOyw" }),
-  v("hold-on", "Hold On", "Ren", 2016, ["Hip Hop"], [], [], { youtubeId: "n7jsWZmHhcM" }),
-  v("jessica", "Jessica", "Ren", 2016, ["Hip Hop"], [], [], { youtubeId: "zU_GnJdT_Fk" }),
-  v("chinchilla-chalk-outlines", "Chalk Outlines", "Ren & Chinchilla", 2021, ["Folk", "Pop"], ["Melancholic", "Cathartic"], ["Love", "Grief"], { youtubeId: "4Vn_N5IHHoc" }),
-  v("chinchilla-how-to-be-me", "How to Be Me", "Ren & Chinchilla", 2019, ["Folk", "Pop"], ["Melancholic"], ["Identity"], { youtubeId: "3IhoPpHYXjo" }),
-  v("sam-blind-eyed", "Blind Eyed", "Ren & Sam Tompkins", 2018, ["Pop", "Hip Hop"], ["Dark"], ["Society"], { youtubeId: "xjF_JTbBZjQ" }),
-  v("sam-what-went-wrong", "What Went Wrong", "Ren & Sam Tompkins", 2020, ["Pop", "Folk"], ["Melancholic"], ["Love"], { series: "What Went Wrong", part: 1, youtubeId: "jmOdhbC6BZc" }),
-  v("sam-what-went-wrong-ii", "What Went Wrong II", "Ren & Sam Tompkins", 2020, ["Pop", "Folk"], ["Melancholic", "Hopeful"], ["Love"], { series: "What Went Wrong", part: 2, youtubeId: "pqfGZ8IRCXk" }),
-  v("bp-sweet-little-lady", "Sweet Little Lady", "The Big Push", 2020, ["Blues", "Busking"], ["Hopeful"], ["Love"], { youtubeId: "X9gOvRAZ1jM" }),
-  v("bp-icarus", "Icarus", "The Big Push", 2020, ["Blues", "Rock"], ["Melancholic"], ["Identity"], { youtubeId: "Yo9fjMywmmk" }),
-  v("bp-why-my-woman", "Why My Woman?", "The Big Push", 2020, ["Hip Hop"], [], [], { youtubeId: "7b2m5lBcJ64" }),
-  v("bp-oh-my-woman", "Oh My Woman!", "The Big Push", 2020, ["Hip Hop"], [], [], { youtubeId: "bVvA7VOU0MI" }),
-  v("bp-dignity", "Dignity", "The Big Push", 2020, ["Hip Hop"], [], [], { youtubeId: "3E37nzXX-4g" }),
-  v("bp-heart-attack", "Heart Attack", "The Big Push", 2024, ["Hip Hop"], [], [], { youtubeId: "aBJmZ51VgNM" }),
-  v("inpatient-asylum-the-documentary", "ASYLUM | The Documentary", "Inpatient", 2026, ["Documentary"], ["Hopeful"], ["Music", "Mental Health"], { youtubeId: "JadrrdwzO1U" }),
+  v("its-alright", "It's Alright", "Ren", 2016, ["Blues", "Busking"], ["Hopeful"], ["Love"], { album: "Freckled Angels", youtubeId: "hCsQDY8A6og", version: "Official Music Video", type: "Music Video" }),
+  v("dominoes", "Dominoes", "Ren", 2019, ["Folk"], [], [], { album: "Freckled Angels", youtubeId: "bbbjWEnC3Gc", version: "Lyric Video", type: "Lyric Video" }),
+  v("satellite-girl", "Satellite Girl", "Ren", 2015, ["Folk"], [], [], { album: "Freckled Angels", youtubeId: "y22m3KksPRw", version: "Official", type: "Music Video" }),
+  v("1990s", "1990s", "Ren", 2017, ["Folk"], [], [], { album: "Freckled Angels", youtubeId: "J2H7wDR9eTU", version: "Lyric Video", type: "Lyric Video" }),
+  v("crutch", "Crutch", "Ren", 2016, ["Folk"], [], [], { album: "Freckled Angels", youtubeId: "3gC2kq6E5Mo", type: "Music Video" }),
+  v("freckled-angels", "Freckled Angels", "Ren", 2015, ["Folk"], [], [], { album: "Freckled Angels", youtubeId: "xRm7DV8jObg", version: "Official", type: "Music Video" }),
+  v("jennys-tale", "Jenny's Tale", "Ren", 2019, ["Folk", "Spoken Word"], ["Melancholic", "Dark"], ["Storytelling", "Society"], { album: "The Tale of Jenny & Screech", series: "The Tale of Jenny & Screech", part: 2, youtubeId: "ZT4PtvgakLU", version: "Official Music Video", type: "Music Video" }),
+  v("screechs-tale", "Screech's Tale", "Ren", 2019, ["Folk", "Spoken Word"], ["Melancholic", "Dark"], ["Storytelling", "Society"], { album: "The Tale of Jenny & Screech", series: "The Tale of Jenny & Screech", part: 3, youtubeId: "HVsrl8zDXnU", version: "Official Music Video", type: "Music Video" }),
+  v("violets-tale", "Violet's Tale", "Ren", 2022, ["Folk", "Spoken Word"], ["Melancholic", "Dark"], ["Storytelling", "Society"], { album: "The Tale of Jenny & Screech", series: "The Tale of Jenny & Screech", part: 1, youtubeId: "a4R9Vk5_CbU", version: "Official Music Video", type: "Music Video" }),
+  v("seven-sins", "Seven Sins", "Ren", 2024, ["Hip Hop"], ["Dark"], ["Religion"], { album: "Sick Boi", youtubeId: "bXS2MF5XW60", version: "Lyric Video", type: "Lyric Video" }),
+  v("sick-boi", "Sick Boi", "Ren", 2023, ["Hip Hop"], ["Dark"], ["Illness", "Mental Health"], { album: "Sick Boi", youtubeId: "3Q6uCrpzbPY", version: "Official Music Video", type: "Music Video" }),
+  v("animal-flow", "Animal Flow", "Ren", 2023, ["Hip Hop"], ["Playful"], ["Nature"], { album: "Sick Boi", youtubeId: "F4mUnmFbVNg", version: "Official Music Video", type: "Music Video" }),
+  v("money-game-part-3", "Money Game Part 3", "Ren", 2023, ["Hip Hop"], ["Angry", "Dark"], ["Society", "Money"], { album: "Sick Boi", series: "Money Game", part: 3, youtubeId: "nyWbun_PbTc", version: "Official Music Video", type: "Music Video" }),
+  v("lost-all-faith", "Lost All Faith", "Ren", 2023, ["Hip Hop"], [], [], { album: "Sick Boi", youtubeId: "hVuTGHClU_A", version: "Lyric Video", type: "Lyric Video" }),
+  v("genesis", "Genesis", "Ren", 2022, ["Hip Hop"], ["Dark"], ["Religion", "Society"], { album: "Sick Boi", youtubeId: "YzsTdLIcbzU", type: "Music Video" }),
+  v("murderer", "Murderer", "Ren", 2023, ["Hip Hop"], ["Dark", "Angry"], ["Society"], { album: "Sick Boi", youtubeId: "hscHqw7CIFo", version: "Official Music Video", type: "Music Video" }),
+  v("suicide", "Suicide", "Ren", 2023, ["Hip Hop", "Folk"], ["Dark", "Cathartic"], ["Mental Health"], { album: "Sick Boi", youtubeId: "n3JNtfi4Vb0", version: "Official Music Video", type: "Music Video" }),
+  v("illest-of-our-time", "Illest of Our Time", "Ren", 2023, ["Hip Hop"], ["Cathartic"], ["Illness"], { album: "Sick Boi", youtubeId: "tB-JGSdBerE", version: "Official Music Video", type: "Music Video" }),
+  v("love-music-part-4", "Love Music Part 4", "Ren", 2023, ["Hip Hop"], [], [], { album: "Sick Boi", series: "Love Music", part: 4, youtubeId: "INheMTgUsuI", version: "Lyric Video", type: "Lyric Video" }),
+  v("uninvited", "Uninvited", "Ren", 2023, ["Hip Hop"], [], [], { album: "Sick Boi", youtubeId: "rXxVv1zxNeM", type: "Music Video" }),
+  v("what-you-want", "What You Want", "Ren", 2022, ["Hip Hop"], [], [], { album: "Sick Boi", youtubeId: "jrjp4Du0rEc", version: "Official Music Video", type: "Music Video" }),
+  v("the-hunger", "The Hunger", "Ren", 2022, ["Hip Hop", "Rock"], ["Angry", "Dark"], ["Society"], { album: "Sick Boi", youtubeId: "1T_fLytBFM4", version: "Official Music Video", type: "Music Video" }),
+  v("down-on-the-beat", "Down on the Beat", "Ren", 2023, ["Hip Hop"], [], [], { album: "Sick Boi", youtubeId: "XjN7TZh-UY0", version: "Lyric Video", type: "Lyric Video" }),
+  v("masochist", "Masochist", "Ren", 2023, ["Hip Hop"], [], [], { album: "Sick Boi", youtubeId: "OKST_i7Caxw", version: "Lyric Video", type: "Lyric Video" }),
+  v("loco", "Loco", "Ren", 2024, ["Hip Hop"], [], [], { album: "Sick Boi", youtubeId: "AFl2tn7Ty2k", version: "Lyric Video", type: "Lyric Video" }),
+  v("wicked-ways", "Wicked Ways", "Ren", 2023, ["Hip Hop"], [], [], { album: "Sick Boi", youtubeId: "P5xz57kmgHA", type: "Music Video" }),
+  v("prologue-sunflowers", "Prologue - Sunflowers", "Ren", 2025, ["Folk", "Spoken Word"], ["Melancholic", "Dark"], ["Storytelling", "Art", "Mental Health"], { album: "Vincent's Tale", series: "Vincent's Tale", part: 1, youtubeId: "vZ1MnVHARME", type: "Music Video" }),
+  v("self-portrait", "Self Portrait", "Ren", 2025, ["Folk", "Spoken Word"], ["Melancholic", "Dark"], ["Storytelling", "Art", "Mental Health"], { album: "Vincent's Tale", series: "Vincent's Tale", part: 2, youtubeId: "d-myXdYvu3w", type: "Music Video" }),
+  v("the-bedroom", "The Bedroom", "Ren", 2026, ["Folk", "Spoken Word"], ["Melancholic", "Dark"], ["Storytelling", "Art", "Mental Health"], { album: "Vincent's Tale", series: "Vincent's Tale", part: 3, youtubeId: "Xu8Xm4gpDP8", version: "Official Music Video", type: "Music Video" }),
+  v("skinner-so-the-story-goes", "So the Story Goes...", "Ren & The Skinner Brothers", 2025, ["Indie", "Rock"], ["Playful"], ["Love"], { album: "Sick Sick Soul (Vol.1)", youtubeId: "u1qtyMPokZM", type: "Music Video" }),
+  v("skinner-ctrl-alt-delete", "CTRL ALT DELETE", "Ren & The Skinner Brothers", 2025, ["Indie", "Rock"], ["Cathartic"], ["Money"], { album: "Sick Sick Soul (Vol.1)", youtubeId: "X--PXyB1Zw0", type: "Music Video" }),
+  v("skinner-truth-or-dare", "Truth or Dare", "Ren & The Skinner Brothers", 2025, ["Indie", "Rock"], ["Melancholic"], ["Identity"], { album: "Sick Sick Soul (Vol.1)", youtubeId: "FmaBhsRfhIw", type: "Music Video" }),
+  v("skinner-dream-life", "Dream Life", "Ren & The Skinner Brothers", 2025, ["Indie", "Rock"], ["Hopeful"], ["Mental Health"], { album: "Sick Sick Soul (Vol.1)", youtubeId: "0HhRNbZ0wRY", type: "Music Video" }),
+  v("skinner-twos-on-a-cigarette", "Two's on a Cigarette", "Ren & The Skinner Brothers", 2025, ["Indie", "Rock"], ["Dark"], ["Society"], { album: "Sick Sick Soul (Vol.1)", youtubeId: "1WCfWxgEY8E", type: "Music Video" }),
+  v("skinner-pink-heineken", "Pink Heineken", "Ren & The Skinner Brothers", 2025, ["Indie", "Rock"], ["Angry"], ["Illness"], { album: "Sick Sick Soul (Vol.1)", youtubeId: "Ra8gSw7Djvo", type: "Music Video" }),
+  v("inpatient-madhouse", "Madhouse", "Inpatient", 2026, ["Hip Hop"], ["Dark"], ["Mental Health"], { album: "Asylum", youtubeId: "7meWEiJEHeI", type: "Music Video" }),
+  v("inpatient-instigator", "Instigator", "Inpatient", 2026, ["Hip Hop"], ["Angry"], ["Society"], { album: "Asylum", youtubeId: "uoIlEWKReqE", type: "Music Video" }),
+  v("inpatient-neurodivergent", "Neurodivergent", "Inpatient", 2026, ["Hip Hop"], ["Playful"], ["Illness"], { album: "Asylum", youtubeId: "7y4MUCCHFGY", type: "Music Video" }),
+  v("inpatient-down-the-road", "Down the Road", "Inpatient", 2026, ["Hip Hop"], ["Dark"], ["Mental Health"], { album: "Asylum", youtubeId: "6jPLEVrL4BI", type: "Music Video" }),
+  v("inpatient-bad-company", "Bad Company", "Inpatient", 2026, ["Hip Hop"], ["Angry"], ["Society"], { album: "Asylum", youtubeId: "IImkLCKxAcs", type: "Music Video" }),
+  v("inpatient-asylum", "Asylum", "Inpatient", 2026, ["Hip Hop"], ["Playful"], ["Illness"], { album: "Asylum", youtubeId: "K9T6ASpDtVI", version: "Lyric Video", type: "Lyric Video" }),
+  v("inpatient-me-and-my-monster", "Me and My Monster", "Inpatient", 2026, ["Hip Hop"], ["Dark"], ["Mental Health"], { album: "Asylum", youtubeId: "ZU0yRhvoQj8", version: "Lyric Video", type: "Lyric Video" }),
+  v("inpatient-smoking-gun", "Smoking Gun", "Inpatient", 2026, ["Hip Hop"], ["Angry"], ["Society"], { album: "Asylum", youtubeId: "O431N-XdZpQ", type: "Music Video" }),
+  v("inpatient-tarantula", "Tarantula", "Inpatient", 2026, ["Hip Hop"], ["Playful"], ["Illness"], { album: "Asylum", youtubeId: "0DTrjpIb4QI", type: "Music Video" }),
+  v("inpatient-mason-jar", "Mason Jar", "Inpatient", 2026, ["Hip Hop"], ["Dark"], ["Mental Health"], { album: "Asylum", youtubeId: "cGo0pVcUt5o", version: "Visualiser", type: "Visualiser" }),
+  v("inpatient-silence", "Silence", "Inpatient", 2026, ["Hip Hop"], ["Angry"], ["Society"], { album: "Asylum", youtubeId: "A27AV1iHl_Q", version: "Visualiser", type: "Visualiser" }),
+  v("inpatient-dr-meyers", "Dr. Meyers", "Inpatient", 2026, ["Hip Hop"], ["Playful"], ["Illness"], { album: "Asylum", youtubeId: "GKTthHxp9_A", version: "Lyric Video", type: "Lyric Video" }),
+  v("inpatient-caskets", "Caskets", "Inpatient", 2026, ["Hip Hop"], ["Dark"], ["Mental Health"], { album: "Asylum", youtubeId: "Hd19DLlHA7w", type: "Music Video" }),
+  v("inpatient-end-of-the-world", "End of the World", "Inpatient", 2026, ["Hip Hop"], ["Angry"], ["Society"], { album: "Asylum", youtubeId: "O7ICrxgpmlI", version: "Official Video", type: "Music Video" }),
+  v("inpatient-lunatic-lullaby", "Lunatic Lullaby", "Inpatient", 2026, ["Hip Hop"], ["Playful"], ["Illness"], { album: "Asylum", youtubeId: "ExIP3rlANp0", version: "Visualiser", type: "Visualiser" }),
+  v("bp-praise-you", "Praise You", "The Big Push", 2019, ["Busking", "Pop"], ["Playful"], ["Music"], { album: "Busking Sessions", youtubeId: "5vbA514eVDc", version: "Fatboy Slim Cover", type: "Cover" }),
+  v("bp-bongo-bongo", "Bongo Bongo", "The Big Push", 2020, ["Busking", "Rock"], [], [], { album: "Busking Sessions", youtubeId: "EQAUupOFarw", version: "Manu Chao cover", type: "Cover" }),
+  v("bp-english-man-in-new-york", "English man in New-York", "The Big Push", 2018, ["Busking", "Rock"], [], [], { album: "Busking Sessions", youtubeId: "ZI9Q295iJl4", version: "Live", type: "Live" }),
+  v("bp-its-alright-live", "It's Alright - Live", "The Big Push", 2019, ["Busking", "Rock"], [], [], { album: "Busking Sessions", youtubeId: "5vqU2t29XN4", version: "Live at Chalk", type: "Live" }),
+  v("bp-what-kind-of-woman-is-this", "What kind of woman is this", "The Big Push", 2018, ["Busking", "Rock"], [], [], { album: "Busking Sessions", youtubeId: "8Rpbg9FG1-o", version: "Live", type: "Live" }),
+  v("bp-sympathy-for-the-devil", "Sympathy for the devil", "The Big Push", 2019, ["Busking", "Rock"], [], [], { album: "Busking Sessions", youtubeId: "i6tGeUVCw3g", version: "The Rolling Stones cover", type: "Cover" }),
+  v("bp-wade-in-the-water", "Wade in the water", "The Big Push", 2019, ["Busking", "Rock"], [], [], { album: "Busking Sessions", youtubeId: "DbL7Frf6nJI", type: "Music Video" }),
+  v("bp-my-generation", "My generation", "The Big Push", 2019, ["Busking", "Rock"], [], [], { album: "Busking Sessions", youtubeId: "OGJxccarvkE", type: "Music Video" }),
+  v("bp-be-bop-a-lula", "Be bop a lula", "The Big Push", 2019, ["Busking", "Rock"], [], [], { album: "Busking Sessions", youtubeId: "Ay2WBiKJfrY", type: "Music Video" }),
+  v("bp-watch-out-live", "Watch Out - Live", "The Big Push", 2021, ["Busking", "Rock"], [], [], { album: "Busking Sessions", youtubeId: "x0YPR4wX2rg", version: "Live Busking", type: "Live" }),
+  v("bp-war-pigs", "War Pigs", "The Big Push", 2021, ["Busking", "Rock"], [], [], { album: "Busking Sessions", youtubeId: "azAD9KE9HKE", version: "Black Sabbath cover", type: "Cover" }),
+  v("bp-i-shot-the-sheriff", "I shot the sheriff", "The Big Push", 2020, ["Busking", "Rock"], [], [], { album: "Busking Sessions", youtubeId: "Q_Qxpev7A4M", version: "Bob Marley cover", type: "Cover" }),
+  v("bp-guns-of-brixton", "Guns Of Brixton", "The Big Push", 2020, ["Busking", "Rock"], ["Angry"], ["Society"], { album: "Busking Sessions", youtubeId: "wC9KrhHBOw8", version: "The Clash cover", type: "Cover" }),
+  v("bp-johnny-b-goode", "Johnny B Goode", "The Big Push", 2020, ["Busking", "Rock"], [], [], { album: "Busking Sessions", youtubeId: "91hcRu5ixmE", version: "Chuck Berry cover", type: "Cover" }),
+  v("bp-lonely-boy", "Lonely Boy", "The Big Push", 2019, ["Busking", "Rock"], [], [], { album: "Busking Sessions", youtubeId: "nxVCK6XBZpY", version: "Black keys cover", type: "Cover" }),
+  v("bp-these-boots-are-made-for-walkin", "These boots are made for walkin'", "The Big Push", 2020, ["Busking", "Rock"], [], [], { album: "Busking Sessions", youtubeId: "ZlJ0wSzBWKw", type: "Music Video" }),
+  v("bp-paint-it-black", "Paint it black", "The Big Push", 2021, ["Busking", "Rock"], [], [], { album: "Busking Sessions", youtubeId: "9MkngQ2ojT4", version: "The Rolling Stones cover", type: "Cover" }),
+  v("bp-heroes", "Heroes", "The Big Push", 2020, ["Busking", "Rock"], [], [], { album: "Busking Sessions", youtubeId: "nTywwhxQ3Nk", version: "David Bowie cover", type: "Cover" }),
+  v("bp-acustarus", "Acustarus", "The Big Push", 2020, ["Busking", "Rock"], [], [], { album: "Busking Sessions", youtubeId: "azs5cn5Orq8", version: "Icarus Acoustic", type: "Acoustic" }),
+  v("bp-sweet-little-lady-acoustic", "Sweet Little Lady - Acoustic", "The Big Push", 2020, ["Busking", "Rock"], [], [], { album: "Busking Sessions", youtubeId: "7gARCb013cw", version: "Live Acoustic", type: "Live" }),
+  v("bp-swan-song", "Swan Song", "The Big Push", 2020, ["Busking", "Rock"], [], [], { album: "Busking Sessions", youtubeId: "2AFA4sF69mY", type: "Music Video" }),
+  v("bp-watch-out", "Watch Out", "The Big Push", 2021, ["Blues", "Rock"], ["Playful"], ["Society"], { album: "Can Do Will Do", youtubeId: "P0GGFjsrhuU", type: "Music Video" }),
+  v("bp-xbox-marijuana", "Xbox Marijuana", "The Big Push", 2021, ["Blues", "Rock"], [], [], { album: "Can Do Will Do", youtubeId: "SnysmGissKw", type: "Music Video" }),
+  v("bp-mannequin", "Mannequin", "The Big Push", 2021, ["Blues", "Rock"], [], [], { album: "Can Do Will Do", youtubeId: "yu1jhwNrryY", version: "Official Audio", type: "Music Video" }),
+  v("bp-when-she-goes", "When She Goes", "The Big Push", 2021, ["Blues", "Rock"], [], [], { album: "Can Do Will Do", youtubeId: "0vfvViyyWXk", version: "Official Audio", type: "Music Video" }),
+  v("bp-all-my-heroes", "All My Heroes", "The Big Push", 2021, ["Blues", "Rock"], [], [], { album: "Can Do Will Do", youtubeId: "ESd5YihFvis", version: "Official Audio", type: "Music Video" }),
+  v("bp-precious", "Precious", "The Big Push", 2021, ["Blues", "Rock"], [], [], { album: "Can Do Will Do", youtubeId: "IlzN1hF_re8", type: "Music Video" }),
+  v("cant-stop-me", "Can't Stop Me", "Ren", 2012, ["Folk"], [], [], { album: "Love Music", youtubeId: "lyWoZ-_CoMI", type: "Music Video" }),
+  v("the-first-night", "The First Night", "Ren", 2026, ["Folk", "Spoken Word"], ["Melancholic", "Dark"], ["Storytelling", "Art", "Mental Health"], { album: "Vincent's Tale", series: "Vincent's Tale", part: 4, youtubeId: "-1r0bxN-Ycw", version: "Official Live Stream", type: "Stream" }),
+  v("the-second-night", "The Second Night", "Ren", 2026, ["Folk", "Spoken Word"], ["Melancholic", "Dark"], ["Storytelling", "Art", "Mental Health"], { album: "Vincent's Tale", series: "Vincent's Tale", part: 5, youtubeId: "vM6zjlxmrGE", version: "Official Live Stream", type: "Stream" }),
+  v("the-third-night", "The Third Night", "Ren", 2026, ["Folk", "Spoken Word"], ["Melancholic", "Dark"], ["Storytelling", "Art", "Mental Health"], { album: "Vincent's Tale", series: "Vincent's Tale", part: 6, youtubeId: "QJzZI0-8als", version: "Official Live Stream", type: "Stream" }),
+  v("starry-night", "Starry Night", "Ren", 2026, ["Folk", "Spoken Word"], ["Melancholic", "Dark"], ["Storytelling", "Art", "Mental Health"], { album: "Vincent's Tale", series: "Vincent's Tale", part: 7, youtubeId: "MTn_bhTVr2U", type: "Music Video" }),
+  v("hi-ren", "Hi Ren", "Ren", 2022, ["Folk", "Hip Hop"], ["Dark", "Cathartic"], ["Mental Health", "Illness"], { youtubeId: "s_nc1IVoMxc", version: "Official Music Video", type: "Music Video" }),
+  v("money-game-part-1", "Money Game Part 1", "Ren", 2019, ["Hip Hop"], ["Angry"], ["Society", "Money"], { series: "Money Game", part: 1, youtubeId: "0ivQwwgW4OY", version: "Official Music Video", type: "Music Video" }),
+  v("money-game-part-2", "Money Game Part 2", "Ren", 2022, ["Hip Hop"], ["Angry"], ["Society", "Money"], { series: "Money Game", part: 2, youtubeId: "DxNUwVuG6Lw", version: "4K", type: "Music Video" }),
+  v("the-tale-of-jenny-screech", "The Tale of Jenny & Screech", "Ren", 2022, ["Hip Hop"], [], [], { youtubeId: "TYAnqQ--KX0", version: "Official Music Video", type: "Music Video" }),
+  v("losing-it", "Losing It", "Ren", 2022, ["Hip Hop"], ["Playful"], ["Mental Health"], { youtubeId: "mLvAGjhDssc", version: "FISHER Rap Version", type: "Cover" }),
+  v("humble", "Humble", "Ren", 2019, ["Hip Hop"], ["Angry"], ["Society"], { youtubeId: "PO9UC2Zt59c", type: "Music Video" }),
+  v("kujo-beat-down", "Kujo Beat Down", "Ren", 2024, ["Hip Hop", "Beatbox"], ["Playful"], ["Music"], { youtubeId: "it_hPbqcYOA", type: "Music Video" }),
+  v("mackay", "Mackay", "Ren", 2024, ["Hip Hop"], ["Angry"], ["Society"], { youtubeId: "TDrFh9RnpQ4", type: "Music Video" }),
+  v("troubles", "Troubles", "Ren", 2024, ["Folk"], ["Melancholic"], ["Mental Health"], { youtubeId: "pt7Bpy27d1M", type: "Music Video" }),
+  v("slaughter-house", "Slaughter House", "Ren", 2024, ["Hip Hop"], ["Dark"], ["Society"], { youtubeId: "_fTylzY3RsU", type: "Music Video" }),
+  v("for-joe", "For Joe", "Ren", 2023, ["Folk"], ["Melancholic", "Cathartic"], ["Grief", "Friendship"], { youtubeId: "ebX5ZvrT6-o", version: "Live", type: "Live" }),
+  v("money-ties", "Money Ties", "Ren", 2024, ["Hip Hop"], [], [], { youtubeId: "Uq3Z6D74dSA", type: "Music Video" }),
+  v("power", "Power", "Ren", 2022, ["Hip Hop"], [], [], { youtubeId: "6_hnhVDtzTY", version: "Official Music Video", type: "Music Video" }),
+  v("depression", "Depression", "Ren", 2018, ["Hip Hop"], [], [], { youtubeId: "VCZj2w0iXO8", version: "Lyric Video", type: "Lyric Video" }),
+  v("insomnia", "Insomnia", "Ren", 2018, ["Hip Hop"], [], [], { youtubeId: "IBgp2OX7hYs", version: "Official", type: "Music Video" }),
+  v("penitence", "Penitence", "Ren", 2020, ["Hip Hop"], [], [], { youtubeId: "R-7UHDoKlMw", type: "Music Video" }),
+  v("children-of-the-moon", "Children of the Moon", "Ren", 2018, ["Hip Hop"], [], [], { youtubeId: "6e4Abttm0Fs", version: "Official Music Video", type: "Music Video" }),
+  v("everybody-drops", "Everybody Drops", "Ren", 2020, ["Hip Hop"], [], [], { youtubeId: "xG6ckC1Q4eU", version: "Visualiser", type: "Visualiser" }),
+  v("right-here-right-now", "Right Here, Right Now", "Ren", 2022, ["Hip Hop"], [], [], { youtubeId: "yVaJUdllr3c", version: "Fatboy Slim", type: "Cover" }),
+  v("wildfire", "Wildfire", "Ren", 2022, ["Hip Hop"], [], [], { youtubeId: "bEVfqR5PJE8", version: "SBTRKT Retake", type: "Cover" }),
+  v("all-my-life", "All My Life", "Ren", 2022, ["Hip Hop"], [], [], { youtubeId: "mViaIY98gUA", version: "FooFighters Rap", type: "Cover" }),
+  v("bittersweet-symphony", "Bittersweet Symphony", "Ren", 2023, ["Hip Hop"], [], [], { youtubeId: "JwtEOp7pC1A", version: "The Verve", type: "Cover" }),
+  v("eden", "Eden", "Ren", 2023, ["Hip Hop"], [], [], { youtubeId: "NdSLsRKnafI", type: "Music Video" }),
+  v("life-is-funny", "Life Is Funny", "Ren", 2020, ["Hip Hop"], [], [], { youtubeId: "rV8U73JHs0Q", version: "Lyric Video", type: "Lyric Video" }),
+  v("dear-god", "Dear God", "Ren", 2020, ["Hip Hop"], [], [], { youtubeId: "uOiB2AYUdMQ", version: "Lyric Video", type: "Lyric Video" }),
+  v("ocean", "Ocean", "Ren", 2020, ["Hip Hop"], [], [], { youtubeId: "xoi7pI0zGPA", version: "Official", type: "Music Video" }),
+  v("heretic", "Heretic", "Ren", 2020, ["Hip Hop"], [], [], { youtubeId: "wukFdoXRZKM", version: "Visualiser", type: "Visualiser" }),
+  v("ready-for-you", "Ready For You", "Ren", 2020, ["Hip Hop"], [], [], { youtubeId: "PdPVzKTJWXI", version: "Visualiser", type: "Visualiser" }),
+  v("crucify-your-culture", "Crucify Your Culture", "Ren", 2020, ["Hip Hop"], [], [], { youtubeId: "LfS41H29asw", type: "Music Video" }),
+  v("fred-again-mash-up", "Fred Again Mash Up", "Ren", 2024, ["Hip Hop"], [], [], { youtubeId: "8ASggnoga9Q", type: "Music Video" }),
+  v("halftime", "Halftime", "Ren", 2024, ["Hip Hop"], [], [], { youtubeId: "e3_KfTO7dfw", version: "Nas Retake", type: "Cover" }),
+  v("dumb-king-come", "Dumb King Come", "Ren", 2023, ["Hip Hop"], [], [], { youtubeId: "gcVUnFisx_Q", type: "Music Video" }),
+  v("love-music-part-3", "Love Music Part 3", "Ren", 2020, ["Hip Hop"], [], [], { series: "Love Music", part: 3, youtubeId: "OjElKx6q2Wc", version: "Lyric Video", type: "Lyric Video" }),
+  v("girls", "Girls!", "Ren", 2018, ["Hip Hop"], [], [], { youtubeId: "ZDRqITGHhMU", version: "Official", type: "Music Video" }),
+  v("do-you-believe", "Do You Believe", "Ren", 2016, ["Hip Hop"], [], [], { youtubeId: "EGgowW6AOyw", version: "Official", type: "Music Video" }),
+  v("hold-on", "Hold On", "Ren", 2016, ["Hip Hop"], [], [], { youtubeId: "n7jsWZmHhcM", version: "Official", type: "Music Video" }),
+  v("jessica", "Jessica", "Ren", 2016, ["Hip Hop"], [], [], { youtubeId: "zU_GnJdT_Fk", version: "Official", type: "Music Video" }),
+  v("chinchilla-chalk-outlines", "Chalk Outlines", "Ren & Chinchilla", 2021, ["Folk", "Pop"], ["Melancholic", "Cathartic"], ["Love", "Grief"], { youtubeId: "4Vn_N5IHHoc", version: "Lyric Video", type: "Lyric Video" }),
+  v("chinchilla-how-to-be-me", "How to Be Me", "Ren & Chinchilla", 2019, ["Folk", "Pop"], ["Melancholic"], ["Identity"], { youtubeId: "3IhoPpHYXjo", version: "Lyric Video", type: "Lyric Video" }),
+  v("sam-blind-eyed", "Blind Eyed", "Ren & Sam Tompkins", 2018, ["Pop", "Hip Hop"], ["Dark"], ["Society"], { youtubeId: "xjF_JTbBZjQ", type: "Music Video" }),
+  v("sam-what-went-wrong", "What Went Wrong", "Ren & Sam Tompkins", 2020, ["Pop", "Folk"], ["Melancholic"], ["Love"], { series: "What Went Wrong", part: 1, youtubeId: "jmOdhbC6BZc", version: "Official", type: "Music Video" }),
+  v("sam-what-went-wrong-ii", "What Went Wrong II", "Ren & Sam Tompkins", 2020, ["Pop", "Folk"], ["Melancholic", "Hopeful"], ["Love"], { series: "What Went Wrong", part: 2, youtubeId: "pqfGZ8IRCXk", type: "Music Video" }),
+  v("bp-sweet-little-lady", "Sweet Little Lady", "The Big Push", 2020, ["Blues", "Busking"], ["Hopeful"], ["Love"], { youtubeId: "X9gOvRAZ1jM", type: "Music Video" }),
+  v("bp-icarus", "Icarus", "The Big Push", 2020, ["Blues", "Rock"], ["Melancholic"], ["Identity"], { youtubeId: "Yo9fjMywmmk", type: "Music Video" }),
+  v("bp-why-my-woman", "Why My Woman?", "The Big Push", 2020, ["Hip Hop"], [], [], { youtubeId: "7b2m5lBcJ64", type: "Music Video" }),
+  v("bp-oh-my-woman", "Oh My Woman!", "The Big Push", 2020, ["Hip Hop"], [], [], { youtubeId: "bVvA7VOU0MI", type: "Music Video" }),
+  v("bp-dignity", "Dignity", "The Big Push", 2020, ["Hip Hop"], [], [], { youtubeId: "3E37nzXX-4g", type: "Music Video" }),
+  v("bp-heart-attack", "Heart Attack", "The Big Push", 2024, ["Hip Hop"], [], [], { youtubeId: "aBJmZ51VgNM", type: "Music Video" }),
+  v("inpatient-asylum-the-documentary", "ASYLUM | The Documentary", "Inpatient", 2026, ["Documentary"], ["Hopeful"], ["Music", "Mental Health"], { youtubeId: "JadrrdwzO1U", type: "Documentary" }),
+  v("freckled-angels-live", "Freckled Angels", "Ren", 2011, ["Folk"], [], [], { versionOf: "freckled-angels", version: "Live", type: "Live", youtubeId: "cmboIFD5Xks" }),
+  v("seven-sins-live-at-dead-wax", "Seven Sins", "Ren", 2025, ["Hip Hop"], [], [], { versionOf: "seven-sins", version: "Live at Dead Wax", type: "Live", youtubeId: "LRSYCZN58y0" }),
+  v("animal-flow-lyric-video", "Animal Flow", "Ren", 2025, ["Hip Hop"], [], [], { versionOf: "animal-flow", version: "Lyric Video", type: "Lyric Video", youtubeId: "k27c96Hwxxo" }),
+  v("animal-flow-live-acoustic", "Animal Flow", "Ren", 2023, ["Hip Hop"], [], [], { versionOf: "animal-flow", version: "Live Acoustic", type: "Live", youtubeId: "Khmm5ZlSsvU" }),
+  v("genesis-drum-bass-remix", "Genesis", "Ren", 2022, ["Hip Hop"], [], [], { versionOf: "genesis", version: "Drum & Bass Remix", type: "Remix", youtubeId: "_Z8BP9a89S8" }),
+  v("genesis-live-acoustic", "Genesis", "Ren", 2022, ["Hip Hop"], [], [], { versionOf: "genesis", version: "Live Acoustic", type: "Live", youtubeId: "XdRskxDOJfQ" }),
+  v("genesis-live-at-dead-wax", "Genesis", "Ren", 2025, ["Hip Hop"], [], [], { versionOf: "genesis", version: "Live at Dead Wax", type: "Live", youtubeId: "qhRILze1COQ" }),
+  v("murderer-live-acoustic", "Murderer", "Ren", 2023, ["Hip Hop"], [], [], { versionOf: "murderer", version: "Live Acoustic", type: "Live", youtubeId: "MLQhZuezp7g" }),
+  v("murderer-live-at-dead-wax", "Murderer", "Ren", 2025, ["Hip Hop"], [], [], { versionOf: "murderer", version: "Live at Dead Wax", type: "Live", youtubeId: "aflwEudlYbw" }),
+  v("illest-of-our-time-live-at-dead-wax", "Illest of Our Time", "Ren", 2025, ["Hip Hop"], [], [], { versionOf: "illest-of-our-time", version: "Live at Dead Wax", type: "Live", youtubeId: "6VtYboCBPhI" }),
+  v("down-on-the-beat-live-at-dead-wax", "Down on the Beat", "Ren", 2025, ["Hip Hop"], [], [], { versionOf: "down-on-the-beat", version: "Live at Dead Wax", type: "Live", youtubeId: "KLllWX5EiB8" }),
+  v("inpatient-smoking-gun-sick-boi-remix", "Smoking Gun", "Inpatient", 2026, ["Hip Hop"], [], [], { versionOf: "inpatient-smoking-gun", version: "Sick Boi Remix", type: "Remix", youtubeId: "xD4BLLHB0nk" }),
+  v("bp-sympathy-for-the-devil-live-at-the-brighton-dome", "Sympathy for the devil", "The Big Push", 2025, ["Busking", "Rock"], [], [], { versionOf: "bp-sympathy-for-the-devil", version: "Live at The Brighton Dome", type: "Live", youtubeId: "CR5FyWeuS90" }),
+  v("bp-heroes-live-at-the-brighton-dome", "Heroes", "The Big Push", 2025, ["Busking", "Rock"], [], [], { versionOf: "bp-heroes", version: "Live at The Brighton Dome", type: "Live", youtubeId: "XIewItYtFIg" }),
+  v("bp-watch-out-live-busking-2020", "Watch Out", "The Big Push", 2021, ["Blues", "Rock"], [], [], { versionOf: "bp-watch-out", version: "Live Busking 2020", type: "Live", youtubeId: "at9odgikigE" }),
+  v("bp-all-my-heroes-live-at-the-brighton-dome", "All My Heroes", "The Big Push", 2025, ["Blues", "Rock"], [], [], { versionOf: "bp-all-my-heroes", version: "Live At The Brighton Dome", type: "Live", youtubeId: "Igi12A3RIEI" }),
+  v("hi-ren-live-at-koko", "Hi Ren", "Ren", 2023, ["Folk", "Hip Hop"], [], [], { versionOf: "hi-ren", version: "Live at KOKO", type: "Live", youtubeId: "chr0eMNEatw" }),
+  v("money-game-part-2-lyric-video", "Money Game Part 2", "Ren", 2020, ["Hip Hop"], [], [], { versionOf: "money-game-part-2", version: "Lyric Video", type: "Lyric Video", youtubeId: "YonS9_QJbp8" }),
+  v("money-game-part-2-live", "Money Game Part 2", "Ren", 2022, ["Hip Hop"], [], [], { versionOf: "money-game-part-2", version: "Live", type: "Live", youtubeId: "dqyce2cuM78" }),
+  v("money-game-part-2-live-at-sky-arts-awards", "Money Game Part 2", "Ren", 2024, ["Hip Hop"], [], [], { versionOf: "money-game-part-2", version: "Live at Sky Arts Awards", type: "Live", youtubeId: "jJmV1A4O1eM" }),
+  v("troubles-acoustic", "Troubles", "Ren", 2024, ["Folk"], [], [], { versionOf: "troubles", version: "Acoustic", type: "Acoustic", youtubeId: "5RDd6gFQvp0" }),
+  v("troubles-instrumental", "Troubles", "Ren", 2024, ["Folk"], [], [], { versionOf: "troubles", version: "Instrumental", type: "Instrumental", youtubeId: "EBbElp_LexY" }),
+  v("slaughter-house-live-at-dead-wax", "Slaughter House", "Ren", 2025, ["Hip Hop"], [], [], { versionOf: "slaughter-house", version: "Live at Dead Wax", type: "Live", youtubeId: "hXIhL0Rivkc" }),
+  v("power-live-at-dead-wax", "Power", "Ren", 2025, ["Hip Hop"], [], [], { versionOf: "power", version: "Live at Dead Wax", type: "Live", youtubeId: "gXEZgSl5o7A" }),
+  v("chinchilla-chalk-outlines-live", "Chalk Outlines", "Ren & Chinchilla", 2021, ["Folk", "Pop"], [], [], { versionOf: "chinchilla-chalk-outlines", version: "Live", type: "Live", youtubeId: "35yALr_opeg" }),
+  v("chinchilla-how-to-be-me-live", "How to Be Me", "Ren & Chinchilla", 2021, ["Folk", "Pop"], [], [], { versionOf: "chinchilla-how-to-be-me", version: "Live", type: "Live", youtubeId: "SDR7sup3DsU" }),
+  v("sam-blind-eyed-live", "Blind Eyed", "Ren & Sam Tompkins", 2018, ["Pop", "Hip Hop"], [], [], { versionOf: "sam-blind-eyed", version: "Live", type: "Live", youtubeId: "2W-MXP8B5zk" }),
+  v("sam-blind-eyed-live-2019", "Blind Eyed", "Ren & Sam Tompkins", 2019, ["Pop", "Hip Hop"], [], [], { versionOf: "sam-blind-eyed", version: "Live 2019", type: "Live", youtubeId: "7YeXF09erjU" }),
+  v("prisoners-round-the-story-of-starry-night-part-two", "Prisoners' Round | The Story of 'Starry Night' (part two)", "Ren", 2026, ["Documentary"], [], [], { type: "Documentary", youtubeId: "JmwnydHHcYg", about: "starry-night" }),
+  v("prisoners-round-the-story-of-starry-night-part-one", "Prisoners' Round | The Story of 'Starry Night' (part one)", "Ren", 2026, ["Documentary"], [], [], { type: "Documentary", youtubeId: "HBT2JZKrvQU", about: "starry-night" }),
+  v("sick-boi-episode-2-pandoras-box", "SICK BOI - Episode 2 - Pandora's Box", "Ren", 2025, ["Documentary"], [], [], { type: "Documentary", youtubeId: "Ohy0GtuxXWg", about: "sick-boi" }),
+  v("the-sick-boi-live-at-dead-wax-full-video", "The Sick Boi Live at Dead Wax (Full Video)", "Ren", 2025, [], [], [], { type: "Live", youtubeId: "CaeB4DcOoVk" }),
+  v("ren-fire-in-the-bts", "REN - Fire in the BTS", "Ren", 2025, [], [], [], { type: "Behind the Scenes", youtubeId: "lAbqTCPzBds" }),
+  v("sick-boi-episode-1-the-flame-of-prometheus", "SICK BOI - Episode 1 - The flame of Prometheus", "Ren", 2024, ["Documentary"], [], [], { type: "Documentary", youtubeId: "47UW7nNzI2U", about: "sick-boi" }),
+  v("money-game-part-3-behind-the-scenes-by-wolf-johnson", "Money Game Part 3 (Behind The Scenes by Wolf Johnson)", "Ren", 2023, [], [], [], { type: "Behind the Scenes", youtubeId: "CdEFYPef7RU", about: "money-game-part-3" }),
+  v("hi-ren-behind-the-scenes-w-ren", "Hi Ren - Behind The Scenes W/ Ren", "Ren", 2022, [], [], [], { type: "Behind the Scenes", youtubeId: "M1Na3nQV_8Q", about: "hi-ren" }),
+  v("richards-tale-bts", "Richard's Tale | BTS", "Ren", 2026, [], [], [], { type: "Behind the Scenes", youtubeId: "l7uxQkJZ4Wk" }),
+  v("sick-sick-soul-bonus-bts", "SICK SICK SOUL | BONUS BTS", "Ren", 2026, [], [], [], { type: "Behind the Scenes", youtubeId: "vpS6cLSUyEw" }),
+  v("ren-x-the-skinner-brothers-twos-on-a-cigarette-bts", "Ren x The Skinner Brothers - Twos On A Cigarette | BTS", "Ren", 2026, [], [], [], { type: "Behind the Scenes", youtubeId: "JeRPc7asnMc", about: "skinner-twos-on-a-cigarette" }),
+  v("ren-x-the-skinner-brothers-dream-life-bts", "Ren x The Skinner Brothers - DREAM LIFE | BTS", "Ren", 2026, [], [], [], { type: "Behind the Scenes", youtubeId: "b80CrG4-Ry4", about: "skinner-dream-life" }),
+  v("ren-x-the-skinner-brothers-truth-or-dare-bts", "Ren x The Skinner Brothers - Truth or Dare | BTS", "Ren", 2026, [], [], [], { type: "Behind the Scenes", youtubeId: "0oPVv-BCi4Q", about: "skinner-truth-or-dare" }),
+  v("ren-x-the-skinner-brothers-ctrl-alt-delete-bts", "Ren x The Skinner Brothers - Ctrl Alt Delete | BTS", "Ren", 2026, [], [], [], { type: "Behind the Scenes", youtubeId: "cDLvEPOXN9o", about: "skinner-ctrl-alt-delete" }),
+  v("ren-x-the-skinner-brothers-so-the-story-goes-bts", "Ren x The Skinner Brothers - So the story goes... | BTS", "Ren", 2026, [], [], [], { type: "Behind the Scenes", youtubeId: "dXVh9rB3fdA", about: "skinner-so-the-story-goes" }),
+  v("asylum-album-release-day-livestream", "ASYLUM Album Release Day - LIVESTREAM", "Ren", 2026, [], [], [], { type: "Stream", youtubeId: "UfSxciuhZ3Y" }),
+  v("vincents-tale-stories-bts-vol-2", "Vincent's Tale | stories [BTS] VOL 2", "Ren", 2026, [], [], [], { type: "Behind the Scenes", youtubeId: "FRNOpzeb2r0" }),
+  v("vincents-tale-stories-bts-vol-1", "Vincent's Tale | stories [BTS] VOL 1", "Ren", 2026, [], [], [], { type: "Behind the Scenes", youtubeId: "N8JyYtJHJK8" }),
+  v("instigator-release-day-livestream", "Instigator Release Day - LIVESTREAM", "Ren", 2026, [], [], [], { type: "Stream", youtubeId: "UVVs3A8kfEM" }),
+  v("inpatient-down-the-road-official-reaction-compilation", "Down The Road (Official Reaction Compilation)", "Inpatient", 2026, [], [], [], { type: "Reaction", youtubeId: "OBYKX8D7Xts", about: "inpatient-down-the-road" }),
+  v("vincents-tale-self-portrait-behind-the-scenes", "Vincent's Tale - Self Portrait (behind the scenes)", "Ren", 2026, [], [], [], { type: "Behind the Scenes", youtubeId: "45cHqCH6gjM", about: "self-portrait" }),
+  v("hi-ren-pre-release-livestream", "Hi Ren (Pre Release Livestream)", "Ren", 2025, [], [], [], { type: "Stream", youtubeId: "WMmefpgb720", about: "hi-ren" }),
+  v("kujo-beat-down-behind-the-scenes", "KUJO BEAT DOWN | Behind The Scenes", "Ren", 2025, [], [], [], { type: "Behind the Scenes", youtubeId: "HiPY_BcyaoM", about: "kujo-beat-down" }),
+  v("sick-boi-episode-1-the-flame-of-prometheus-behind-the-scenes", "SICK BOI - EPISODE 1: The flame of Prometheus (Behind The Scenes)", "Ren", 2025, [], [], [], { type: "Behind the Scenes", youtubeId: "FiQ76Oqs0a4", about: "sick-boi" }),
+  v("ren-ft-kit-slaughter-house-behind-the-scenes-part-ii", "Ren Ft. Kit - Slaughter House | Behind The Scenes (PART II)", "Ren", 2025, [], [], [], { type: "Behind the Scenes", youtubeId: "oOoh0NDloyE", about: "slaughter-house" }),
+  v("ren-ft-kit-slaughter-house-behind-the-scenes-part-i", "Ren Ft. Kit - Slaughter House | Behind The Scenes (PART I)", "Ren", 2025, [], [], [], { type: "Behind the Scenes", youtubeId: "pdSRwNMKCOo", about: "slaughter-house" }),
+  v("vincents-tale-self-portrait-official-reaction-compilation", "Vincent's Tale - Self Portrait (Official Reaction Compilation)", "Ren", 2025, [], [], [], { type: "Reaction", youtubeId: "6lVRWoJ-sWw", about: "self-portrait" }),
+  v("violets-tale-official-reaction-compilation", "Violet's Tale (Official Reaction Compilation)", "Ren", 2025, [], [], [], { type: "Reaction", youtubeId: "DirSuU9OYTM", about: "violets-tale" }),
+  v("screechs-tale-official-reaction-compilation", "Screech's Tale (Official Reaction Compilation)", "Ren", 2025, [], [], [], { type: "Reaction", youtubeId: "iXQZLcvoRhE", about: "screechs-tale" }),
+  v("jennys-tale-official-reaction-compilation", "Jenny's Tale (Official Reaction Compilation)", "Ren", 2025, [], [], [], { type: "Reaction", youtubeId: "OBNj-UxxGpM", about: "jennys-tale" }),
+  v("bitter-sweet-symphony-live-bts", "Bitter Sweet Symphony (Live) | BTS", "Ren", 2025, [], [], [], { type: "Behind the Scenes", youtubeId: "bi54PZxb5a0" }),
+  v("illest-of-our-time-the-sick-boi-live-at-dead-wax-full-reacti", "Illest Of Our Time ( The Sick Boi Live at Dead Wax ) ***FULL REACTION COMPILATION***", "Ren", 2025, [], [], [], { type: "Reaction", youtubeId: "epJZkINuNmw", about: "illest-of-our-time" }),
+  v("ren-fire-in-the-booth-full-reaction-compilation", "REN - Fire in the Booth (Full Reaction Compilation)", "Ren", 2025, [], [], [], { type: "Reaction", youtubeId: "8YnDi6zkp8k" }),
+  v("chinchilla-ren-x-chinchilla-how-to-be-me-live-bts", "Ren X Chinchilla - How To Be Me (Live) - BTS", "Ren & Chinchilla", 2025, [], [], [], { type: "Behind the Scenes", youtubeId: "NxPgIbdUBpw", about: "chinchilla-how-to-be-me" }),
+  v("webby-ft-ren-baggage-behind-the-scenes", "Webby ft. Ren - 'Baggage' | BEHIND THE SCENES", "Ren", 2024, [], [], [], { type: "Behind the Scenes", youtubeId: "DjK7Qh8aGCE" }),
+  v("slaughter-house-twitch-stream", "'SLAUGHTER HOUSE' Twitch Stream", "Ren", 2024, [], [], [], { type: "Stream", youtubeId: "_IrsyVp8N_Y" }),
+  v("children-of-the-moon-bts", "Children Of The Moon (BTS)", "Ren", 2024, [], [], [], { type: "Behind the Scenes", youtubeId: "esc-6IHCRU0", about: "children-of-the-moon" }),
+  v("nas-retake-bts", "Nas Retake (BTS)", "Ren", 2024, [], [], [], { type: "Behind the Scenes", youtubeId: "Cm3MUej2t0w" }),
+  v("animal-flow-bts", "ANIMAL FLOW (BTS)", "Ren", 2024, [], [], [], { type: "Behind the Scenes", youtubeId: "ivfiQ2TRoVU", about: "animal-flow" }),
+  v("back-on-74-message-in-a-bottle-bts", "Back on 74/Message in a Bottle (BTS)", "Ren", 2024, [], [], [], { type: "Behind the Scenes", youtubeId: "_mM7t9r57Pc" }),
+  v("fred-again-mashup-bts", "Fred Again mashup (BTS)", "Ren", 2024, [], [], [], { type: "Behind the Scenes", youtubeId: "DIiQi6kiaB0" }),
+  v("pigman-treasure-hunt-videos-bts", "PIGMAN (treasure hunt videos) BTS", "Ren", 2024, [], [], [], { type: "Behind the Scenes", youtubeId: "RozA-uetuXU" }),
+  v("seven-sins-behind-the-scenes", "SEVEN SINS - BEHIND THE SCENES", "Ren", 2024, [], [], [], { type: "Behind the Scenes", youtubeId: "zbWXBXQGHlQ", about: "seven-sins" }),
+  v("ren-twitch-stream-5th-september-2024", "Ren Twitch Stream - 5th September 2024", "Ren", 2024, [], [], [], { type: "Stream", youtubeId: "66H0QrdijGE" }),
+  v("the-making-of-money-game-3-studio-bts", "The making of Money Game 3 - studio BTS", "Ren", 2024, [], [], [], { type: "Behind the Scenes", youtubeId: "45YrWygW12w" }),
+  v("sam-ren-and-sam-tompkins-livestream-2020", "Ren and Sam Tompkins livestream 2020", "Ren & Sam Tompkins", 2024, [], [], [], { type: "Stream", youtubeId: "3uVe4qQqYtQ" }),
+  v("ren-potato-twitch-stream", "Ren potato twitch stream", "Ren", 2023, [], [], [], { type: "Stream", youtubeId: "nzfiJ5hb0dA" }),
+  v("ren-twitch-stream-18th-october", "Ren Twitch Stream 18th october", "Ren", 2023, [], [], [], { type: "Stream", youtubeId: "GSt4CXIPMS8" }),
+  v("money-game-3-live-twitch-stream-12th-october-2023", "Money Game 3 Live Twitch Stream - 12th October 2023", "Ren", 2023, [], [], [], { type: "Stream", youtubeId: "IlOfjoxUkMA", about: "money-game-part-3" }),
+  v("bp-behind-the-push-tour-diary-part-v-manchester", "Behind The Push (Tour Diary): Part V - MANCHESTER", "The Big Push", 2026, [], [], [], { type: "Behind the Scenes", youtubeId: "EgS8pGSboNM" }),
+  v("bp-behind-the-push-tour-diary-part-iv-brighton", "Behind The Push (Tour Diary): Part IV - BRIGHTON", "The Big Push", 2026, [], [], [], { type: "Behind the Scenes", youtubeId: "I0bHfBDEK-c" }),
+  v("bp-behind-the-push-tour-diary-part-iii-bristol", "Behind The Push (Tour Diary): Part III - BRISTOL", "The Big Push", 2026, [], [], [], { type: "Behind the Scenes", youtubeId: "2i-72LzJKBc" }),
+  v("bp-behind-the-push-tour-diary-part-ii-london", "Behind The Push (Tour Diary): Part II - LONDON", "The Big Push", 2026, [], [], [], { type: "Behind the Scenes", youtubeId: "4qh-xRkTEhI" }),
+  v("bp-behind-the-push-tour-diary-part-i-glasgow", "Behind The Push (Tour Diary): Part I - GLASGOW", "The Big Push", 2026, [], [], [], { type: "Behind the Scenes", youtubeId: "2bok3ufh6yE" }),
+  v("bp-behind-the-push-xbox-marijuana", "Behind the Push : Xbox Marijuana", "The Big Push", 2021, [], [], [], { type: "Behind the Scenes", youtubeId: "QZUAFeXeh_k", about: "bp-xbox-marijuana" }),
+  v("bp-behind-the-push-icarus", "Behind the Push: Icarus", "The Big Push", 2020, [], [], [], { type: "Behind the Scenes", youtubeId: "Kgaa8DFHx3E", about: "bp-icarus" }),
+  v("bp-behind-the-push-why-my-woman", "Behind the Push: Why My Woman?", "The Big Push", 2020, [], [], [], { type: "Behind the Scenes", youtubeId: "fYcAbOGVg3s", about: "bp-why-my-woman" }),
+  v("bp-behind-the-push-live-at-chalk", "Behind the Push: Live at Chalk", "The Big Push", 2019, [], [], [], { type: "Behind the Scenes", youtubeId: "oKSj3jFc9HM" }),
 ];
 
 export type Artist = { mbid?: string; bio: string; members?: string[]; socials: { label: string; url: string }[] };
@@ -410,12 +501,33 @@ const normTitle = (t: string) =>
     .trim();
 
 export const videoForTrack = (album: string, track: Track) =>
-  VIDEOS.find((v) => v.album === album && normTitle(v.title) === normTitle(track.title.replace(/^vincent.s tale - /i, "")));
+  VIDEOS.find((v) => !v.versionOf && v.album === album && normTitle(v.title) === normTitle(track.title.replace(/^vincent.s tale - /i, "")));
+
+export const versionsOf = (video: Video) => {
+  const base = video.versionOf ?? video.id;
+  return VIDEOS.filter((v) => v.id === base || v.versionOf === base);
+};
+
+export const relatedTo = (video: Video) => {
+  const base = video.about ?? video.versionOf ?? video.id;
+  return VIDEOS.filter((v) => v.about === base && v.id !== video.id);
+};
+
+export const videoById = (id: string) => VIDEOS.find((v) => v.id === id);
 
 export const albumsOf = (artist: string) =>
   Object.entries(ALBUMS)
     .filter(([, a]) => a.artist === artist)
     .sort(([, a], [, b]) => a.date.localeCompare(b.date));
+
+export const matchesQuery = (video: Video, query: string) => {
+  const hay = [video.title, video.type, video.version, video.collective, video.album, video.series, video.year, ...video.genres, ...video.moods, ...video.topics].join(" ").toLowerCase();
+  return query
+    .toLowerCase()
+    .split(/\s+/)
+    .filter(Boolean)
+    .every((term) => hay.includes(term));
+};
 
 export const seriesParts = (video: Video) =>
   video.series ? VIDEOS.filter((v) => v.series === video.series).sort((a, b) => (a.part ?? 0) - (b.part ?? 0)) : [];
@@ -424,6 +536,8 @@ export const tagsFor = (video: Video, dim: Dimension): string[] => {
   switch (dim) {
     case "collective":
       return [video.collective];
+    case "type":
+      return [video.type];
     case "genre":
       return video.genres;
     case "mood":
@@ -477,6 +591,7 @@ function buildOrbits(videos: Video[]): Orbit[] {
 export function buildGalaxies(dim: Dimension): Galaxy[] {
   const groups = new Map<string, Video[]>();
   for (const video of VIDEOS) {
+    if (video.versionOf && dim !== "type") continue;
     for (const tag of tagsFor(video, dim)) {
       groups.set(tag, [...(groups.get(tag) ?? []), video]);
     }
